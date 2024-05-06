@@ -1,0 +1,52 @@
+<div class="content" style="margin-top: 25px; padding-right: 10px; border-bottom: solid 1px #1d85bf;">
+    <div class="grid">
+        <div class="col-4 margin-bottom">
+            <span class="p-float-label">
+                <p-dropdown placeholder="Subsector"></p-dropdown>
+                <label class="label-placehoder requerido">Subsector</label>
+            </span>
+        </div>
+        <div class="col-8 margin-bottom">
+            <span class="p-float-label">
+                <p-dropdown placeholder="Unidad fiscalizable"></p-dropdown>
+                <label class="label-placehoder requerido">Unidad fiscalizable</label>
+            </span>
+        </div>
+        <div class="col-12 margin-bottom">
+            <span class="p-float-label">
+                <p-multiSelect [options]="ufi" optionLabel="name"></p-multiSelect>
+                <label class="label-placehoder">Instrumento de gestión ambiental</label>
+            </span>
+        </div>
+        <div class="col-12 margin-bottom">
+            <span class="p-float-label flex flex-column">
+                <input pInputText type="text" placeholder="Nombre de informe"/>
+                <label class="label-placehoder requerido">Nombre de informe</label>
+            </span>
+        </div>
+        <div class="col-12 margin-bottom">
+            <span class="p-float-label">
+                <p-dropdown placeholder="Etapa"></p-dropdown>
+                <label class="label-placehoder requerido">Etapa</label>
+            </span>
+        </div>
+        <div class="col-6 margin-bottom">
+            <span class="p-float-label">
+                <p-dropdown placeholder="Frecuencia de presentación de reporte"></p-dropdown>
+                <label class="label-placehoder requerido">Frecuencia de presentación de reporte</label>
+            </span>
+        </div>
+        <div class="col-6 margin-bottom">
+            <span class="p-float-label">
+                <p-dropdown placeholder="Periodo de presentación de reporte"></p-dropdown>
+                <label class="label-placehoder requerido">Periodo de presentación de reporte</label>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="futter">
+    <div class="flex justify-content-center gap-2">
+        <p-button label="Guardar" outlined="true" severity="primary" class="outline-primary" (click)="onClickCancelar()"></p-button>
+        <p-button label="Cancelar" outlined="true" severity="secondary" class="outline-secondary" (click)="onClickCancelar()"></p-button>
+    </div>
+</div>

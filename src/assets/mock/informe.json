@@ -1,0 +1,62 @@
+[
+    {
+      "orden": 0,
+      "usuario": "$3,676.65",
+      "informeMonitoreo": "http://placehold.it/32x32",
+      "instrumentoGestion": "brown",
+      "etapa": "Katelyn Daniel",
+      "nroRegistro": "female",
+      "estado": "Texas",
+      "fechaRegistro": "02/04/2024",
+      "fechaCierre": "02/04/2024",
+      "fechaPresentacion": "02/04/2024"
+    },
+    {
+      "orden": 1,
+      "usuario": "$3,545.97",
+      "informeMonitoreo": "http://placehold.it/32x32",
+      "instrumentoGestion": "green",
+      "etapa": "Natalia Oneil",
+      "nroRegistro": "female",
+      "estado": "Arizona",
+      "fechaRegistro": "02/04/2024",
+      "fechaCierre": "02/04/2024",
+      "fechaPresentacion": "02/04/2024"
+    },
+    {
+      "orden": 2,
+      "usuario": "$3,520.46",
+      "informeMonitoreo": "http://placehold.it/32x32",
+      "instrumentoGestion": "brown",
+      "etapa": "Sherman Adams",
+      "nroRegistro": "male",
+      "estado": "Colorado",
+      "fechaRegistro": "02/04/2024",
+      "fechaCierre": "02/04/2024",
+      "fechaPresentacion": "02/04/2024"
+    },
+    {
+      "orden": 3,
+      "usuario": "$3,113.82",
+      "informeMonitoreo": "http://placehold.it/32x32",
+      "instrumentoGestion": "brown",
+      "etapa": "Elliott Livingston",
+      "nroRegistro": "male",
+      "estado": "New Jersey",
+      "fechaRegistro": "02/04/2024",
+      "fechaCierre": "02/04/2024",
+      "fechaPresentacion": "02/04/2024"
+    },
+    {
+      "orden": 4,
+      "usuario": "$1,460.13",
+      "informeMonitoreo": "http://placehold.it/32x32",
+      "instrumentoGestion": "brown",
+      "etapa": "Marla Gonzalez",
+      "nroRegistro": "female",
+      "estado": "Massachusetts",
+      "fechaRegistro": "02/04/2024",
+      "fechaCierre": "02/04/2024",
+      "fechaPresentacion": "02/04/2024"
+    }
+  ]
