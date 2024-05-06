@@ -23,6 +23,7 @@ import { DialogModule } from 'primeng/dialog';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MessagesModule } from 'primeng/messages';
+import { CalendarModule } from 'primeng/calendar';
 
 
 import { InformeMonitoreoListadoComponent } from './informe-monitoreo/views/informe/informe-monitoreo-listado/informe-monitoreo-listado.component';
@@ -30,6 +31,12 @@ import { InformeMonitoreoDetalleComponent } from './informe-monitoreo/views/info
 import { PuntoMonitoreoListadoComponent } from './informe-monitoreo/views/puntos/punto-monitoreo-listado/punto-monitoreo-listado.component';
 import { ResultadoComponent } from './informe-monitoreo/views/puntos/resultado/resultado.component';
 import { ComponenteAmbientalListadoComponent } from './informe-monitoreo/views/componente/componente-ambiental-listado/componente-ambiental-listado.component';
+import { EquipoMonitoreoListadoComponent } from './informe-monitoreo/views/equipos/equipo-monitoreo-listado/equipo-monitoreo-listado.component';
+import { EquipoMonitoreoDetalleComponent } from './informe-monitoreo/views/equipos/equipo-monitoreo-detalle/equipo-monitoreo-detalle.component';
+import { EnsayoMonitoreoDetalleComponent } from './informe-monitoreo/views/ensayo/ensayo-monitoreo-detalle/ensayo-monitoreo-detalle.component';
+import { EnsayoMonitoreoListadoComponent } from './informe-monitoreo/views/ensayo/ensayo-monitoreo-listado/ensayo-monitoreo-listado.component';
+import { DocumentoMonitoreoListadoComponent } from './informe-monitoreo/views/documento/documento-monitoreo-listado/documento-monitoreo-listado.component';
+import { DocumentoMonitoreoDetalleComponent } from './informe-monitoreo/views/documento/documento-monitoreo-detalle/documento-monitoreo-detalle.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +45,13 @@ import { ComponenteAmbientalListadoComponent } from './informe-monitoreo/views/c
     InformeMonitoreoDetalleComponent,
     PuntoMonitoreoListadoComponent,
     ResultadoComponent,
-    ComponenteAmbientalListadoComponent
+    ComponenteAmbientalListadoComponent,
+    EquipoMonitoreoListadoComponent,
+    EquipoMonitoreoDetalleComponent,
+    EnsayoMonitoreoDetalleComponent,
+    EnsayoMonitoreoListadoComponent,
+    DocumentoMonitoreoListadoComponent,
+    DocumentoMonitoreoDetalleComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,7 +75,8 @@ import { ComponenteAmbientalListadoComponent } from './informe-monitoreo/views/c
     TooltipModule,
     ToastModule,
     DialogModule,
-    MessagesModule
+    MessagesModule,
+    CalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
