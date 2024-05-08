@@ -1,1 +1,57 @@
-<p>ensayo-monitoreo-detalle works!</p>
+<div class="content  mb-4" style="margin-top: 25px; padding-right: 10px; border-bottom: solid 1px #1d85bf;">
+    <div class="grid row">
+        <div class="col-12 mb-4">
+            <span class="p-float-label flex flex-column">
+                <input pInputText type="text" placeholder="N° informe de ensayo" />
+                <label class="label-placehoder requerido">N° informe de ensayo</label>
+            </span>
+        </div>
+        <div class="p-grid ui-fluid col-12 mb-4">
+            <span class="p-float-label flex flex-column">
+                <p-calendar [readonlyInput]="true" styleClass="w-full" [showIcon]="true" [showOnFocus]="false"
+                    inputId="buttondisplay"></p-calendar>
+                <label class="label-placehoder requerido">Fecha de recepción de muestra</label>
+            </span>
+        </div>
+        <div class="p-grid ui-fluid col-12 mb-4">
+            <span class="p-float-label flex flex-column">
+                <p-calendar [readonlyInput]="true" styleClass="w-full" [showIcon]="true" [showOnFocus]="false"
+                    inputId="buttondisplay"></p-calendar>
+                <label class="label-placehoder requerido">Fecha de emisión del informe de ensayo</label>
+            </span>
+        </div>
+        <div class="col-12 mb-4">
+            <span class="p-float-label flex flex-column">
+                <input pInputText type="text" placeholder="Ruc de laboratorio"/>
+                <label class="label-placehoder requerido">Ruc de laboratorio</label>
+            </span>
+        </div>
+        <div class="col-12 mb-4">
+            <span class="p-float-label flex flex-column">
+                <input pInputText type="text" placeholder="Nombre de laboratorio" [disabled]="true"/>
+                <label class="label-placehoder requerido">Nombre de laboratorio</label>
+            </span>
+        </div>
+        <div class="col-12 mb-2">
+            <div class="card flex flex-column">
+              <p-fileUpload mode="basic" name="demo[]" chooseIcon="pi pi-upload"
+                url="https://www.primefaces.org/cdn/api/upload.php" accept=".pdf,.docx,.doc,.zip,.rar" maxFileSize="1000000"
+                (onUpload)="onBasicUploadAuto($event)" [auto]="true" chooseLabel="Adjuntar Archivo"/>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="flex flex-column">
+              <strong>Formatos permitidos: .pdf,.docx,.doc,.zip,.rar</strong> 
+              <strong>Támaño máximo permitido: 5 GB.</strong>
+            </div>
+          </div>
+    </div>
+</div>
+<div class="futter">
+    <div class="flex justify-content-center gap-2">
+        <p-button label="Guardar" outlined="true" severity="primary" class="outline-primary"
+            (click)="onClickCancelar()"></p-button>
+        <p-button label="Cancelar" outlined="true" severity="secondary" class="outline-secondary"
+            (click)="onClickCancelar()"></p-button>
+    </div>
+</div>

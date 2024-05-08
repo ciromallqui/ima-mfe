@@ -24,7 +24,9 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MessagesModule } from 'primeng/messages';
 import { CalendarModule } from 'primeng/calendar';
-
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { CheckboxModule } from 'primeng/checkbox';
+import { FileUploadModule } from 'primeng/fileupload';
 
 import { InformeMonitoreoListadoComponent } from './informe-monitoreo/views/informe/informe-monitoreo-listado/informe-monitoreo-listado.component';
 import { InformeMonitoreoDetalleComponent } from './informe-monitoreo/views/informe/informe-monitoreo-detalle/informe-monitoreo-detalle.component';
@@ -37,6 +39,9 @@ import { EnsayoMonitoreoDetalleComponent } from './informe-monitoreo/views/ensay
 import { EnsayoMonitoreoListadoComponent } from './informe-monitoreo/views/ensayo/ensayo-monitoreo-listado/ensayo-monitoreo-listado.component';
 import { DocumentoMonitoreoListadoComponent } from './informe-monitoreo/views/documento/documento-monitoreo-listado/documento-monitoreo-listado.component';
 import { DocumentoMonitoreoDetalleComponent } from './informe-monitoreo/views/documento/documento-monitoreo-detalle/documento-monitoreo-detalle.component';
+import { EquipoAsociarParametroMonitoreoComponent } from './informe-monitoreo/views/equipos/equipo-asociar-parametro-monitoreo/equipo-asociar-parametro-monitoreo.component';
+import { EnsayoAsociarParametroMonitoreoComponent } from './informe-monitoreo/views/ensayo/ensayo-asociar-parametro-monitoreo/ensayo-asociar-parametro-monitoreo.component';
+
 
 @NgModule({
   declarations: [
@@ -52,6 +57,8 @@ import { DocumentoMonitoreoDetalleComponent } from './informe-monitoreo/views/do
     EnsayoMonitoreoListadoComponent,
     DocumentoMonitoreoListadoComponent,
     DocumentoMonitoreoDetalleComponent,
+    EquipoAsociarParametroMonitoreoComponent,
+    EnsayoAsociarParametroMonitoreoComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,7 +83,10 @@ import { DocumentoMonitoreoDetalleComponent } from './informe-monitoreo/views/do
     ToastModule,
     DialogModule,
     MessagesModule,
-    CalendarModule
+    CalendarModule,
+    ConfirmDialogModule,
+    CheckboxModule,
+    FileUploadModule
   ],
   providers: [],
   bootstrap: [AppComponent]

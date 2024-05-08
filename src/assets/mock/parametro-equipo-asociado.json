@@ -1,0 +1,11 @@
+[
+    {
+        "descripcion": "Dióxido de azufre (SO2) (<= 250 µg/m³)",
+        "idParametroDet": 10017473,
+        "idEquipo": 32026,
+        "nombrePunto": "AIR-01",
+        "componente": "AIRE// AIRE AMBIENTAL",
+        "unidadMedidaRes": "µg/m³",
+        "orden": 0
+      }
+]
