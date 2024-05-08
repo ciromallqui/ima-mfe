@@ -23,6 +23,8 @@ import { DialogModule } from 'primeng/dialog';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MessagesModule } from 'primeng/messages';
+import { TreeModule } from 'primeng/tree';
+import { CheckboxModule } from 'primeng/checkbox';
 
 
 import { InformeMonitoreoListadoComponent } from './informe-monitoreo/views/informe/informe-monitoreo-listado/informe-monitoreo-listado.component';
@@ -30,6 +32,8 @@ import { InformeMonitoreoDetalleComponent } from './informe-monitoreo/views/info
 import { PuntoMonitoreoListadoComponent } from './informe-monitoreo/views/puntos/punto-monitoreo-listado/punto-monitoreo-listado.component';
 import { ResultadoComponent } from './informe-monitoreo/views/puntos/resultado/resultado.component';
 import { ComponenteAmbientalListadoComponent } from './informe-monitoreo/views/componente/componente-ambiental-listado/componente-ambiental-listado.component';
+import { ParametroListadoComponent } from './informe-monitoreo/views/parametro/parametro-listado/parametro-listado.component';
+import { ParametroSeleccionComponent } from './informe-monitoreo/views/parametro/parametro-seleccion/parametro-seleccion.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,9 @@ import { ComponenteAmbientalListadoComponent } from './informe-monitoreo/views/c
     InformeMonitoreoDetalleComponent,
     PuntoMonitoreoListadoComponent,
     ResultadoComponent,
-    ComponenteAmbientalListadoComponent
+    ComponenteAmbientalListadoComponent,
+    ParametroListadoComponent,
+    ParametroSeleccionComponent
   ],
   imports: [
     BrowserModule,
@@ -57,12 +63,14 @@ import { ComponenteAmbientalListadoComponent } from './informe-monitoreo/views/c
     FontAwesomeModule,
     ContextMenuModule,
     MultiSelectModule,
+    CheckboxModule,
     MenuModule,
     TableModule,
     TooltipModule,
     ToastModule,
     DialogModule,
-    MessagesModule
+    MessagesModule,
+    TreeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

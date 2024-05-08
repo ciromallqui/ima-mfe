@@ -1,4 +1,4 @@
-<div class="content">
+<div class="content" *ngIf="tabResul=='COMPONENTE'">
     <div class="grid" *ngIf="busqueda" style="margin-top: 3px;">
         <div class="md:col-4 sm col-12">
             <span class="p-float-label flex flex-column">
@@ -15,14 +15,14 @@
             <div class="titulo-res">
                 <strong class="pcp-1" (click)="onClickPuntoRes()">Puntos</strong>
                 <strong class="pcp-2 res-active" (click)="onClickComponenteRes()">Componentes</strong>
-                <strong class="pcp-2" (click)="onClickParametroRes()">Parámetros</strong>
+                <strong class="pcp-2" (click)="onClickParametroRes(dataComponente)">Parámetros</strong>
                 <i class="pi pi-filter-fill" pTooltip="Mostrar filtro" tooltipPosition="top" *ngIf="!busqueda" (click)="onClickBusqueda()"></i>
                 <i class="pi pi-filter-slash" pTooltip="Ocultar filtro" tooltipPosition="top" *ngIf="busqueda" (click)="onClickBusqueda()"></i>
             </div>
         </div>
-        <div class="md:col-5 col-12 flex justify-content-end">
+        <!-- <div class="md:col-5 col-12 flex justify-content-end">
             <p-button label="Seleccionar Componente" severity="primary" outlined="true" class="outline-primary" (click)="onClickMostrarComponente()"></p-button>
-        </div>
+        </div> -->
         
         <div class="grid">
             <div class="col-12 info-res">
@@ -31,11 +31,18 @@
             <div class="col-12 table">
                 <p-table [value]="dataSource" selectionMode="single" dataKey="orden" [tableStyle]="{ 'min-width': '100rem'}">
                     <ng-template pTemplate="header">
-                        <tr><th>COMPONENTE AMBIENTAL / PROCEDENCIA DE LA MUESTRA / PROCEDENCIA ESPECÍFICA DE LA MUESTRA </th></tr>
-                    </ng-template>
-                    <ng-template pTemplate="body">
                         <tr>
-                            <td>col 11</td>
+                            <th style="width: 50px;">N°</th><th style="width: 50px;">OPCIONES</th>
+                            <th>COMPONENTE AMBIENTAL / PROCEDENCIA DE LA MUESTRA / PROCEDENCIA ESPECÍFICA DE LA MUESTRA </th></tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-data let-rowIndex="rowIndex">
+                        <tr>
+                            <td>{{data.orden}}</td>
+                            <td>
+                                <fa-icon [icon]="faTrash" pTooltip="Eliminar componente" tooltipPosition="top" class="icon-danger"></fa-icon>
+                                <i class="pi pi-arrow-right icon-res" pTooltip="Mostrar parámetros" tooltipPosition="top" (click)="onClickParametroRes(data)"></i>
+                            </td>
+                            <td>{{data.nombreComponente}}</td>
                         </tr>
                     </ng-template>
                 </p-table>
@@ -43,3 +50,8 @@
         </div>
     </div>
 </div>
+<div *ngIf="tabResul=='PARAMETRO'">
+    <parametro-listado [data]="dataComponente" (select)="onSelected($event)"></parametro-listado>
+</div>
+
+<p-toast position="top-center" key="noComp"></p-toast>

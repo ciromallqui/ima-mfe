@@ -1,0 +1,23 @@
+<div class="content" style="margin-top: 10px;  border-bottom: solid 1px #1d85bf;">
+    <div class="grid">
+        <div class="col-12">
+            <div><strong>Punto de Monitore: </strong><label>PUNTO 01</label></div>
+            <div><strong>Componente Ambiental: </strong><label>AIRE//AIRE AMBIENTAL</label></div>
+        </div>
+        <div class="col-12">
+            <div><strong>Parámetros:</strong></div>
+            <div class="">
+                <p-tree class="w-full md:w-30rem" [value]="parametroLista" dataKey="idParametro" [(selection)]="selectedFiles" (onNodeSelect)="selectNode($event)">
+                    <ng-template let-node pTemplate="default">
+                        <div><span class="hover:text-primary">{{node.parametro}}</span></div>
+                    </ng-template>
+                </p-tree>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="futter">
+    <div class="flex justify-content-center">
+        <p-button label="Cancelar" outlined="true" severity="secondary" class="outline-secondary" (click)="onClickCancelar()"></p-button>
+    </div>
+</div>

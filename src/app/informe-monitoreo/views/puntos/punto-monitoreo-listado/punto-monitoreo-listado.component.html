@@ -21,8 +21,8 @@
             <div class="md:col-7 col-12">
                 <div class="titulo-res">
                     <strong class="pcp-1 res-active" (click)="onClickPuntoRes()">Puntos</strong>
-                    <strong class="pcp-2" (click)="onClickComponenteRes()">Componentes</strong>
-                    <strong class="pcp-2" (click)="onClickParametroRes()">Parámetros</strong>
+                    <strong class="pcp-2" (click)="onClickComponenteRes(dataPunto)">Componentes</strong>
+                    <strong class="pcp-2" (click)="onClickParametroRes(dataPunto)">Parámetros</strong>
                     <i class="pi pi-filter-fill" pTooltip="Mostrar filtro" tooltipPosition="top" *ngIf="!busqueda" (click)="onClickBusqueda()"></i>
                     <i class="pi pi-filter-slash" pTooltip="Ocultar filtro" tooltipPosition="top" *ngIf="busqueda" (click)="onClickBusqueda()"></i>
                 </div>
@@ -46,7 +46,7 @@
                                 <i class="pi pi-map-marker icon-res" pTooltip="Agregar coordenadas" tooltipPosition="top"></i>
                                 <i class="pi pi-camera icon-res" pTooltip="Agregar foto" tooltipPosition="top"></i>
                                 <i class="pi pi-comment icon-res" pTooltip="Observación" tooltipPosition="top"></i>
-                                <i class="pi pi-arrow-right icon-res" pTooltip="Mostrar componentes" tooltipPosition="top" (click)="onClickComponenteRes()"></i>
+                                <i class="pi pi-arrow-right icon-res" pTooltip="Mostrar componentes" tooltipPosition="top" (click)="onClickComponenteRes(data)"></i>
                             </td>
                             <td>{{ data.nombrePunto }}</td><td>{{ data.fuentePunto }}</td>
                             <td>{{ data.nombreFuente }}</td><td>{{ data.tipoPunto }}</td>
@@ -64,6 +64,11 @@
         </div>
     </div>
     <div *ngIf="tabResul=='COMPONENTE'">
-        <componente-ambiental-listado (select)="onSelectPP($event)"></componente-ambiental-listado>
+        <componente-ambiental-listado [data]="dataPunto" (select)="onSelected($event)"></componente-ambiental-listado>
     </div>
+    <!-- <div *ngIf="tabResul=='PARAMETRO'">
+        <parametro-listado (select)="onSelected($event)"></parametro-listado>
+    </div> -->
 </div>
+
+<p-toast position="top-center" key="noPunto"></p-toast>

@@ -76,7 +76,7 @@
     <p-toast position="top-center" key="tc"></p-toast>
     <div class="card flex justify-content-center">
         <p-dialog header="AGREGAR NUEVO INFORME" [(visible)]="mostrarDetalle" [modal]="true" [style]="{width: '700px', height: '470px'}" closable="false">
-            <informe-monitoreo-detalle style="position: absolute;" (cerrar)="onClickCerrar($event)"></informe-monitoreo-detalle>
+            <informe-monitoreo-detalle style="position: absolute;" (cerrar)="onClickCerrarDetalle($event)"></informe-monitoreo-detalle>
         </p-dialog>
     </div>
 </div>

@@ -77,7 +77,7 @@ export class InformeMonitoreoListadoComponent implements OnInit{
     console.log(informe);
   }
 
-  onClickCerrar(event: boolean) {
+  onClickCerrarDetalle(event: boolean) {
     this.mostrarDetalle = event;
   }
 

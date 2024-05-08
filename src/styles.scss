@@ -89,6 +89,7 @@ body {
 
 .p-dialog .p-dialog-header {
   border-bottom: solid 1px #1d85bf;
+  padding: 1rem;
   padding-left: 30px;
 }
 .p-dialog .p-dialog-content {
@@ -131,6 +132,13 @@ body {
 }
 .p-message .p-message-wrapper {
   padding: 0.5rem 1.75rem;
+}
+
+.p-tree .p-tree-container .p-treenode .p-treenode-content {
+  padding: 0.2rem; 
+}
+.p-tree .p-tree-container .p-treenode .p-treenode-content .p-tree-toggler {
+  margin-right: 0;
 }
 
 

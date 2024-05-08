@@ -2,6 +2,7 @@
     {
       "orden": 1,
       "nombrePunto": "PUNTO 01",
+      "codigoPunto": "PM00011",
       "fuentePunto": "PUNTO IGA",
       "nombreFuente": "brown",
       "tipoPunto": "Punto",
@@ -11,7 +12,8 @@
     },
     {
         "orden": 2,
-        "nombrePunto": "PUNTO 01",
+        "nombrePunto": "PUNTO 02",
+        "codigoPunto": "PM00012",
         "fuentePunto": "PUNTO IGA",
         "nombreFuente": "brown",
         "tipoPunto": "Punto",
@@ -21,7 +23,8 @@
     },
     {
         "orden": 3,
-        "nombrePunto": "PUNTO 01",
+        "nombrePunto": "PUNTO 03",
+        "codigoPunto": "PM00013",
         "fuentePunto": "PUNTO IGA",
         "nombreFuente": "brown",
         "tipoPunto": "Punto",
@@ -31,7 +34,8 @@
     },
     {
         "orden": 4,
-        "nombrePunto": "PUNTO 01",
+        "nombrePunto": "PUNTO 04",
+        "codigoPunto": "PM00014",
         "fuentePunto": "PUNTO IGA",
         "nombreFuente": "brown",
         "tipoPunto": "Punto",
