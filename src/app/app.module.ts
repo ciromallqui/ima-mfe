@@ -23,17 +23,28 @@ import { DialogModule } from 'primeng/dialog';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MessagesModule } from 'primeng/messages';
-import { TreeModule } from 'primeng/tree';
+import { CalendarModule } from 'primeng/calendar';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { CheckboxModule } from 'primeng/checkbox';
-
+import { FileUploadModule } from 'primeng/fileupload';
+import { TreeModule } from 'primeng/tree';
 
 import { InformeMonitoreoListadoComponent } from './informe-monitoreo/views/informe/informe-monitoreo-listado/informe-monitoreo-listado.component';
 import { InformeMonitoreoDetalleComponent } from './informe-monitoreo/views/informe/informe-monitoreo-detalle/informe-monitoreo-detalle.component';
 import { PuntoMonitoreoListadoComponent } from './informe-monitoreo/views/puntos/punto-monitoreo-listado/punto-monitoreo-listado.component';
 import { ResultadoComponent } from './informe-monitoreo/views/puntos/resultado/resultado.component';
 import { ComponenteAmbientalListadoComponent } from './informe-monitoreo/views/componente/componente-ambiental-listado/componente-ambiental-listado.component';
+import { EquipoMonitoreoListadoComponent } from './informe-monitoreo/views/equipos/equipo-monitoreo-listado/equipo-monitoreo-listado.component';
+import { EquipoMonitoreoDetalleComponent } from './informe-monitoreo/views/equipos/equipo-monitoreo-detalle/equipo-monitoreo-detalle.component';
+import { EnsayoMonitoreoDetalleComponent } from './informe-monitoreo/views/ensayo/ensayo-monitoreo-detalle/ensayo-monitoreo-detalle.component';
+import { EnsayoMonitoreoListadoComponent } from './informe-monitoreo/views/ensayo/ensayo-monitoreo-listado/ensayo-monitoreo-listado.component';
+import { DocumentoMonitoreoListadoComponent } from './informe-monitoreo/views/documento/documento-monitoreo-listado/documento-monitoreo-listado.component';
+import { DocumentoMonitoreoDetalleComponent } from './informe-monitoreo/views/documento/documento-monitoreo-detalle/documento-monitoreo-detalle.component';
+import { EquipoAsociarParametroMonitoreoComponent } from './informe-monitoreo/views/equipos/equipo-asociar-parametro-monitoreo/equipo-asociar-parametro-monitoreo.component';
+import { EnsayoAsociarParametroMonitoreoComponent } from './informe-monitoreo/views/ensayo/ensayo-asociar-parametro-monitoreo/ensayo-asociar-parametro-monitoreo.component';
 import { ParametroListadoComponent } from './informe-monitoreo/views/parametro/parametro-listado/parametro-listado.component';
 import { ParametroSeleccionComponent } from './informe-monitoreo/views/parametro/parametro-seleccion/parametro-seleccion.component';
+
 
 @NgModule({
   declarations: [
@@ -43,6 +54,14 @@ import { ParametroSeleccionComponent } from './informe-monitoreo/views/parametro
     PuntoMonitoreoListadoComponent,
     ResultadoComponent,
     ComponenteAmbientalListadoComponent,
+    EquipoMonitoreoListadoComponent,
+    EquipoMonitoreoDetalleComponent,
+    EnsayoMonitoreoDetalleComponent,
+    EnsayoMonitoreoListadoComponent,
+    DocumentoMonitoreoListadoComponent,
+    DocumentoMonitoreoDetalleComponent,
+    EquipoAsociarParametroMonitoreoComponent,
+    EnsayoAsociarParametroMonitoreoComponent,
     ParametroListadoComponent,
     ParametroSeleccionComponent
   ],
@@ -70,6 +89,10 @@ import { ParametroSeleccionComponent } from './informe-monitoreo/views/parametro
     ToastModule,
     DialogModule,
     MessagesModule,
+    CalendarModule,
+    ConfirmDialogModule,
+    CheckboxModule,
+    FileUploadModule,
     TreeModule
   ],
   providers: [],

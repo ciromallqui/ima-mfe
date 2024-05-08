@@ -1,0 +1,27 @@
+[
+    {
+      "descripcion": "Arsénico (<= 0.5 mg/L)",
+      "idParametroDet": 10017510,
+      "idCompIesRedmon": "1-645607",
+      "idIesRedMonitoreo": 645607,
+      "fechaMuestreoInicial": "No registra fecha",
+      "orden": 0
+    },
+    {
+      
+      "descripcion": "Boro (<= 4 mg/L)",
+      "idParametroDet": 10017511,
+      "idCompIesRedmon": "1-645607",
+      "idIesRedMonitoreo": 645607,
+      "fechaMuestreoInicial": "No registra fecha",
+      "orden": 1
+    },
+    {
+      "descripcion": "Cadmio (<= 0.2 mg/L)",
+      "idParametroDet": 10017512,
+      "idCompIesRedmon": "1-645607",
+      "idIesRedMonitoreo": 645607,
+      "fechaMuestreoInicial": "No registra fecha",
+      "orden": 2
+    }
+  ]     

@@ -1,0 +1,13 @@
+[
+    {
+        "descripcion": "Mercurio gaseoso total (Hg) (<= 2 µg/m³)",
+        "idParametroDet": 10017472,
+        "idInformeEnsayo": 38349,
+        "nombrePunto": "AIR-01",
+        "componente": "AIRE// AIRE AMBIENTAL",
+        "signoResultado": "<=",
+        "valorResultado": "222",
+        "unidadMedidaRes": "µg/m³",
+        "orden": 0
+      }
+]

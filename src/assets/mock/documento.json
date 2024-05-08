@@ -1,0 +1,41 @@
+[
+    {
+      "idDocumento": 38349,
+      "nombre": "12342342 (_pdf-prueba.pdf)",
+      "tipoDocumento": "INFORME DE ENSAYO",
+      "idArchivo": 125938,
+      "audfechaCreacion": "06/05/2024",
+      "nombreArchivo": "documento_1715036727590.pdf",
+      "nombreArchivoOriginal": "_pdf-prueba.pdf",
+      "rutaAlfresto": "MONITOREO/registro-resultado/2024/",
+      "uiid": "f115097b-c7d1-489a-bf2d-d88d70a54593",
+      "modulo": "ENSAYO",
+      "orden": 0
+    },
+    {
+      "idDocumento": 32026,
+      "nombre": "Equipo 1 (_pdf-prueba.pdf)",
+      "tipoDocumento": "CERTIFICADO DE CALIBRACIÓN DE LABORATORIO",
+      "idArchivo": 125937,
+      "audfechaCreacion": "06/05/2024",
+      "nombreArchivo": "documento_1715036578784.pdf",
+      "nombreArchivoOriginal": "_pdf-prueba.pdf",
+      "rutaAlfresto": "MONITOREO/registro-resultado/2024/",
+      "uiid": "dc8ac2a7-e6e3-497c-bc75-c416180d60e7",
+      "modulo": "EQUIPO",
+      "orden": 1
+    },
+    {
+      "idDocumento": 33749,
+      "nombre": "dasd",
+      "tipoDocumento": "DATOS DE CAMPO CON REGISTRO",
+      "idArchivo": 125955,
+      "audfechaCreacion": "08/05/2024",
+      "nombreArchivo": "documento_1715184631197.docx",
+      "nombreArchivoOriginal": "Observaciones.docx",
+      "rutaAlfresto": "MONITOREO/registro-resultado/2024/",
+      "uiid": "e9727099-7d5d-41f4-a997-1e6f256cf635",
+      "modulo": "DOCUMENTO",
+      "orden": 2
+    }
+  ]

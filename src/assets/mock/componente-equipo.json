@@ -1,0 +1,16 @@
+[
+    {
+      "idComponente": 1,
+      "componente": "AGUA",
+      "idIesRedMonitoreo": 645607,
+      "idCompIesRedmon": "1-645607",
+      "orden": 0
+    },
+    {
+      "idComponente": 16,
+      "componente": "AIRE// AIRE AMBIENTAL",
+      "idIesRedMonitoreo": 645607,
+      "idCompIesRedmon": "16-645607",
+      "orden": 1
+    }
+  ]
