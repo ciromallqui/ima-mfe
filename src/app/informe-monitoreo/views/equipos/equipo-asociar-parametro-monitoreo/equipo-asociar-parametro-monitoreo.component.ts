@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { EquipoComponenteMonitoreo, EquipoParametroMonitoreo, EquipoPuntoMonitoreo } from '../model/EquipoMonitoreo';
 import { EquipoMonitoreoService } from '../../../services/equipo-monitoreo.service';
 import { ConfirmationService, MessageService, PrimeNGConfig } from 'primeng/api';
+import { faCheckDouble } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'equipo-asociar-parametro',
@@ -10,6 +11,7 @@ import { ConfirmationService, MessageService, PrimeNGConfig } from 'primeng/api'
   providers: [ConfirmationService]
 })
 export class EquipoAsociarParametroMonitoreoComponent implements OnInit {
+  faCheckDouble = faCheckDouble;
   @Output() cerrar: EventEmitter<boolean> = new EventEmitter();
   openDialogConfirm:boolean = false;
   dataSourcePunto: EquipoPuntoMonitoreo[] = [];

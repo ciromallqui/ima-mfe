@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EquipoMonitoreo, EquipoParametroAsociadoMonitoreo } from '../model/EquipoMonitoreo';
 import { EquipoMonitoreoService } from '../../../services/equipo-monitoreo.service';
 import { ConfirmationService, Message, MessageService, PrimeNGConfig } from 'primeng/api';
+import { faPencil, faTrashAlt, faExpandArrowsAlt, faLocationArrow, faFileExcel } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'equipo',
@@ -10,6 +11,8 @@ import { ConfirmationService, Message, MessageService, PrimeNGConfig } from 'pri
   providers: [ConfirmationService]
 })
 export class EquipoMonitoreoListadoComponent implements OnInit {
+  faPencil = faPencil;
+  faTrash = faTrashAlt;
   /*Para abrir el dialogo de confirmacion*/
   openDialogConfirm: boolean = false;
   /*fin*/

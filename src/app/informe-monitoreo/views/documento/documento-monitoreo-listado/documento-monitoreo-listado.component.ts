@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DocumentoMonitoreo } from '../model/DocumentoMonitoreo';
 import { ConfirmationService, MessageService, PrimeNGConfig } from 'primeng/api';
 import { DocumentoMonitoreoService } from '../../../services/documento-monitoreo.service';
+import { faPencil, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'documento-monitoreo-listado',
@@ -10,6 +11,8 @@ import { DocumentoMonitoreoService } from '../../../services/documento-monitoreo
   providers: [ConfirmationService]
 })
 export class DocumentoMonitoreoListadoComponent implements OnInit {
+  faPencil = faPencil;
+  faTrash = faTrashAlt;
   first = 0;
   rows = 10;
   dataSource: DocumentoMonitoreo[] = [];

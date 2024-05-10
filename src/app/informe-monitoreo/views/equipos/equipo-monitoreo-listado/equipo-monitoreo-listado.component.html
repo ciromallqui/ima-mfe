@@ -30,12 +30,10 @@
             <tr>
               <td>{{ data.orden }}</td>
               <td style="width: 200px;">
-                <i class="pi pi-pencil icon-res" pTooltip="Editar Equipo" tooltipPosition="top"
-                  (click)="onClickEditarEquipo()"></i>
-                <i class="pi pi-eraser icon-danger" pTooltip="Eliminar Equipo" tooltipPosition="top"
-                  (click)="confirm()"></i>
-                <i class="pi pi-arrow-down-left-and-arrow-up-right-to-center icon-res px-2"
-                  pTooltip="Seleccionar Parámetro" tooltipPosition="top" (click)="onClickAsociarParametros()"></i>
+                <fa-icon [icon]="faPencil" class="icon-primary" pTooltip="Editar Equipo" tooltipPosition="top"
+                  (click)="onClickEditarEquipo()"></fa-icon>
+                <fa-icon [icon]="faTrash" class="icon-danger px-2" pTooltip="Eliminar Equipo" tooltipPosition="top"
+                  (click)="confirm()"></fa-icon>
                 <i class="pi pi-arrow-right icon-res px-2" pTooltip="Ir al parámetro" (click)="onClickParametros()"
                   tooltipPosition="top"></i>
               </td>
@@ -64,9 +62,15 @@
           <strong class="pcp-2 res-active">Parámetros</strong>
         </div>
       </div>
-      <div class="col-3 mb-2">
+      <div class="md:col-3 col-12 mb-2">
         <div class="card flex justify-content-center">
           <p-dropdown [options]="" placeholder="Equipo" [editable]="true" optionLabel="name" />
+        </div>
+      </div>
+      <div class="md:col-9 col-12 mb-2">
+        <div class="card flex justify-content-end">
+          <p-button label="Asociar parámetro" icon="pi pi-plus" severity="primary" outlined="true" class="outline-primary"
+          (click)="onClickAsociarParametros()"></p-button>
         </div>
       </div>
       <div class="md:col-12 col-12 table">
