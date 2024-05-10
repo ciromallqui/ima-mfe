@@ -1,0 +1,73 @@
+<div class="content">
+    <div class="grid">
+        <div class="col-12 tab-dialog">
+            <p-tabView styleClass="tabview-custom" [(activeIndex)]="activeIndex">
+                <p-tabPanel>
+                    <ng-template pTemplate="header">
+                        <span>Puntos del IGA</span>
+                    </ng-template><br>
+                    <div class="grid">
+                        <div class="col-12 margin-bottom">
+                            <span class="p-float-label">
+                                <p-dropdown placeholder="Seleccionar IGA"></p-dropdown>
+                                <label class="label-placehoder">Seleccionar IGA</label>
+                            </span>
+                        </div>
+                        <div class="md:col-6 col-12 margin-bottom">
+                            <span class="p-float-label flex flex-column">
+                                <input pInputText type="text" placeholder="Buscar Puntos"/>
+                                <label class="label-placehoder">Buscar Puntos</label>
+                            </span>
+                        </div>
+                        <div class="md:col-6 col-12 margin-bottom">
+                            <span class="p-float-label">
+                                <p-dropdown placeholder="Buscar por Componente"></p-dropdown>
+                                <label class="label-placehoder">Buscar por Componente</label>
+                            </span>
+                        </div>
+                        <div class="col-12 table">
+                            <p-table [value]="dataSource" selectionMode="single" dataKey="orden" [tableStyle]="{ 'min-width': '500px' }">
+                                <ng-template pTemplate="header">
+                                    <tr>
+                                        <th><i class="pi pi-check-square" pTooltip="Seleccionar todos" tooltipPosition="top"></i>
+                                            <i class="pi pi-times" pTooltip="Desmarcar todos" tooltipPosition="top"></i>
+                                        </th>
+                                        <th>PUNTO</th>
+                                        <th>FUENTE PUNTO</th>
+                                        <th>COMPONENTE AMBIENTAL</th>
+                                    </tr>
+                                </ng-template>
+                                <ng-template pTemplate="body" let-data let-rowIndex="rowIndex">
+                                    <tr>
+                                        <td style="width: 100px;">
+                                            <p-checkbox></p-checkbox>
+                                        </td>
+                                        <td>{{ data.nombrePunto }}</td>
+                                        <td>{{ data.fuentePunto }}</td>
+                                        <td>{{ data.componente }}</td>
+                                    </tr>
+                                </ng-template>
+                            </p-table>
+                        </div>
+                    </div>
+                </p-tabPanel>
+                <p-tabPanel>
+                    <ng-template pTemplate="header">
+                        <span>Otros Informes</span>
+                    </ng-template><br>
+                    <div class="grid">
+                        <div class="col-12">
+                            
+                        </div>
+                    </div>
+                </p-tabPanel>
+            </p-tabView>
+        </div>
+    </div>
+</div>
+<div class="futter">
+    <div class="flex justify-content-center gap-2">
+        <!-- <p-button label="Guardar" outlined="true" severity="primary" class="outline-primary"></p-button> -->
+        <p-button label="Cerrar" outlined="true" severity="secondary" class="outline-secondary" (click)="onClickCancelar()"></p-button>
+    </div>
+</div>

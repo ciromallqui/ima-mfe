@@ -21,6 +21,8 @@ export class ComponenteAmbientalListadoComponent implements OnInit {
 
   tabResul: string = "COMPONENTE";
   busqueda: boolean = false;
+  mostrarDetalle: boolean = false;
+  mostrarParamPostSelect: boolean = false;
 
   constructor(
     private messageService: MessageService
@@ -30,8 +32,9 @@ export class ComponenteAmbientalListadoComponent implements OnInit {
     this.infoPunto = [{ sticky: false, closable: false, severity: 'success', summary: 'Punto de monitoreo:', detail: this.data.nombrePunto +" ("+this.data.codigoPunto+")" }];
   }
 
-  // onClickMostrarComponente() {
-  // }
+  onClickParamAdicional() {
+    this.mostrarDetalle = true;
+  }
 
   onClickBusqueda() {
     if(this.busqueda)
@@ -62,8 +65,83 @@ export class ComponenteAmbientalListadoComponent implements OnInit {
     }
   }
 
+  selectNodeComp(node: any) {
+    this.mostrarParamPostSelect = true;
+    // var miElto = document.getElementsByClassName("p-checkbox-box")[0];
+    // miElto.className = "verde";
+    // var miElto1 = document.getElementsByClassName("p-checkbox")[0];
+    // miElto1.className = "verde";
+  }
+
+  onClickCerrar() {
+    this.mostrarDetalle = false;
+  }
+
   messageWarn(message: string) {
     this.messageService.clear();
     this.messageService.add({ key: 'noComp', sticky: false, severity: 'warn', summary: 'Información', detail: message });
   }
+
+  parametroAdiLista: any[] = [
+    {
+      idParametro: 1,
+      parametro: "PARÁMETROS CON NORMA",
+      checked: true,
+      showCheckbox: false,
+      data: "Documents Folder",
+      children: [{
+        idParametro: 1,
+        parametro: "D.S. N° 002-2013-MINAM",
+        showCheckbox: true,
+        data: "Work Folder",
+        children: [{idParametro: 1, parametro: "Suelo Agrícola",showCheckbox: true, "data": "Expenses Document"}, {idParametro: 1, parametro: "Suelo residual",showCheckbox: true, "data": "Resume Document"}]
+      }]
+    },
+    {
+      idParametro: 1,
+      parametro: "PARÁMETROS SIN NORMA",
+      data: "Pictures Folder",
+      children: [{
+        idParametro: 1,
+        parametro: "Parámetro de aire sin norma",
+        data: "Pictures Folder",
+        children: [
+          {idParametro: 1, parametro: "Aceites y grasas mg/kg", "data": "Barcelona Photo"},
+          {idParametro: 1, parametro: "Aceites y grasas %", "data": "PrimeFaces Logo"}]
+      }]
+    }
+  ];
+
+  componenteLista: any[] = [
+    {
+      idComponente: 1,
+      componente: "AGUA",
+      checked: true,
+      showCheckbox: false,
+      data: "Documents Folder",
+      children: [{
+        idComponente: 2,
+        componente: "AGUA RESIDUAL",
+        showCheckbox: true,
+        data: "Work Folder",
+        children: [{idComponente: 3, componente: "AGUA RESIDUAL INDUSTRIAL",showCheckbox: true, "data": "Expenses Document"}, {idComponente: 4, componente: "AGUA RESIDUAL MUNICIPAL",showCheckbox: true, "data": "Resume Document"}]
+      }]
+    },
+    {
+      idComponente: 5,
+      componente: "AIRE",
+      data: "Pictures Folder",
+      children: [
+        {idComponente: 6, componente: "AIRE AMBIENTAL", "data": "Barcelona Photo"},
+        {idComponente: 7, componente: "EMISIONES ATMOSFÉRICAS", "data": "PrimeFaces Logo"}]
+    },
+    {
+      idComponente: 8,
+      componente: "SUELO",
+      data: "Pictures Folder",
+      children: [
+        {idComponente: 9, componente: "SUELO - MATERIALES", "data": "Barcelona Photo"},
+        {idComponente: 10, componente: "SUSTANCIA QUÍMICA", "data": "PrimeFaces Logo"}]
+    }
+  ];
 }
