@@ -1,4 +1,4 @@
-<div class="content" *ngIf="tabResul=='COMPONENTE'">
+<div class="content-list" *ngIf="tabResul=='COMPONENTE'">
     <div class="grid" *ngIf="busqueda" style="margin-top: 3px;">
         <div class="md:col-4 sm col-12">
             <span class="p-float-label flex flex-column">
@@ -20,9 +20,9 @@
                 <i class="pi pi-filter-slash" pTooltip="Ocultar filtro" tooltipPosition="top" *ngIf="busqueda" (click)="onClickBusqueda()"></i>
             </div>
         </div>
-        <!-- <div class="md:col-5 col-12 flex justify-content-end">
-            <p-button label="Seleccionar Componente" severity="primary" outlined="true" class="outline-primary" (click)="onClickMostrarComponente()"></p-button>
-        </div> -->
+        <div class="md:col-5 col-12 flex justify-content-end">
+            <p-button label="Seleccionar Componente" severity="primary" outlined="true" class="outline-primary" (click)="onClickParamAdicional()"></p-button>
+        </div>
         
         <div class="grid">
             <div class="col-12 info-res">
@@ -48,6 +48,37 @@
                 </p-table>
             </div>
         </div>
+    </div>
+    <div class="card flex justify-content-center">
+        <p-dialog header="SELECCIONAR PARÁMETROS ADICIONALES" [(visible)]="mostrarDetalle" [modal]="true" [style]="{width: '600px'}" closable="false">
+            <div class="grid" style="margin-top: 10px; margin-bottom: 10px; border-bottom: solid 1px #1d85bf;">
+                <div class="col-12">
+                    <div><strong>Seleccione un componente para mostrar los parámetros:</strong></div>
+                    <div class="">
+                        <p-tree class="w-full md:w-30rem" [value]="componenteLista" dataKey="idComponente">
+                            <ng-template let-node pTemplate="default">
+                                <div><span class="hover:text-primary cursor-pointer" (click)="selectNodeComp(node)">{{node.componente}}</span></div>
+                            </ng-template>
+                        </p-tree>
+                    </div>
+                </div>
+                <div class="col-12" *ngIf="mostrarParamPostSelect">
+                    <div><strong>Lista de parámetros adicionales:</strong></div>
+                    <div class="">
+                        <p-tree [filter]="true" filterMode="strict" filterBy="parametro" filterPlaceholder="Buscar" [value]="parametroAdiLista" dataKey="idParametroAdi">
+                            <ng-template let-node pTemplate="default">
+                                <div><span class="hover:text-primary cursor-pointer">{{node.parametro}}</span></div>
+                            </ng-template>
+                        </p-tree>
+                    </div>
+                </div>
+            </div>
+            <div class="futter">
+                <div class="flex justify-content-center">
+                    <p-button label="Cerrar" outlined="true" severity="secondary" class="outline-secondary" (click)="onClickCerrar()"></p-button>
+                </div>
+            </div>
+        </p-dialog>
     </div>
 </div>
 <div *ngIf="tabResul=='PARAMETRO'">

@@ -44,6 +44,11 @@ import { EquipoAsociarParametroMonitoreoComponent } from './informe-monitoreo/vi
 import { EnsayoAsociarParametroMonitoreoComponent } from './informe-monitoreo/views/ensayo/ensayo-asociar-parametro-monitoreo/ensayo-asociar-parametro-monitoreo.component';
 import { ParametroListadoComponent } from './informe-monitoreo/views/parametro/parametro-listado/parametro-listado.component';
 import { ParametroSeleccionComponent } from './informe-monitoreo/views/parametro/parametro-seleccion/parametro-seleccion.component';
+import { PuntoMonitoreoFotoComponent } from './informe-monitoreo/views/puntos/punto-monitoreo-foto/punto-monitoreo-foto.component';
+import { PuntoMonitoreoObservacionComponent } from './informe-monitoreo/views/puntos/punto-monitoreo-observacion/punto-monitoreo-observacion.component';
+import { PuntoAdicionalComponent } from './informe-monitoreo/views/puntos/punto-adicional/punto-adicional.component';
+import { PuntoMonitoreoGestionComponent } from './informe-monitoreo/views/puntos/punto-monitoreo-gestion/punto-monitoreo-gestion.component';
+import { PuntoMonitoreoCoordenadaComponent } from './informe-monitoreo/views/puntos/punto-monitoreo-coordenada/punto-monitoreo-coordenada.component';
 
 
 @NgModule({
@@ -63,7 +68,12 @@ import { ParametroSeleccionComponent } from './informe-monitoreo/views/parametro
     EquipoAsociarParametroMonitoreoComponent,
     EnsayoAsociarParametroMonitoreoComponent,
     ParametroListadoComponent,
-    ParametroSeleccionComponent
+    ParametroSeleccionComponent,
+    PuntoMonitoreoFotoComponent,
+    PuntoMonitoreoObservacionComponent,
+    PuntoAdicionalComponent,
+    PuntoMonitoreoGestionComponent,
+    PuntoMonitoreoCoordenadaComponent
   ],
   imports: [
     BrowserModule,

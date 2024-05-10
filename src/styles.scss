@@ -89,7 +89,7 @@ body {
 
 .p-dialog .p-dialog-header {
   border-bottom: solid 1px #1d85bf;
-  padding: 1rem;
+  padding: 1.3rem;
   padding-left: 30px;
 }
 .p-dialog .p-dialog-content {
@@ -116,6 +116,20 @@ body {
 }
 .tab-resultado .p-tabview .p-tabview-nav {
   border: 0;
+}
+.tab-dialog .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+  background: #fcfcfc;
+  color: #3f3f3f;
+  clip-path:  none;
+  margin-left: 0;
+  width: 190px;
+}
+.tab-dialog .p-tabview .p-tabview-nav {
+  border: 1px solid #e4e1e1;
+  border-width: 0 0 2px 0;
+}
+.tab-dialog .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+  border-radius: 5px 5px 0 0;
 }
 .p-tabview .p-tabview-panels {
   padding: 10px;
@@ -186,4 +200,14 @@ body {
 .titulo-res .res-active {
   background: #44bfb5;
   color: #FFF;
+}
+
+.content {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-bottom: solid 1px #1d85bf;
+}
+.content .grid-sp > .col-12 {
+  margin-top: -20px;
+  padding: 0;
 }

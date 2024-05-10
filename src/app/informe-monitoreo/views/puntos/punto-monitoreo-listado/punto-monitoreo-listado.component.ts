@@ -16,6 +16,11 @@ export class PuntoMonitoreoListadoComponent implements OnInit{
 
   busqueda: boolean = false;
   tabResul: string = "PUNTO";
+  mostrarDlgCoodenada: boolean = false;
+  mostrarDlgFoto: boolean = false;
+  mostrarDlgObservacion: boolean = false;
+  mostrarDlgPGestion: boolean = false;
+  mostrarDlgPAdicional: boolean = false;
 
   puntoMonitoreo: PuntoMonitoreo | undefined;
   dataSource: PuntoMonitoreo[] = [];
@@ -36,6 +41,10 @@ export class PuntoMonitoreoListadoComponent implements OnInit{
     this.rows = event.rows;
   }
 
+  onSelected(event: any) {
+    this.tabResul = event;
+  }
+
   listado(){
     this.puntoMonitoreoService.listaPunto().subscribe((res: any) =>{
       this.dataSource = res;
@@ -48,16 +57,28 @@ export class PuntoMonitoreoListadoComponent implements OnInit{
     else this.busqueda = true;
   }
 
-  onClickPunto() {
-
+  onClickDlgPGestion(data: PuntoMonitoreo) {
+    this.mostrarDlgPGestion = true;
+  }
+  onClickDlgPAdicional(data: PuntoMonitoreo) {
+    this.mostrarDlgPAdicional = true;
+  }
+  onClickDlgCoordenada(data: PuntoMonitoreo) {
+    this.mostrarDlgCoodenada = true;
+  }
+  onClickDlgFoto(data: PuntoMonitoreo) {
+    this.mostrarDlgFoto = true;
+  }
+  onClickDlgObservacion(data: PuntoMonitoreo) {
+    this.mostrarDlgObservacion = true;
   }
 
-  onSelected(event: any) {
-    this.tabResul = event;
-  }
-
-  onClickPuntoAdicional() {
-
+  onCerrarDlg(event: boolean) {
+    this.mostrarDlgPGestion = event;
+    this.mostrarDlgPAdicional = event;
+    this.mostrarDlgCoodenada = event;
+    this.mostrarDlgFoto = event;
+    this.mostrarDlgObservacion = event;
   }
 
   onClickPuntoRes() {

@@ -1,4 +1,4 @@
-<div class="content">
+<div class="content-list">
     <div *ngIf="tabResul=='PUNTO'">
         <div class="grid" *ngIf="busqueda" style="margin-top: 4px;">
             <div class="md:col-4 col-12 margin-bottom">
@@ -28,8 +28,8 @@
                 </div>
             </div>
             <div class="md:col-5 col-12 flex justify-content-end gap-1">
-                <p-button label="Gestionar Puntos" severity="primary" outlined="true" class="outline-primary" (click)="onClickPunto()"></p-button>
-                <p-button label="Agregar Punto Adicional" severity="primary" outlined="true" class="outline-primary" (click)="onClickPuntoAdicional()"></p-button>
+                <p-button label="Gestionar Puntos" severity="primary" outlined="true" class="outline-primary" (click)="onClickDlgPGestion(dataPunto)"></p-button>
+                <p-button label="Agregar Punto Adicional" severity="primary" outlined="true" class="outline-primary" (click)="onClickDlgPAdicional(dataPunto)"></p-button>
             </div>
         </div>
         <div class="grid">
@@ -43,9 +43,9 @@
                             <td>{{ data.orden }}</td>
                             <td style="width: 120px;">
                                 <!-- <i class="pi pi-asterisk icon-res" pTooltip="Selec. parámetros" tooltipPosition="top"></i> -->
-                                <i class="pi pi-map-marker icon-res" pTooltip="Agregar coordenadas" tooltipPosition="top"></i>
-                                <i class="pi pi-camera icon-res" pTooltip="Agregar foto" tooltipPosition="top"></i>
-                                <i class="pi pi-comment icon-res" pTooltip="Observación" tooltipPosition="top"></i>
+                                <i class="pi pi-map-marker icon-res" pTooltip="Agregar coordenadas" tooltipPosition="top" (click)="onClickDlgCoordenada(data)"></i>
+                                <i class="pi pi-camera icon-res" pTooltip="Agregar foto" tooltipPosition="top" (click)="onClickDlgFoto(data)"></i>
+                                <i class="pi pi-comment icon-res" pTooltip="Observación" tooltipPosition="top" (click)="onClickDlgObservacion(data)"></i>
                                 <i class="pi pi-arrow-right icon-res" pTooltip="Mostrar componentes" tooltipPosition="top" (click)="onClickComponenteRes(data)"></i>
                             </td>
                             <td>{{ data.nombrePunto }}</td><td>{{ data.fuentePunto }}</td>
@@ -66,9 +66,21 @@
     <div *ngIf="tabResul=='COMPONENTE'">
         <componente-ambiental-listado [data]="dataPunto" (select)="onSelected($event)"></componente-ambiental-listado>
     </div>
-    <!-- <div *ngIf="tabResul=='PARAMETRO'">
-        <parametro-listado (select)="onSelected($event)"></parametro-listado>
-    </div> -->
+</div>
+
+<div class="card flex justify-content-center">
+    <p-dialog header="SELECCIONAR PUNTOS DE MONITOREO" [(visible)]="mostrarDlgPGestion" [modal]="true" [style]="{width: '800px'}" closable="false">
+        <punto-monitoreo-gestion (close)="onCerrarDlg($event)"></punto-monitoreo-gestion>
+    </p-dialog>
+    <p-dialog header="COORDENADAS" [(visible)]="mostrarDlgCoodenada" [modal]="true" [style]="{width: '800px'}" closable="false">
+        <punto-monitoreo-coordenada (close)="onCerrarDlg($event)"></punto-monitoreo-coordenada>
+    </p-dialog>
+    <p-dialog header="AGREGAR FOTO Y/O VIDEO" [(visible)]="mostrarDlgFoto" [modal]="true" [style]="{width: '600px'}" closable="false">
+        <punto-monitoreo-foto (close)="onCerrarDlg($event)"></punto-monitoreo-foto>
+    </p-dialog>
+    <p-dialog header="PUNTO: PUNTO 01" [(visible)]="mostrarDlgObservacion" [modal]="true" [style]="{width: '500px'}" closable="false">
+        <punto-monitoreo-observacion (close)="onCerrarDlg($event)"></punto-monitoreo-observacion>
+    </p-dialog>
 </div>
 
 <p-toast position="top-center" key="noPunto"></p-toast>
