@@ -19,11 +19,14 @@
                         <td>{{ data.orden }}</td>
                         <td style="width: 200px;">
                             <i class="pi pi-eye icon-res" pTooltip="Ver datos" tooltipPosition="top"
-                                (click)="onClickVerDatos(data)" *ngIf="data.modulo.includes('ENSAYO') || data.modulo.includes('EQUIPO')"></i>
-                            <i class="pi pi-pencil icon-res" pTooltip="Editar datos" tooltipPosition="top"
-                                (click)="onClickEditarDocumento()" *ngIf="data.modulo.includes('DOCUMENTO')"></i>
-                            <i class="pi pi-eraser icon-danger" pTooltip="Eliminar Documento" tooltipPosition="top"
-                                (click)="onClickEliminarDocumento()" *ngIf="data.modulo.includes('DOCUMENTO')"></i>
+                                (click)="onClickVerDatos(data)"
+                                *ngIf="data.modulo.includes('ENSAYO') || data.modulo.includes('EQUIPO')"></i>
+                            <fa-icon [icon]="faPencil" class="icon-primary" pTooltip="Editar Documento"
+                                tooltipPosition="top" (click)="onClickEditarDocumento()"
+                                *ngIf="data.modulo.includes('DOCUMENTO')"></fa-icon>
+                            <fa-icon [icon]="faTrash" class="icon-danger px-2" pTooltip="Eliminar Documento"
+                                tooltipPosition="top" (click)="onClickEliminarDocumento()"
+                                *ngIf="data.modulo.includes('DOCUMENTO')"></fa-icon>
                         </td>
                         <td>{{ data.nombre }}</td>
                         <td>{{ data.tipoDocumento }}</td>

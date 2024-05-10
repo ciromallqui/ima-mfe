@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { EnsayoInformeComponenteMonitoreo, EnsayoInformeParametroMonitoreo, EnsayoInformePuntoMonitoreo } from '../model/EnsayoInformeMonitoreo';
 import { EnsayoInformeMonitoreoService } from '../../../services/ensayo-informe-monitoreo.service';
 import { ConfirmationService, MessageService, PrimeNGConfig } from 'primeng/api';
+import { faCheckDouble } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'ensayo-asociar-parametro-monitoreo',
@@ -10,6 +11,7 @@ import { ConfirmationService, MessageService, PrimeNGConfig } from 'primeng/api'
   providers: [ConfirmationService]
 })
 export class EnsayoAsociarParametroMonitoreoComponent implements OnInit{
+  faCheckDouble = faCheckDouble;
   @Output() cerrar: EventEmitter<boolean> = new EventEmitter();
   openDialogConfirm:boolean = false;
   dataSourcePunto: EnsayoInformePuntoMonitoreo[] = [];

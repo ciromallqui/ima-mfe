@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EnsayoInformeMonitoreo, EnsayoInformeParametroAsociadoMonitoreo } from '../model/EnsayoInformeMonitoreo';
 import { ConfirmationService, MessageService, PrimeNGConfig } from 'primeng/api';
 import { EnsayoInformeMonitoreoService } from '../../../services/ensayo-informe-monitoreo.service';
+import { faPencil, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'ensayo-monitoreo-listado',
@@ -10,7 +11,8 @@ import { EnsayoInformeMonitoreoService } from '../../../services/ensayo-informe-
   providers: [ConfirmationService]
 })
 export class EnsayoMonitoreoListadoComponent implements OnInit {
-
+  faPencil = faPencil;
+  faTrash = faTrashAlt;
   /*Para abrir el dialogo de confirmacion*/
   openDialogConfirm: boolean = false;
   /*fin*/
