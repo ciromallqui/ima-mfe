@@ -1,5 +1,5 @@
 <div class="content-list" *ngIf="tabResul=='COMPONENTE'">
-    <div class="grid" *ngIf="busqueda" style="margin-top: 3px;">
+    <div class="grid mt-1" *ngIf="busqueda">
         <div class="md:col-4 sm col-12">
             <span class="p-float-label flex flex-column">
                 <input pInputText type="text" placeholder="Nombre de componente"/>
@@ -51,9 +51,9 @@
     </div>
     <div class="card flex justify-content-center">
         <p-dialog header="SELECCIONAR PARÁMETROS ADICIONALES" [(visible)]="mostrarDetalle" [modal]="true" [style]="{width: '600px'}" closable="false">
-            <div class="grid" style="margin-top: 10px; margin-bottom: 10px; border-bottom: solid 1px #1d85bf;">
+            <div class="grid mt-2 mb-3 overflow-y-auto" style="border-bottom: solid 1px #1d85bf; max-height: 44rem;">
                 <div class="col-12">
-                    <div><strong>Seleccione un componente para mostrar los parámetros:</strong></div>
+                    <div><strong class="text-primary">Seleccione un componente para mostrar los parámetros:</strong></div>
                     <div class="">
                         <p-tree class="w-full md:w-30rem" [value]="componenteLista" dataKey="idComponente">
                             <ng-template let-node pTemplate="default">
@@ -63,7 +63,7 @@
                     </div>
                 </div>
                 <div class="col-12" *ngIf="mostrarParamPostSelect">
-                    <div><strong>Lista de parámetros adicionales:</strong></div>
+                    <div><strong class="text-primary">Lista de parámetros adicionales:</strong></div>
                     <div class="">
                         <p-tree [filter]="true" filterMode="strict" filterBy="parametro" filterPlaceholder="Buscar" [value]="parametroAdiLista" dataKey="idParametroAdi">
                             <ng-template let-node pTemplate="default">

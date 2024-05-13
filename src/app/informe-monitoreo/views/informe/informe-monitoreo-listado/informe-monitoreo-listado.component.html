@@ -54,9 +54,9 @@
                     <td>{{ data.orden }}</td>
                     <td>
                         <fa-icon [icon]="faPencil" pTooltip="Editar informe" tooltipPosition="top" class="icon-primary"></fa-icon>
-                        <fa-icon [icon]="faTrash" pTooltip="Editar informe" tooltipPosition="top" class="icon-danger"></fa-icon>
-                        <fa-icon [icon]="faArrowsAlt" pTooltip="Editar informe" tooltipPosition="top" class="icon-primary" (click)="onClickResultado()"></fa-icon>
-                        <span pTooltip="Editar informe" tooltipPosition="top" class="material-icons icon-primary">send</span>
+                        <fa-icon [icon]="faTrash" pTooltip="Eliminar informe" tooltipPosition="top" class="icon-danger"></fa-icon>
+                        <fa-icon [icon]="faArrowsAlt" pTooltip="Entrar a resultados" tooltipPosition="top" class="icon-primary" (click)="onClickResultado()"></fa-icon>
+                        <span pTooltip="Presentación de informe" tooltipPosition="top" class="material-icons icon-primary" (click)="onClickPresentar(data)">send</span>
                     </td>
                     <td>{{ data.usuario }}</td><td>{{ data.informeMonitoreo }}</td>
                     <td>{{ data.instrumentoGestion }}</td><td>{{ data.etapa }}</td>
@@ -75,8 +75,13 @@
     </div>
     <p-toast position="top-center" key="tc"></p-toast>
     <div class="card flex justify-content-center">
-        <p-dialog header="AGREGAR NUEVO INFORME" [(visible)]="mostrarDetalle" [modal]="true" [style]="{width: '700px', height: '470px'}" closable="false">
-            <informe-monitoreo-detalle style="position: absolute;" (cerrar)="onClickCerrarDetalle($event)"></informe-monitoreo-detalle>
+        <p-dialog header="AGREGAR NUEVO INFORME" [(visible)]="mostrarDlgDetalle" [modal]="true" [style]="{width: '700px', height: '470px'}" closable="false">
+            <informe-monitoreo-detalle style="position: absolute;" (close)="onClickCerrarDetalle($event)"></informe-monitoreo-detalle>
+        </p-dialog>
+    </div>
+    <div class="card flex justify-content-center">
+        <p-dialog header="DOCUMENTOS ADJUNTOS PARA LA PRESENTACIÓN" [(visible)]="mostrarDlgEnvio" [modal]="true" [style]="{width: '900px'}" closable="false">
+            <informe-monitoreo-envio (close)="onClickCerrarDetalle($event)"></informe-monitoreo-envio>
         </p-dialog>
     </div>
 </div>

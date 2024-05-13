@@ -1,0 +1,117 @@
+<div class="content ml-2">
+    <div class="grid">
+        <div class="col-12 text-primary text-2xl">
+            <strong>Datos del administrado</strong>
+        </div>
+        <div class="md:col-4 col-12 p-1">
+            <strong>Empresa nacional</strong>
+        </div>
+        <div class="md:col-8 col-12 p-1">
+            <span>: 20519405637</span>
+        </div>
+        <div class="md:col-4 col-12 p-1">
+            <strong>Rzón social</strong>
+        </div>
+        <div class="md:col-8 col-12 p-1">
+            <span>: ARISISTEMAS E.I.R.L</span>
+        </div>
+        <div class="md:col-4 col-12 p-1">
+            <strong>DNI/CE</strong>
+        </div>
+        <div class="md:col-8 col-12 p-1">
+            <span>: 48378758</span>
+        </div>
+        <div class="md:col-4 col-12 p-1">
+            <strong>Nombre del representante</strong>
+        </div>
+        <div class="md:col-8 col-12 p-1">
+            <span>: GABY ROSARIO RIOS TICSE DE BAZALAR</span>
+        </div>
+        <div class="md:col-4 col-12 p-1">
+            <strong>Teléfono</strong>
+        </div>
+        <div class="md:col-8 col-12 p-1">
+            <span>: -</span>
+        </div>
+        <div class="md:col-4 col-12 p-1">
+            <strong>Correo electrónico</strong>
+        </div>
+        <div class="md:col-8 col-12 p-1">
+            <span>: 48378758.2&#64;yopmail.com</span>
+        </div>
+        <div class="md:col-4 col-12 p-1 mt-2">
+            <strong>Correo adicional</strong>
+        </div>
+        <div class="md:col-8 col-12 p-1">
+            <input pInputText type="text" class="w-full" value="48378758.2@yopmail.com"/>
+            <div class="text-red-500 text-sm"><span>* Si desea que le enviemos su cargo a otro correo, puede editar en este campo.</span></div>
+        </div>
+    </div>
+    <div class="grid">
+        <div class="col-12 text-primary text-2xl mt-2">
+            <strong>Información del documento</strong>
+        </div>
+        <div class="md:col-4 col-12 p-1">
+            <strong>Tipo de documento</strong>
+        </div>
+        <div class="md:col-8 col-12 p-1">
+            <span>: INFORME</span>
+        </div>
+        <div class="md:col-4 col-12 p-1">
+            <strong>N° de documento</strong>
+        </div>
+        <div class="md:col-8 col-12 p-1">
+            <span>: 12741-2024</span>
+        </div>
+        <div class="md:col-4 col-12 p-1">
+            <strong>Cantidad de folios</strong>
+        </div>
+        <div class="md:col-8 col-12 p-1">
+            <span>: 1</span>
+        </div>
+        <div class="md:col-4 col-12 p-1">
+            <strong>Asunto del documento</strong>
+        </div>
+        <div class="md:col-8 col-12 p-1">
+            <span>: Informe de Monitoreo Ambiental (IMA)</span>
+        </div>
+        <div class="md:col-4 col-12 p-1">
+            <strong>Descripción</strong>
+        </div>
+        <div class="md:col-8 col-12 p-1">
+            <span>: Esto es un informe de prueba 01</span>
+        </div>
+        <div class="md:col-4 col-12 p-1">
+            <strong>Unidad fiscalizable</strong>
+        </div>
+        <div class="md:col-8 col-12 p-1">
+            <span>: Planta OTI</span>
+        </div>
+    </div>
+    <div class="grid">
+        <div class="col-12 table mt-2">
+            <p-table [value]="dataSource">
+                <ng-template pTemplate="header">
+                    <tr><th>N°</th><th>ARCHIVOS</th><th class=" text-center" >TIPO</th></tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-data let-rowIndex="rowIndex">
+                    <tr>
+                        <td>{{data.orden}}</td>
+                        <td>{{data.archivo}}</td>
+                        <td class=" text-center" ><span [ngClass]="{'tipo-principal': data.tipo=='PRINCIPAL', 'tipo-anexo': data.tipo=='ANEXO'}" >{{data.tipo}}</span></td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+        <div class="col-12 mt-3 mb-2">
+            <p-checkbox label="He leído las condiciones establecidas en la" value="true" />
+            <span class="text-primary border-bottom-1 hover:text-primary-800 cursor-pointer"> cláusula de Protección de Datos Personales</span>
+        </div>
+    </div>
+</div>
+<div class="futter">
+    <div class="flex justify-content-center gap-2">
+        <p-button label="Presentar Informe" outlined="true" severity="primary" class="outline-primary"></p-button>
+        <p-button label="Cancelar" outlined="true" severity="secondary" class="outline-secondary" (click)="onClickCancelar()"></p-button>
+    </div>
+</div>

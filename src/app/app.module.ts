@@ -49,6 +49,9 @@ import { PuntoMonitoreoObservacionComponent } from './informe-monitoreo/views/pu
 import { PuntoAdicionalComponent } from './informe-monitoreo/views/puntos/punto-adicional/punto-adicional.component';
 import { PuntoMonitoreoGestionComponent } from './informe-monitoreo/views/puntos/punto-monitoreo-gestion/punto-monitoreo-gestion.component';
 import { PuntoMonitoreoCoordenadaComponent } from './informe-monitoreo/views/puntos/punto-monitoreo-coordenada/punto-monitoreo-coordenada.component';
+import { PuntoAdicionalComponenteComponent } from './informe-monitoreo/views/puntos/punto-adicional-componente/punto-adicional-componente.component';
+import { PuntoAdicionalParametroComponent } from './informe-monitoreo/views/puntos/punto-adicional-parametro/punto-adicional-parametro.component';
+import { InformeMonitoreoEnvioComponent } from './informe-monitoreo/views/informe/informe-monitoreo-envio/informe-monitoreo-envio.component';
 
 
 @NgModule({
@@ -73,7 +76,10 @@ import { PuntoMonitoreoCoordenadaComponent } from './informe-monitoreo/views/pun
     PuntoMonitoreoObservacionComponent,
     PuntoAdicionalComponent,
     PuntoMonitoreoGestionComponent,
-    PuntoMonitoreoCoordenadaComponent
+    PuntoMonitoreoCoordenadaComponent,
+    PuntoAdicionalComponenteComponent,
+    PuntoAdicionalParametroComponent,
+    InformeMonitoreoEnvioComponent
   ],
   imports: [
     BrowserModule,
