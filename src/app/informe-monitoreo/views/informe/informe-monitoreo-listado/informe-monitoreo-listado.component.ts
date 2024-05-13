@@ -17,7 +17,8 @@ export class InformeMonitoreoListadoComponent implements OnInit{
   faPaperPlane = faLocationArrow;
   faFileExcel = faFileExcel;
 
-  mostrarDetalle: boolean = false;
+  mostrarDlgDetalle: boolean = false;
+  mostrarDlgEnvio: boolean = false;
   valor: string | undefined;
   infoMenu: MenuItem[] | undefined;
   contextMenu: MenuItem[] | undefined;
@@ -52,12 +53,16 @@ export class InformeMonitoreoListadoComponent implements OnInit{
 
   onClickAgregar(){
     console.log(this.valor);
-    this.mostrarDetalle = true;
+    this.mostrarDlgDetalle = true;
     // this.messageService.add({ key: 'tc', sticky: false, severity: 'error', summary: 'Product Selected', detail: "Holaaaa" });
   }
 
   onClickResultado() {
     this.showResultado = true;
+  }
+
+  onClickPresentar(data: InformeMonitoreo) {
+    this.mostrarDlgEnvio = true;
   }
 
   descargarManual() {
@@ -78,7 +83,7 @@ export class InformeMonitoreoListadoComponent implements OnInit{
   }
 
   onClickCerrarDetalle(event: boolean) {
-    this.mostrarDetalle = event;
+    this.mostrarDlgEnvio = event;
   }
 
   tableHeader: string[] = ["N°","OPCIONES","NOMBRE DEL USUARIO","INFORME DE MONITOREO AMBIENTAL","INSTRUMENTO DE GESTIÓN","ETAPA","N° REGISTRO","ESTADO","FECHA REGISTRO","FECHA CIERRE","REPORTE"];

@@ -7,10 +7,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class InformeMonitoreoDetalleComponent {
 
-  @Output() cerrar: EventEmitter<boolean> = new EventEmitter();
+  @Output() close: EventEmitter<boolean> = new EventEmitter();
 
   onClickCancelar(){
-    this.cerrar.emit(false);
+    this.close.emit(false);
   }
 
   ufi: any = [
