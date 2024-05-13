@@ -109,7 +109,7 @@ export class EquipoMonitoreoListadoComponent implements OnInit {
   }
   /*fin*/
   /*Para el dialogo del eliminar*/
-  confirm() {
+  onClickEliminar() {
     this.confirmationService.confirm({
       header: 'MONITOREO',
       message: '¿Está seguro que desea eliminar el registro?',
