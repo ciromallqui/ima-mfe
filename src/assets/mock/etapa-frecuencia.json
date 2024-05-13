@@ -1,0 +1,222 @@
+[{
+  "listaFrecuenciaMonitoreo": [
+    {
+      "idTipo": 47,
+      "id": "9",
+      "nombre": "3 DÍAS POR AÑO"
+    },
+    {
+      "idTipo": 44,
+      "id": "6",
+      "nombre": "ANUAL"
+    },
+    {
+      "idTipo": 207,
+      "id": "10",
+      "nombre": "BIANUAL"
+    },
+    {
+      "idTipo": 208,
+      "id": "11",
+      "nombre": "BIMENSUAL"
+    },
+    {
+      "idTipo": 386,
+      "id": "15",
+      "nombre": "BIMESTRAL"
+    },
+    {
+      "idTipo": 1545,
+      "id": "20",
+      "nombre": "CADA 3 DÌAS"
+    },
+    {
+      "idTipo": 352,
+      "id": "14",
+      "nombre": "CADA 6 DÍAS"
+    },
+    {
+      "idTipo": 1147,
+      "id": "17",
+      "nombre": "CADA MAÑANA"
+    },
+    {
+      "idTipo": 331,
+      "id": "13",
+      "nombre": "CUATRIMESTRAL"
+    },
+    {
+      "idTipo": 1067,
+      "id": "16",
+      "nombre": "DIARIO"
+    },
+    {
+      "idTipo": 1505,
+      "id": "18",
+      "nombre": "DOS VECES"
+    },
+    {
+      "idTipo": 45,
+      "id": "7",
+      "nombre": "HORARIO"
+    },
+    {
+      "idTipo": 46,
+      "id": "8",
+      "nombre": "INDETERMINADO"
+    },
+    {
+      "idTipo": 41,
+      "id": "3",
+      "nombre": "MENSUAL"
+    },
+    {
+      "idTipo": 232,
+      "id": "12",
+      "nombre": "PUNTUAL"
+    },
+    {
+      "idTipo": 40,
+      "id": "2",
+      "nombre": "QUINCENAL"
+    },
+    {
+      "idTipo": 39,
+      "id": "1",
+      "nombre": "SEMANAL"
+    },
+    {
+      "idTipo": 43,
+      "id": "5",
+      "nombre": "SEMESTRAL"
+    },
+    {
+      "idTipo": 1565,
+      "id": "21",
+      "nombre": "TRES VECES"
+    },
+    {
+      "idTipo": 42,
+      "id": "4",
+      "nombre": "TRIMESTRAL"
+    },
+    {
+      "idTipo": 1506,
+      "id": "19",
+      "nombre": "UNA VEZ"
+    }
+  ],
+  "listaFrecuenciaReporte": [
+    {
+      "idTipo": 73,
+      "id": "4",
+      "nombre": "ANUAL"
+    },
+    {
+      "idTipo": 205,
+      "id": "6",
+      "nombre": "BIANUAL"
+    },
+    {
+      "idTipo": 206,
+      "id": "7",
+      "nombre": "BIMESTRAL"
+    },
+    {
+      "idTipo": 330,
+      "id": "8",
+      "nombre": "CUATRIMESTRAL"
+    },
+    {
+      "idTipo": 74,
+      "id": "5",
+      "nombre": "INDETERMINADO"
+    },
+    {
+      "idTipo": 48,
+      "id": "1",
+      "nombre": "MENSUAL"
+    },
+    {
+      "idTipo": 1087,
+      "id": "17",
+      "nombre": "PUNTUAL"
+    },
+    {
+      "idTipo": 49,
+      "id": "2",
+      "nombre": "SEMESTRAL"
+    },
+    {
+      "idTipo": 72,
+      "id": "3",
+      "nombre": "TRIMESTRAL"
+    }
+  ],
+  "listaFrecMonitoreo":[
+    {
+      "idEtapa": 8069094,
+      "codEtapa": "6",
+      "nombreEtapa": "ABANDONO",
+      "isCheked": true,
+      "idIesParametroMed": 9749539,
+      "esParametroAdicional": true
+    },
+    {
+      "idEtapa": 0,
+      "codEtapa": "5",
+      "nombreEtapa": "CIERRE FINAL",
+      "isCheked": false,
+      "idIesParametroMed": 0,
+      "esParametroAdicional": true
+    },
+    {
+      "idEtapa": 0,
+      "codEtapa": "4",
+      "nombreEtapa": "CIERRE PROGRESIVO",
+      "isCheked": false,
+      "idIesParametroMed": 0,
+      "esParametroAdicional": true
+    },
+    {
+      "idEtapa": 0,
+      "codEtapa": "2",
+      "nombreEtapa": "CONSTRUCCIÓN",
+      "isCheked": false,
+      "idIesParametroMed": 0,
+      "esParametroAdicional": true
+    },
+    {
+      "idEtapa": 0,
+      "codEtapa": "8",
+      "nombreEtapa": "EXPLORACIÓN",
+      "isCheked": false,
+      "idIesParametroMed": 0,
+      "esParametroAdicional": true
+    },
+    {
+      "idEtapa": 0,
+      "codEtapa": "1",
+      "nombreEtapa": "OPERACIÓN",
+      "isCheked": false,
+      "idIesParametroMed": 0,
+      "esParametroAdicional": true
+    },
+    {
+      "idEtapa": 0,
+      "codEtapa": "7",
+      "nombreEtapa": "POST ABANDONO",
+      "isCheked": false,
+      "idIesParametroMed": 0,
+      "esParametroAdicional": true
+    },
+    {
+      "idEtapa": 0,
+      "codEtapa": "3",
+      "nombreEtapa": "POST CIERRE",
+      "isCheked": false,
+      "idIesParametroMed": 0,
+      "esParametroAdicional": true
+    }
+  ]
+}]

@@ -1,0 +1,463 @@
+[
+  {
+    "idInfMonResultado": 10017482,
+    "signoResultado": "3",
+    "valorResultado": "2",
+    "valorLimite": null,
+    "unidadMedidaRes": "36",
+    "idIesParametroMed": 9749434,
+    "tipoMonitoreo": "IMA",
+    "idParametro": 27,
+    "idRedMonCompParam": 0,
+    "idRedMonComponente": 374368,
+    "idIesRedMonitoreo": 650581,
+    "parametroDescripcion": "Aceites y grasas (<= 100 mg/L)",
+    "idAcreditacion": "1",
+    "normativa": "D.S. N° 010-2019-VIVIENDA// Anexo N° 1",
+    "idComponente": 53,
+    "idLimite": "3",
+    "listaSigno": [
+      {
+        "idTipo": 215,
+        "id": "5",
+        "nombre": "<"
+      },
+      {
+        "idTipo": 212,
+        "id": "3",
+        "nombre": "<="
+      },
+      {
+        "idTipo": 211,
+        "id": "1",
+        "nombre": "="
+      },
+      {
+        "idTipo": 214,
+        "id": "4",
+        "nombre": ">"
+      },
+      {
+        "idTipo": 213,
+        "id": "2",
+        "nombre": ">="
+      }
+    ],
+    "codFuenteRedMon": 0,
+    "codigo": "650581-53",
+    "idTipoValor": "1",
+    "listaLimite": [
+      {
+        "idTipo": 261,
+        "id": "2",
+        "nombre": "LC (Límite de cuantificación)"
+      },
+      {
+        "idTipo": 260,
+        "id": "1",
+        "nombre": "LD (Límite de detección)"
+      },
+      {
+        "idTipo": 1485,
+        "id": "4",
+        "nombre": "No tiene límites"
+      }
+    ],
+    "idFrecuenciaReporte": "1",
+    "idRedMonitoreo": 454940,
+    "idRedMonPar": 3993821,
+    "esPuntoAdicional": false,
+    "esParametroAdicional": false,
+    "listUnidadMedida": [
+      {
+        "id": "42",
+        "nombre": "mL/L"
+      },
+      {
+        "id": "36",
+        "nombre": "mg/L"
+      },
+      {
+        "id": "34",
+        "nombre": "mg/kg"
+      },
+      {
+        "id": "1",
+        "nombre": "%"
+      },
+      {
+        "id": "64",
+        "nombre": "TEQ/Kg"
+      }
+    ],
+    "esLimiteMultiple": true,
+    "valorLc": "2",
+    "valorLd": "2",
+    "valorUnidadMedia": "100",
+    "idValorUnidadMedida": 36
+  },
+  {
+    "idInfMonResultado": 10017485,
+    "signoResultado": "3",
+    "valorResultado": "2",
+    "valorLimite": "2",
+    "unidadMedidaRes": "36",
+    "idIesParametroMed": 9749437,
+    "tipoMonitoreo": "IMA",
+    "idParametro": 49,
+    "idRedMonComponente": 374368,
+    "idIesRedMonitoreo": 650581,
+    "parametroDescripcion": "Aluminio (<= 10 mg/L)",
+    "idAcreditacion": "1",
+    "normativa": "D.S. N° 010-2019-VIVIENDA// Anexo N° 2",
+    "idComponente": 53,
+    "idLimite": "1",
+    "listaSigno": [
+      {
+        "idTipo": 215,
+        "id": "5",
+        "nombre": "<"
+      },
+      {
+        "idTipo": 212,
+        "id": "3",
+        "nombre": "<="
+      },
+      {
+        "idTipo": 211,
+        "id": "1",
+        "nombre": "="
+      },
+      {
+        "idTipo": 214,
+        "id": "4",
+        "nombre": ">"
+      },
+      {
+        "idTipo": 213,
+        "id": "2",
+        "nombre": ">="
+      }
+    ],
+    "codigo": "650581-53",
+    "idTipoValor": "1",
+    "listaLimite": [
+      {
+        "idTipo": 261,
+        "id": "2",
+        "nombre": "LC (Límite de cuantificación)"
+      },
+      {
+        "idTipo": 260,
+        "id": "1",
+        "nombre": "LD (Límite de detección)"
+      },
+      {
+        "idTipo": 1485,
+        "id": "4",
+        "nombre": "No tiene límites"
+      }
+    ],
+    "idFrecuenciaReporte": "1",
+    "idRedMonitoreo": 454940,
+    "idRedMonPar": 3993838,
+    "esPuntoAdicional": false,
+    "esParametroAdicional": false,
+    "listUnidadMedida": [
+      {
+        "id": "7",
+        "nombre": "µg/L"
+      },
+      {
+        "id": "80",
+        "nombre": "kg/t"
+      },
+      {
+        "id": "38",
+        "nombre": "mg/m³"
+      },
+      {
+        "id": "36",
+        "nombre": "mg/L"
+      },
+      {
+        "id": "34",
+        "nombre": "mg/kg"
+      },
+      {
+        "id": "8",
+        "nombre": "µg/m³"
+      }
+    ],
+    "esLimiteMultiple": false,
+    "valorLc": null,
+    "valorLd": null,
+    "valorUnidadMedia": "10",
+    "idValorUnidadMedida": 36
+  },
+  {
+    "idInfMonResultado": 10017483,
+    "signoResultado": "3",
+    "valorResultado": "2",
+    "valorLimite": "2",
+    "unidadMedidaRes": "68",
+    "idIesParametroMed": 9749435,
+    "tipoMonitoreo": "IMA",
+    "idParametro": 450,
+    "idRedMonComponente": 374368,
+    "idIesRedMonitoreo": 650581,
+    "parametroDescripcion": "Potencial de hidrógeno (pH) (6. - 9.>, Unidad de pH)",
+    "idAcreditacion": "1",
+    "normativa": "D.S. N° 010-2019-VIVIENDA// Anexo N° 2",
+    "idComponente": 53,
+    "idLimite": "2",
+    "listaSigno": [
+      {
+        "idTipo": 215,
+        "id": "5",
+        "nombre": "<"
+      },
+      {
+        "idTipo": 212,
+        "id": "3",
+        "nombre": "<="
+      },
+      {
+        "idTipo": 211,
+        "id": "1",
+        "nombre": "="
+      },
+      {
+        "idTipo": 214,
+        "id": "4",
+        "nombre": ">"
+      },
+      {
+        "idTipo": 213,
+        "id": "2",
+        "nombre": ">="
+      }
+    ],
+    "codigo": "650581-53",
+    "idTipoValor": "2",
+    "listaLimite": [
+      {
+        "idTipo": 261,
+        "id": "2",
+        "nombre": "LC (Límite de cuantificación)"
+      },
+      {
+        "idTipo": 260,
+        "id": "1",
+        "nombre": "LD (Límite de detección)"
+      },
+      {
+        "idTipo": 1485,
+        "id": "4",
+        "nombre": "No tiene límites"
+      }
+    ],
+    "idFrecuenciaReporte": "1",
+    "idRedMonitoreo": 454940,
+    "idRedMonPar": 3993842,
+    "esPuntoAdicional": false,
+    "esParametroAdicional": false,
+    "listUnidadMedida": [
+      {
+        "id": "7",
+        "nombre": "µg/L"
+      },
+      {
+        "id": "68",
+        "nombre": "Unidad de pH"
+      },
+      {
+        "id": "36",
+        "nombre": "mg/L"
+      },
+      {
+        "id": "34",
+        "nombre": "mg/kg"
+      }
+    ],
+    "esLimiteMultiple": false,
+    "valorLc": null,
+    "valorLd": null,
+    "valorUnidadMedia": null,
+    "idValorUnidadMedida": 68
+  },
+  {
+    "idInfMonResultado": 10017484,
+    "signoResultado": "1",
+    "valorResultado": "2",
+    "valorLimite": null,
+    "unidadMedidaRes": "4",
+    "idIesParametroMed": 9749436,
+    "tipoMonitoreo": "IMA",
+    "idParametro": 496,
+    "idRedMonComponente": 374368,
+    "idIesRedMonitoreo": 650581,
+    "parametroDescripcion": "Temperatura (< 35 °C)",
+    "idAcreditacion": "1",
+    "normativa": "D.S. N° 010-2019-VIVIENDA// Anexo N° 2",
+    "idComponente": 53,
+    "idFrecuenciaMonitoreo": 0,
+    "idLimite": "4",
+    "listaSigno": [
+      {
+        "idTipo": 215,
+        "id": "5",
+        "nombre": "<"
+      },
+      {
+        "idTipo": 212,
+        "id": "3",
+        "nombre": "<="
+      },
+      {
+        "idTipo": 211,
+        "id": "1",
+        "nombre": "="
+      },
+      {
+        "idTipo": 214,
+        "id": "4",
+        "nombre": ">"
+      },
+      {
+        "idTipo": 213,
+        "id": "2",
+        "nombre": ">="
+      }
+    ],
+    "codigo": "650581-53",
+    "idTipoValor": "1",
+    "listaLimite": [
+      {
+        "idTipo": 261,
+        "id": "2",
+        "nombre": "LC (Límite de cuantificación)"
+      },
+      {
+        "idTipo": 260,
+        "id": "1",
+        "nombre": "LD (Límite de detección)"
+      },
+      {
+        "idTipo": 1485,
+        "id": "4",
+        "nombre": "No tiene límites"
+      }
+    ],
+    "idFrecuenciaReporte": "1",
+    "idRedMonitoreo": 454940,
+    "idRedMonPar": 3993843,
+    "esPuntoAdicional": false,
+    "esParametroAdicional": false,
+    "listUnidadMedida": [
+      {
+        "id": "4",
+        "nombre": "°C"
+      }
+    ],
+    "esLimiteMultiple": false,
+    "valorLc": null,
+    "valorLd": null,
+    "valorUnidadMedia": "35",
+    "idValorUnidadMedida": 4
+  },
+  {
+    "idInfMonResultado": 10017587,
+    "signoResultado": "3",
+    "valorResultado": "2",
+    "valorLimite": null,
+    "unidadMedidaRes": "36",
+    "idIesParametroMed": 9749539,
+    "tipoMonitoreo": "IMA",
+    "idParametro": 27,
+    "idIesRedMonitoreo": 650581,
+    "parametroDescripcion": "Aceites y grasas (<= 0.5 mg/L)",
+    "idAcreditacion": "1",
+    "normativa": "D.S. N° 015-2015-MINAM// Categoría 1: Poblacional y Recreacional// A: Aguas Superficiales Destinadas a la Producción de Agua Potable// A1: Aguas que Pueden ser Potabilizadas con Desinfección",
+    "idComponente": 53,
+    "idLimite": "4",
+    "listaSigno": [
+      {
+        "idTipo": 215,
+        "id": "5",
+        "nombre": "<"
+      },
+      {
+        "idTipo": 212,
+        "id": "3",
+        "nombre": "<="
+      },
+      {
+        "idTipo": 211,
+        "id": "1",
+        "nombre": "="
+      },
+      {
+        "idTipo": 214,
+        "id": "4",
+        "nombre": ">"
+      },
+      {
+        "idTipo": 213,
+        "id": "2",
+        "nombre": ">="
+      }
+    ],
+    "codFuenteRedMon": 0,
+    "codigo": "650581-53",
+    "idTipoValor": "1",
+    "taxonomia": false,
+    "listaLimite": [
+      {
+        "idTipo": 261,
+        "id": "2",
+        "nombre": "LC (Límite de cuantificación)"
+      },
+      {
+        "idTipo": 260,
+        "id": "1",
+        "nombre": "LD (Límite de detección)"
+      },
+      {
+        "idTipo": 1485,
+        "id": "4",
+        "nombre": "No tiene límites"
+      }
+    ],
+    "idRedMonitoreo": 454940,
+    "esPuntoAdicional": false,
+    "esParametroAdicional": true,
+    "listUnidadMedida": [
+      {
+        "id": "42",
+        "nombre": "mL/L"
+      },
+      {
+        "id": "36",
+        "nombre": "mg/L"
+      },
+      {
+        "id": "34",
+        "nombre": "mg/kg"
+      },
+      {
+        "id": "1",
+        "nombre": "%"
+      },
+      {
+        "id": "64",
+        "nombre": "TEQ/Kg"
+      }
+    ],
+    "esLimiteMultiple": false,
+    "valorLc": null,
+    "valorLd": null,
+    "valorUnidadMedia": null,
+    "idValorUnidadMedida": 36
+  }
+]

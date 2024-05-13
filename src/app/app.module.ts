@@ -28,6 +28,10 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { CheckboxModule } from 'primeng/checkbox';
 import { FileUploadModule } from 'primeng/fileupload';
 import { TreeModule } from 'primeng/tree';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { FloatLabelModule } from 'primeng/floatlabel';
+import { InputNumberModule } from 'primeng/inputnumber';
+
 
 import { InformeMonitoreoListadoComponent } from './informe-monitoreo/views/informe/informe-monitoreo-listado/informe-monitoreo-listado.component';
 import { InformeMonitoreoDetalleComponent } from './informe-monitoreo/views/informe/informe-monitoreo-detalle/informe-monitoreo-detalle.component';
@@ -52,6 +56,8 @@ import { PuntoMonitoreoCoordenadaComponent } from './informe-monitoreo/views/pun
 import { PuntoAdicionalComponenteComponent } from './informe-monitoreo/views/puntos/punto-adicional-componente/punto-adicional-componente.component';
 import { PuntoAdicionalParametroComponent } from './informe-monitoreo/views/puntos/punto-adicional-parametro/punto-adicional-parametro.component';
 import { InformeMonitoreoEnvioComponent } from './informe-monitoreo/views/informe/informe-monitoreo-envio/informe-monitoreo-envio.component';
+import { ParametroMuestraComponent } from './informe-monitoreo/views/parametro/parametro-muestra/parametro-muestra.component';
+import { ParametroEtapaFrecuenciaComponent } from './informe-monitoreo/views/parametro/parametro-etapa-frecuencia/parametro-etapa-frecuencia.component';
 
 
 @NgModule({
@@ -79,7 +85,9 @@ import { InformeMonitoreoEnvioComponent } from './informe-monitoreo/views/inform
     PuntoMonitoreoCoordenadaComponent,
     PuntoAdicionalComponenteComponent,
     PuntoAdicionalParametroComponent,
-    InformeMonitoreoEnvioComponent
+    InformeMonitoreoEnvioComponent,
+    ParametroMuestraComponent,
+    ParametroEtapaFrecuenciaComponent
   ],
   imports: [
     BrowserModule,
@@ -109,7 +117,10 @@ import { InformeMonitoreoEnvioComponent } from './informe-monitoreo/views/inform
     ConfirmDialogModule,
     CheckboxModule,
     FileUploadModule,
-    TreeModule
+    TreeModule,
+    InputSwitchModule,
+    FloatLabelModule,
+    InputNumberModule
   ],
   providers: [],
   bootstrap: [AppComponent]
