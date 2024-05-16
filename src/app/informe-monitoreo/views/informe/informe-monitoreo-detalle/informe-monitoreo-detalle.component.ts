@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { DropdownList } from '../model/DropdownList';
 
 @Component({
   selector: 'informe-monitoreo-detalle',
@@ -8,6 +9,12 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class InformeMonitoreoDetalleComponent {
 
   @Output() close: EventEmitter<boolean> = new EventEmitter();
+
+  listaSubsector!: DropdownList[];
+  listaUnidadFiscalizable!: DropdownList[];
+  listaEtapa!: DropdownList[];
+  listaFrecReporte!: DropdownList[];
+  listaPeriodoReporte!: DropdownList[];
 
   onClickCancelar(){
     this.close.emit(false);

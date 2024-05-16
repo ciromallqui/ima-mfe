@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Message } from 'primeng/api';
+import { TreeControlCheckbox } from '../../../../utils/TreeControlCheckbox';
 
 @Component({
   selector: 'parametro-seleccion',
@@ -23,6 +24,13 @@ export class ParametroSeleccionComponent implements OnInit {
     this.cerrar.emit(false);
   }
 
+  onChangeCheckParam(datos: any) {
+    new TreeControlCheckbox().changeCheckbox(datos);
+  }
+  onChangeCheckParamAdi(datos: any) {
+    new TreeControlCheckbox().changeCheckbox(datos);
+  }
+
   selectNode(event: any) {
     console.log(event);
   }
@@ -38,46 +46,57 @@ export class ParametroSeleccionComponent implements OnInit {
       children: [{
         idParametro: 1,
         parametro: "Zona comercial",
+        checked: false,
         showCheckbox: true,
         data: "Work Folder",
-        children: [{idParametro: 1, parametro: "Horario diurno",showCheckbox: true, "data": "Expenses Document"}, {idParametro: 1, parametro: "Horario nocturno",showCheckbox: true, "data": "Resume Document"}]
+        children: [{idParametro: 1, parametro: "Horario diurno",checked: false,showCheckbox: true, "data": "Expenses Document"}, {idParametro: 1, parametro: "Horario nocturno",checked: false,showCheckbox: true, "data": "Resume Document"}]
       }]
     },
     {
       idParametro: 1,
       parametro: "UNE 22-381-93 Control de vibraciones",
       data: "Pictures Folder",
+      checked: false,
+      showCheckbox: false,
       children: [
-        {idParametro: 1, parametro: "Tabla 1: Criterio de prevención de daños", "data": "Barcelona Photo"},
-        {idParametro: 1, parametro: "Tabla 2: prueba de...", "data": "PrimeFaces Logo"}]
+        {idParametro: 1,checked: false, showCheckbox: true, parametro: "Tabla 1: Criterio de prevención de daños", "data": "Barcelona Photo"},
+        {idParametro: 1,checked: false, showCheckbox: true, parametro: "Tabla 2: prueba de...", "data": "PrimeFaces Logo"}]
     }
   ];
   parametroAdiLista: any[] = [
     {
       idParametro: 1,
+      idParametroPadre: 0,
       parametro: "PARÁMETROS CON NORMA",
-      checked: true,
+      checked: false,
       showCheckbox: false,
       data: "Documents Folder",
       children: [{
-        idParametro: 1,
+        idParametro: 2,
+        idParametroPadre: 1,
         parametro: "D.S. N° 002-2013-MINAM",
-        showCheckbox: true,
+        showCheckbox: false,
+        checked: false,
         data: "Work Folder",
-        children: [{idParametro: 1, parametro: "Suelo Agrícola",showCheckbox: true, "data": "Expenses Document"}, {idParametro: 1, parametro: "Suelo residual",showCheckbox: true, "data": "Resume Document"}]
+        children: [{idParametro: 3,idParametroPadre: 2, parametro: "Suelo Agrícola",showCheckbox: true,checked: false, "data": "Expenses Document"}, {idParametro: 4,idParametroPadre: 2, parametro: "Suelo residual",showCheckbox: true,checked: false, "data": "Resume Document"}]
       }]
     },
     {
-      idParametro: 1,
+      idParametro: 5,
+      idParametroPadre: 0,
       parametro: "PARÁMETROS SIN NORMA",
       data: "Pictures Folder",
+      checked: false,
       children: [{
-        idParametro: 1,
+        idParametro: 6,
+        idParametroPadre: 5,
         parametro: "Parámetro de aire sin norma",
         data: "Pictures Folder",
+        showCheckbox: true,
+        checked: false,
         children: [
-          {idParametro: 1, parametro: "Aceites y grasas mg/kg", "data": "Barcelona Photo"},
-          {idParametro: 1, parametro: "Aceites y grasas %", "data": "PrimeFaces Logo"}]
+          {idParametro: 7,idParametroPadre: 6,checked: true,showCheckbox: true, parametro: "Aceites y grasas mg/kg", "data": "Barcelona Photo"},
+          {idParametro: 18,idParametroPadre: 6,checked: false,showCheckbox: true, parametro: "Aceites y grasas %", "data": "PrimeFaces Logo"}]
       }]
     }
   ];

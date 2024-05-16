@@ -1,15 +1,18 @@
-<div class="content">
+<div class="content-list">
     <div class="grid">
-        <div class="col-12">
-            <strong>Componente: AIRE AMBIENTAL</strong>
+        <div class="col-12 p-0">
+            <p-messages [(value)]="infoComponente" [enableService]="false" />
         </div>
         <div class="col-12">
-            <strong>Lista de parámetros</strong>
+            <strong class="mt-0">Lista de parámetros</strong>
         </div>
         <div class="col-12">
             <p-tree [filter]="true" filterMode="strict" filterBy="parametro" filterPlaceholder="Buscar" [value]="parametroAdiLista" dataKey="idParametroAdi">
                 <ng-template let-node pTemplate="default">
-                    <div><span class="hover:text-primary">{{node.parametro}}</span></div>
+                    <div>
+                        <p-checkbox [(ngModel)]="node.checked" [binary]="true" inputId="idParametroAdi" *ngIf="node.showCheckbox" (onChange)="onChangeCheckParam(node)"/>
+                        <span class="hover:text-primary">{{node.parametro}}</span>
+                    </div>
                 </ng-template>
             </p-tree>
         </div>

@@ -1,8 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-import { Message, MessageService } from 'primeng/api';
+import { ConfirmationService, Message, MessageService } from 'primeng/api';
 import { PuntoMonitoreo } from '../../puntos/model/PuntoMonitoreo';
 import { ComponenteAmbiental } from '../model/ComponenteAmbiental';
+import { TreeControlCheckbox } from '../../../../utils/TreeControlCheckbox';
 
 @Component({
   selector: 'componente-ambiental-listado',
@@ -22,11 +23,13 @@ export class ComponenteAmbientalListadoComponent implements OnInit {
   tabResul: string = "COMPONENTE";
   busqueda: boolean = false;
   mostrarDetalle: boolean = false;
+  openDlgEliminar: boolean = false;
   mostrarParamPostSelect: boolean = false;
 
   constructor(
-    private messageService: MessageService
-  ){}
+    private messageService: MessageService,
+    private confirmationService: ConfirmationService,
+  ){  }
 
   ngOnInit(): void {
     this.infoPunto = [{ sticky: false, closable: false, severity: 'success', summary: 'Punto de monitoreo:', detail: this.data.nombrePunto +" ("+this.data.codigoPunto+")" }];
@@ -65,16 +68,34 @@ export class ComponenteAmbientalListadoComponent implements OnInit {
     }
   }
 
+  onChangeCheckParam(datos: any) {
+    new TreeControlCheckbox().changeCheckbox(datos);
+  }
+
   selectNodeComp(node: any) {
     this.mostrarParamPostSelect = true;
-    // var miElto = document.getElementsByClassName("p-checkbox-box")[0];
-    // miElto.className = "verde";
-    // var miElto1 = document.getElementsByClassName("p-checkbox")[0];
-    // miElto1.className = "verde";
+  }
+
+  //PARAMETRO
+  nodeCheckedParam(event: any) {
+
   }
 
   onClickCerrar() {
     this.mostrarDetalle = false;
+  }
+
+  onClickEliminar(data: ComponenteAmbiental) {
+    this.confirmationService.confirm({
+      message: '¿Está seguro que desea eliminar el registro?',
+      accept: () => {
+        this.openDlgEliminar = false;
+        this.messageService.add({ key: 'noComp', severity: 'success', summary: 'Confirmado', detail: 'El componente se eliminó correctamente.', life: 3000 });
+      },
+      reject: () => {
+        this.openDlgEliminar = false;
+      }
+    });
   }
 
   messageWarn(message: string) {
@@ -85,29 +106,37 @@ export class ComponenteAmbientalListadoComponent implements OnInit {
   parametroAdiLista: any[] = [
     {
       idParametro: 1,
+      idParametroPadre: 0,
       parametro: "PARÁMETROS CON NORMA",
-      checked: true,
+      checked: false,
       showCheckbox: false,
       data: "Documents Folder",
       children: [{
-        idParametro: 1,
+        idParametro: 2,
+        idParametroPadre: 1,
         parametro: "D.S. N° 002-2013-MINAM",
-        showCheckbox: true,
+        showCheckbox: false,
+        checked: false,
         data: "Work Folder",
-        children: [{idParametro: 1, parametro: "Suelo Agrícola",showCheckbox: true, "data": "Expenses Document"}, {idParametro: 1, parametro: "Suelo residual",showCheckbox: true, "data": "Resume Document"}]
+        children: [{idParametro: 3,idParametroPadre: 2, parametro: "Suelo Agrícola",showCheckbox: true,checked: false, "data": "Expenses Document"}, {idParametro: 4,idParametroPadre: 2, parametro: "Suelo residual",showCheckbox: true,checked: false, "data": "Resume Document"}]
       }]
     },
     {
-      idParametro: 1,
+      idParametro: 5,
+      idParametroPadre: 0,
       parametro: "PARÁMETROS SIN NORMA",
       data: "Pictures Folder",
+      checked: false,
       children: [{
-        idParametro: 1,
+        idParametro: 6,
+        idParametroPadre: 5,
         parametro: "Parámetro de aire sin norma",
         data: "Pictures Folder",
+        showCheckbox: true,
+        checked: false,
         children: [
-          {idParametro: 1, parametro: "Aceites y grasas mg/kg", "data": "Barcelona Photo"},
-          {idParametro: 1, parametro: "Aceites y grasas %", "data": "PrimeFaces Logo"}]
+          {idParametro: 7,idParametroPadre: 6,checked: true,showCheckbox: true, parametro: "Aceites y grasas mg/kg", "data": "Barcelona Photo"},
+          {idParametro: 18,idParametroPadre: 6,checked: false,showCheckbox: true, parametro: "Aceites y grasas %", "data": "PrimeFaces Logo"}]
       }]
     }
   ];

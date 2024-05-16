@@ -105,13 +105,32 @@
         </div>
         <div class="col-12 mt-3 mb-2">
             <p-checkbox label="He leído las condiciones establecidas en la" value="true" />
-            <span class="text-primary border-bottom-1 hover:text-primary-800 cursor-pointer"> cláusula de Protección de Datos Personales</span>
+            <span class="text-primary border-bottom-1 hover:text-primary-800 cursor-pointer" (click)="onClickClausula()"> cláusula de Protección de Datos Personales</span>
         </div>
     </div>
 </div>
 <div class="futter">
     <div class="flex justify-content-center gap-2">
-        <p-button label="Presentar Informe" outlined="true" severity="primary" class="outline-primary"></p-button>
+        <p-button label="Enviar a OEFA" outlined="true" severity="primary" class="outline-primary"></p-button>
         <p-button label="Cancelar" outlined="true" severity="secondary" class="outline-secondary" (click)="onClickCancelar()"></p-button>
     </div>
+</div>
+
+<div class="flex justify-content-center p-dialog-simple">
+    <p-dialog [modal]="true" [closable]="false" [(visible)]="openDlgClausula" [style]="{ width: '35rem' }">
+          <ng-template pTemplate="content">
+            <div class="flex flex-column align-items-center surface-overlay text-3xl text-center">
+              <strong>Ley Nª 29733 Ley de Protección de Datos Personales</strong>
+            </div>
+            <div class="mt-3 flex flex-column align-items-justify surface-overlay text-lg text-justify">
+                <span>
+                    OEFA, con domicilio en Av. Faustino Sánchez Carrión N° 603 - Jesús María, informa a los/as usuarios/as que hagan uso de la Mesa de Partes Virtual, que sus datos personales serán tratados con la finalidad de facilitar el registro de su solicitud, la atención oportuna del trámite, y debida comunicación de la misma a el/la usuario/a, de conformidad con lo establecido en la Ley N° 27444, Ley del Procedimiento Administrativo General, siendo que el OEFA ha adoptado los niveles de seguridad y de protección de datos personales legalmente requeridos, y ha instalado todos los medios y medidas técnicas a su alcance. Asimismo, informamos que los datos personales registrados pueden ser enviados a las personas que soliciten información pública por transparencia o entidades públicas conforme al ordenamiento jurídico.
+                    <br><br>Además, el OEFA informa que el/la usuario/a puede ejercer, de corresponder, sus derechos de información, acceso, rectificación, cancelación y oposición; en los términos dispuestos en la Ley N° 29733, Ley de Protección de Datos Personales y su Reglamento aprobado por el Decreto Supremo N° 003-2013-JUS, enviando una solicitud la siguiente dirección electrónica: protegemostusdatos&#64;oefa.gob.pe o presencialmente a: Av. Faustino Sánchez Carrión Nº 603 - Jesús María, en el horario de lunes a viernes, de 8:30 a 16:30 horas.
+                </span>
+            </div>
+            <div class="flex justify-content-center border-top-1 border-primary-300 pt-3 mt-3">
+                <p-button label="Aceptar" severity="primary" (click)="openDlgClausula = false" />
+            </div>
+          </ng-template>
+    </p-dialog>
 </div>

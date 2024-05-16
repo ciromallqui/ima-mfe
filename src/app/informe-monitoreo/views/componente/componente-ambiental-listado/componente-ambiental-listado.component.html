@@ -39,7 +39,7 @@
                         <tr>
                             <td>{{data.orden}}</td>
                             <td>
-                                <fa-icon [icon]="faTrash" pTooltip="Eliminar componente" tooltipPosition="top" class="icon-danger"></fa-icon>
+                                <fa-icon [icon]="faTrash" pTooltip="Eliminar componente" tooltipPosition="top" class="icon-danger" (click)="onClickEliminar(data)"></fa-icon>
                                 <i class="pi pi-arrow-right icon-res" pTooltip="Mostrar parámetros" tooltipPosition="top" (click)="onClickParametroRes(data)"></i>
                             </td>
                             <td>{{data.nombreComponente}}</td>
@@ -49,7 +49,7 @@
             </div>
         </div>
     </div>
-    <div class="card flex justify-content-center">
+    <div class="card flex justify-content-center p-dialog-custom">
         <p-dialog header="SELECCIONAR PARÁMETROS ADICIONALES" [(visible)]="mostrarDetalle" [modal]="true" [style]="{width: '600px'}" closable="false">
             <div class="grid mt-2 mb-3 overflow-y-auto" style="border-bottom: solid 1px #1d85bf; max-height: 44rem;">
                 <div class="col-12">
@@ -67,7 +67,10 @@
                     <div class="">
                         <p-tree [filter]="true" filterMode="strict" filterBy="parametro" filterPlaceholder="Buscar" [value]="parametroAdiLista" dataKey="idParametroAdi">
                             <ng-template let-node pTemplate="default">
-                                <div><span class="hover:text-primary cursor-pointer">{{node.parametro}}</span></div>
+                                <div>
+                                    <p-checkbox [(ngModel)]="node.checked" [binary]="true" inputId="idParametroAdi" *ngIf="node.showCheckbox" (onChange)="onChangeCheckParam(node)"/>
+                                    <span class="hover:text-primary cursor-pointer">{{node.parametro}}</span>
+                                </div>
                             </ng-template>
                         </p-tree>
                     </div>
@@ -83,6 +86,23 @@
 </div>
 <div *ngIf="tabResul=='PARAMETRO'">
     <parametro-listado [data]="dataComponente" (select)="onSelected($event)"></parametro-listado>
+</div>
+
+<div class="card flex justify-content-center">
+    <p-confirmDialog #cd [visible]="openDlgEliminar">
+      <ng-template pTemplate="headless" let-message>
+        <div class="flex flex-column align-items-center p-5 surface-overlay border-round p-dialog-confirm">
+          <div class="border-circle bg-primary inline-flex justify-content-center align-items-center h-6rem w-6rem">
+            <i class="pi pi-question text-5xl"></i>
+          </div>
+          <strong class="mt-4">{{ message.message }}</strong>
+          <div class="flex align-items-center gap-2 mt-4">
+            <p-button label="Aceptar" (click)="cd.accept()" severity="primary" outlined="true" class="outline-primary"></p-button>
+            <p-button label="Cancelar" (click)="cd.reject()" severity="secondary" outlined="true" class="outline-secondary"></p-button>
+          </div>
+        </div>
+      </ng-template>
+    </p-confirmDialog>
 </div>
 
 <p-toast position="top-center" key="noComp"></p-toast>

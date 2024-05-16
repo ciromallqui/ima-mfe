@@ -9,8 +9,14 @@ export class InformeMonitoreoEnvioComponent {
 
   @Output() close: EventEmitter<boolean> = new EventEmitter();
 
+  openDlgClausula: boolean = false;
+
   onClickCancelar(){
     this.close.emit(false);
+  }
+
+  onClickClausula() {
+    this.openDlgClausula = true;
   }
 
   dataSource: any = [

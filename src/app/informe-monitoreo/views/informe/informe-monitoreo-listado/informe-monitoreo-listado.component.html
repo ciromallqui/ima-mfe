@@ -1,33 +1,33 @@
-<div class="container" *ngIf="!showResultado">
+<div class="container m-2 mt-4" *ngIf="!showResultado">
     <div class="grid">
         <div class="lg:col-3 sm:col-6 col-12 margin-bottom">
             <span class="p-float-label">
-                <p-dropdown placeholder="Subsector"></p-dropdown>
+                <p-dropdown [options]="listaSubsector" optionValue="id" optionLabel="nombre" placeholder="Subsector"></p-dropdown>
                 <label class="label-placehoder">Subsector</label>
             </span>
         </div>
         <div class="lg:col-6 sm:col-6 col-12 margin-bottom">
             <span class="p-float-label">
-                <p-dropdown placeholder="Unidad fiscalizable"></p-dropdown>
+                <p-dropdown [options]="listaUnidadFiscalizable" optionValue="id" optionLabel="nombre" placeholder="Unidad fiscalizable"></p-dropdown>
                 <label class="label-placehoder">Unidad fiscalizable</label>
             </span>
         </div>
         <div class="lg:col-3 md:col-4 sm:col-6 col-12 margin-bottom">
             <span class="p-float-label">
-                <p-dropdown placeholder="Estado"></p-dropdown>
+                <p-dropdown [options]="listaEstado" optionValue="id" optionLabel="nombre" placeholder="Estado"></p-dropdown>
                 <label class="label-placehoder">Estado</label>
             </span>
         </div>
     
         <div class="lg:col-3 md:col-4 sm:col-6 col-12 margin-bottom">
             <span class="p-float-label flex flex-column">
-                <input pInputText type="text" placeholder="Nombre de informe" [(ngModel)]="valor"/>
+                <input pInputText type="text" placeholder="Nombre de informe"/>
                 <label class="label-placehoder">Nombre de informe</label>
             </span>
         </div>
         <div class="lg:col-2 md:col-4 sm:col-6 col-12 margin-bottom">
             <span class="p-float-label flex flex-column">
-                <input pInputText type="text" placeholder="Nro de registro" [(ngModel)]="valor"/>
+                <input pInputText type="text" placeholder="Nro de registro"/>
                 <label class="label-placehoder">Nro de registro</label>
             </span>
         </div>
@@ -37,7 +37,7 @@
                 <p-button label="Cancelar" icon="pi pi-times" severity="secondary" outlined="true" class="outline-secondary"></p-button>
             </p-buttonGroup>
         </div>
-        <div class="lg:col-4 md:col-8 sm:col-12 flex justify-content-end gap-1"  style="margin-bottom: 3px;">
+        <div class="lg:col-4 md:col-8 sm:col-12 flex justify-content-end gap-1 mb-1">
             <p-button label="Agregar Informe" icon="pi pi-plus" severity="primary" (click)="onClickAgregar()"></p-button>
             <p-splitButton label="Información" [model]="infoMenu"></p-splitButton>
         </div>
@@ -53,10 +53,10 @@
                 <tr [pContextMenuRow]="data">
                     <td>{{ data.orden }}</td>
                     <td>
-                        <fa-icon [icon]="faPencil" pTooltip="Editar informe" tooltipPosition="top" class="icon-primary"></fa-icon>
-                        <fa-icon [icon]="faTrash" pTooltip="Eliminar informe" tooltipPosition="top" class="icon-danger"></fa-icon>
+                        <fa-icon [icon]="faPencil" pTooltip="Editar informe" tooltipPosition="top" class="icon-primary" (click)="onClickAgregar()" *ngIf="data.estado=='EN PROCESO'"></fa-icon>
+                        <fa-icon [icon]="faTrash" pTooltip="Eliminar informe" tooltipPosition="top" class="icon-danger" (click)="onClickEliminar(data)" *ngIf="data.estado=='EN PROCESO'"></fa-icon>
                         <fa-icon [icon]="faArrowsAlt" pTooltip="Entrar a resultados" tooltipPosition="top" class="icon-primary" (click)="onClickResultado()"></fa-icon>
-                        <span pTooltip="Presentación de informe" tooltipPosition="top" class="material-icons icon-primary" (click)="onClickPresentar(data)">send</span>
+                        <span pTooltip="Enviar informe a OEFA" tooltipPosition="top" class="material-icons icon-primary" (click)="onClickPresentar(data)" *ngIf="data.estado=='CONCLUIDO'">send</span>
                     </td>
                     <td>{{ data.usuario }}</td><td>{{ data.informeMonitoreo }}</td>
                     <td>{{ data.instrumentoGestion }}</td><td>{{ data.etapa }}</td>
@@ -64,7 +64,7 @@
                     <td>{{ data.fechaRegistro }}</td><td>{{ data.fechaCierre }}</td>
                     <td>
                         <fa-icon [icon]="faFileExcel" pTooltip="Descargar reporte" tooltipPosition="top" class="icon-primary"></fa-icon>
-                        <span pTooltip="Concluir informe" tooltipPosition="top" class="material-icons icon-primary">assignment_turned_in</span>
+                        <span pTooltip="Concluir el informe" tooltipPosition="top" class="material-icons icon-primary" (click)="onClickConcluir(data)" *ngIf="data.estado=='EN PROCESO'">assignment_turned_in</span>
                     </td>
                 </tr>
             </ng-template>
@@ -74,16 +74,33 @@
         </div>
     </div>
     <p-toast position="top-center" key="tc"></p-toast>
-    <div class="card flex justify-content-center">
+    <div class="card flex justify-content-center p-dialog-custom">
         <p-dialog header="AGREGAR NUEVO INFORME" [(visible)]="mostrarDlgDetalle" [modal]="true" [style]="{width: '700px', height: '470px'}" closable="false">
             <informe-monitoreo-detalle style="position: absolute;" (close)="onClickCerrarDetalle($event)"></informe-monitoreo-detalle>
         </p-dialog>
     </div>
-    <div class="card flex justify-content-center">
+    <div class="card flex justify-content-center p-dialog-custom">
         <p-dialog header="DOCUMENTOS ADJUNTOS PARA LA PRESENTACIÓN" [(visible)]="mostrarDlgEnvio" [modal]="true" [style]="{width: '900px'}" closable="false">
             <informe-monitoreo-envio (close)="onClickCerrarDetalle($event)"></informe-monitoreo-envio>
         </p-dialog>
     </div>
+</div>
+
+<div class="card flex justify-content-center">
+    <p-confirmDialog #cd [visible]="openDlgEliminar">
+      <ng-template pTemplate="headless" let-message>
+        <div class="flex flex-column align-items-center p-5 surface-overlay border-round p-dialog-confirm">
+          <div class="border-circle bg-primary inline-flex justify-content-center align-items-center h-6rem w-6rem">
+            <i class="pi pi-question text-5xl"></i>
+          </div>
+          <strong class="mt-4">{{ message.message }}</strong>
+          <div class="flex align-items-center gap-2 mt-4">
+            <p-button label="Aceptar" (click)="cd.accept()" severity="primary" outlined="true" class="outline-primary"></p-button>
+            <p-button label="Cancelar" (click)="cd.reject()" severity="secondary" outlined="true" class="outline-secondary"></p-button>
+          </div>
+        </div>
+      </ng-template>
+    </p-confirmDialog>
 </div>
 
 <div class="content-res" *ngIf="showResultado">

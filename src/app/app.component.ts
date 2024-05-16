@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   activeIndex: number = 1;
+  mostrarMenu: boolean = true;
+  opciones: string = 'I';
+
+  onSelectCard(opcion: string) {
+    this.opciones = opcion;
+  }
 }

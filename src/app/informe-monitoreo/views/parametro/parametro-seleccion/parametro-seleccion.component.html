@@ -26,7 +26,10 @@
                             <div class="">
                                 <p-tree class="w-full md:w-30rem" [value]="parametroLista" dataKey="idParametro" [(selection)]="selectedFiles" (onNodeSelect)="selectNode($event)">
                                     <ng-template let-node pTemplate="default">
-                                        <div><span class="hover:text-primary">{{node.parametro}}</span></div>
+                                        <div>
+                                            <p-checkbox [(ngModel)]="node.checked" [binary]="true" inputId="idParametro" *ngIf="node.showCheckbox" (onChange)="onChangeCheckParam(node)"/>
+                                            <span class="hover:text-primary">{{node.parametro}}</span>
+                                        </div>
                                     </ng-template>
                                 </p-tree>
                             </div>
@@ -42,7 +45,10 @@
                             <div class="">
                                 <p-tree [filter]="true" filterMode="strict" filterBy="parametro" filterPlaceholder="Buscar" [value]="parametroAdiLista" dataKey="idParametroAdi" [(selection)]="selectedFiles">
                                     <ng-template let-node pTemplate="default">
-                                        <div><span class="hover:text-primary">{{node.parametro}}</span></div>
+                                        <div>
+                                            <p-checkbox [(ngModel)]="node.checked" [binary]="true" inputId="idParametroAdi" *ngIf="node.showCheckbox" (onChange)="onChangeCheckParamAdi(node)"/>
+                                            <span class="hover:text-primary">{{node.parametro}}</span>
+                                        </div>
                                     </ng-template>
                                 </p-tree>
                             </div>

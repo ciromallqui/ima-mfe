@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
 export class ResultadoComponent {
 
   activeIndex: number = 0;
+  valor!: string;
 
 }

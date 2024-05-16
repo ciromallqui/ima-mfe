@@ -11,6 +11,7 @@ html {
 
 body {
   background-color: #FFF;
+  margin: 0;
 }
 
 .requerido::before {
@@ -78,7 +79,7 @@ body {
   width: auto;
 }
 
-.p-dialog::after {
+.p-dialog-custom .p-dialog::after { //para dialogs información y/o detalle
   content: '';
   position: absolute;
   background: #1d85bf; 
@@ -86,14 +87,23 @@ body {
   height: 100%; 
   border-radius: 5px 0 0 5px;
 }
-
-.p-dialog .p-dialog-header {
+.p-dialog-custom .p-dialog .p-dialog-header {
   border-bottom: solid 1px #1d85bf;
   padding: 1.3rem;
   padding-left: 30px;
 }
 .p-dialog .p-dialog-content {
   padding: 0 1.5rem 1rem 2rem;
+}
+.p-dialog-confirm { //solo para diálogos de mensaje o confirmación
+  padding-bottom: 15px !important;
+} 
+.p-dialog-simple .p-dialog::after {
+  display: none ;
+}
+.p-dialog-simple .p-dialog .p-dialog-header {
+  border-bottom: none;
+  // padding: 1.3rem;
   // padding-left: 30px;
 }
 
@@ -156,7 +166,23 @@ body {
   margin-right: 0;
 }
 
+.p-multiselect .p-multiselect-label {
+  max-width: 600px;
+}
 
+.p-card{
+  padding: 15px 15px 0 15px;
+}
+.p-card:hover {
+  background-color: #e6e6e6;
+}
+.p-card-body {
+  padding: 0;
+  text-align: center;
+  font-size: 18px;
+}
+
+//::::::::::::::
 .navigation-result{
   background: rgb(17, 81, 170);
   color: #FFF;
@@ -206,7 +232,7 @@ body {
 .content {
   margin-top: 20px;
   margin-bottom: 10px;
-  border-bottom: solid 1px #1d85bf;
+  border-bottom: solid 1px #1d86bfc4;
 }
 .content .grid-sp > .col-12 {
   margin-top: -20px;

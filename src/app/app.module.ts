@@ -28,6 +28,8 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { CheckboxModule } from 'primeng/checkbox';
 import { FileUploadModule } from 'primeng/fileupload';
 import { TreeModule } from 'primeng/tree';
+import { ImageModule } from 'primeng/image';
+import { CardModule } from 'primeng/card';
 
 import { InformeMonitoreoListadoComponent } from './informe-monitoreo/views/informe/informe-monitoreo-listado/informe-monitoreo-listado.component';
 import { InformeMonitoreoDetalleComponent } from './informe-monitoreo/views/informe/informe-monitoreo-detalle/informe-monitoreo-detalle.component';
@@ -109,7 +111,9 @@ import { InformeMonitoreoEnvioComponent } from './informe-monitoreo/views/inform
     ConfirmDialogModule,
     CheckboxModule,
     FileUploadModule,
-    TreeModule
+    TreeModule,
+    ImageModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

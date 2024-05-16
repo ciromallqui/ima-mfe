@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuItem, MessageService } from 'primeng/api';
+import { ConfirmationService, MenuItem, MessageService, PrimeNGConfig } from 'primeng/api';
 import { InformeMonitoreo } from '../model/InformeMonitoreo';
 import { InformeMonitoreoService } from '../../../services/informe-monitoreo.service';
 import { faPencil, faTrashAlt, faExpandArrowsAlt, faLocationArrow, faFileExcel } from '@fortawesome/free-solid-svg-icons';
+import { DropdownList } from '../model/DropdownList';
 
 @Component({
   selector: 'informe-monitoreo-listado',
   templateUrl: './informe-monitoreo-listado.component.html',
   styleUrl: './informe-monitoreo-listado.component.scss',
-  providers: [MessageService]
+  providers: [MessageService, ConfirmationService]
 })
 export class InformeMonitoreoListadoComponent implements OnInit{
   faPencil = faPencil;
@@ -17,24 +18,33 @@ export class InformeMonitoreoListadoComponent implements OnInit{
   faPaperPlane = faLocationArrow;
   faFileExcel = faFileExcel;
 
-  mostrarDlgDetalle: boolean = false;
-  mostrarDlgEnvio: boolean = false;
-  valor: string | undefined;
+  selectInforme!: InformeMonitoreo;
   infoMenu: MenuItem[] | undefined;
   contextMenu: MenuItem[] | undefined;
   dataSource!: InformeMonitoreo[];
-  selectInforme!: InformeMonitoreo;
+
+  listaSubsector!: DropdownList[];
+  listaUnidadFiscalizable!: DropdownList[];
+  listaEstado!: DropdownList[];
+
+  mostrarDlgDetalle: boolean = false;
+  mostrarDlgEnvio: boolean = false;
   showResultado: boolean = false;
+  openDlgEliminar: boolean = false;
+  openDlgConcluirr: boolean = false;
 
   first: number = 0;
   rows: number = 10;
 
   constructor( 
     private informeMonitoreoService: InformeMonitoreoService,
-    private messageService: MessageService
+    private confirmationService: ConfirmationService,
+    private messageService: MessageService,
+    private primengConfig: PrimeNGConfig
   ) {}
 
   ngOnInit() {
+    this.primengConfig.ripple = true;
     this.menuItem();
     this.listado();
   }
@@ -52,7 +62,6 @@ export class InformeMonitoreoListadoComponent implements OnInit{
   }
 
   onClickAgregar(){
-    console.log(this.valor);
     this.mostrarDlgDetalle = true;
     // this.messageService.add({ key: 'tc', sticky: false, severity: 'error', summary: 'Product Selected', detail: "Holaaaa" });
   }
@@ -84,6 +93,32 @@ export class InformeMonitoreoListadoComponent implements OnInit{
 
   onClickCerrarDetalle(event: boolean) {
     this.mostrarDlgEnvio = event;
+    this.mostrarDlgDetalle = event;
+  }
+
+  onClickEliminar(data: InformeMonitoreo) {
+    this.confirmationService.confirm({
+      message: '¿Está seguro que desea eliminar el registro?',
+      accept: () => {
+        this.openDlgEliminar = false;
+        this.messageService.add({ severity: 'success', summary: 'Confirmado', detail: 'El informe de ensayo se eliminó correctamente.', life: 3000 });
+      },
+      reject: () => {
+        this.openDlgEliminar = false;
+      }
+    });
+  }
+  onClickConcluir(data: InformeMonitoreo) {
+    this.confirmationService.confirm({
+      message: '¿Está seguro que desea concluir \n el Informe de Monitoreo?',
+      accept: () => {
+        this.openDlgConcluirr = false;
+        this.messageService.add({ severity: 'success', summary: 'Confirmado', detail: 'Informe concluido con éxito.', life: 3000 });
+      },
+      reject: () => {
+        this.openDlgConcluirr = false;
+      }
+    });
   }
 
   tableHeader: string[] = ["N°","OPCIONES","NOMBRE DEL USUARIO","INFORME DE MONITOREO AMBIENTAL","INSTRUMENTO DE GESTIÓN","ETAPA","N° REGISTRO","ESTADO","FECHA REGISTRO","FECHA CIERRE","REPORTE"];

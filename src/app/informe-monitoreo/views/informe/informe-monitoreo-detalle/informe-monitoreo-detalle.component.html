@@ -2,13 +2,13 @@
     <div class="grid">
         <div class="col-4 margin-bottom">
             <span class="p-float-label">
-                <p-dropdown placeholder="Subsector"></p-dropdown>
+                <p-dropdown [options]="listaSubsector" optionValue="id" optionLabel="nombre" placeholder="Subsector"></p-dropdown>
                 <label class="label-placehoder requerido">Subsector</label>
             </span>
         </div>
         <div class="col-8 margin-bottom">
             <span class="p-float-label">
-                <p-dropdown placeholder="Unidad fiscalizable"></p-dropdown>
+                <p-dropdown [options]="listaUnidadFiscalizable" optionValue="id" optionLabel="nombre" placeholder="Unidad fiscalizable"></p-dropdown>
                 <label class="label-placehoder requerido">Unidad fiscalizable</label>
             </span>
         </div>
@@ -26,19 +26,19 @@
         </div>
         <div class="col-12 margin-bottom">
             <span class="p-float-label">
-                <p-dropdown placeholder="Etapa"></p-dropdown>
+                <p-dropdown [options]="listaEtapa" optionValue="id" optionLabel="nombre" placeholder="Etapa"></p-dropdown>
                 <label class="label-placehoder requerido">Etapa</label>
             </span>
         </div>
         <div class="col-6 margin-bottom">
             <span class="p-float-label">
-                <p-dropdown placeholder="Frecuencia de presentación de reporte"></p-dropdown>
+                <p-dropdown [options]="listaFrecReporte" optionValue="id" optionLabel="nombre" placeholder="Frecuencia de presentación de reporte"></p-dropdown>
                 <label class="label-placehoder requerido">Frecuencia de presentación de reporte</label>
             </span>
         </div>
         <div class="col-6 margin-bottom">
             <span class="p-float-label">
-                <p-dropdown placeholder="Periodo de presentación de reporte"></p-dropdown>
+                <p-dropdown [options]="listaPeriodoReporte" optionValue="id" optionLabel="nombre" placeholder="Periodo de presentación de reporte"></p-dropdown>
                 <label class="label-placehoder requerido">Periodo de presentación de reporte</label>
             </span>
         </div>

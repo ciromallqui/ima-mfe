@@ -12,7 +12,6 @@ export interface PuntoMonitoreo {
     datum?: string;
     proyeccion?: string;
     refLocalizacion?: string;
-    observación?: string;
-    orden?: number;
-    
+    observacion?: string;
+    orden?: number;   
 }

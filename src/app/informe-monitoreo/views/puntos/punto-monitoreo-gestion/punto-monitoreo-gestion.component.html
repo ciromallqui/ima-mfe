@@ -7,30 +7,33 @@
                         <span>Puntos del IGA</span>
                     </ng-template><br>
                     <div class="grid">
-                        <div class="col-12 margin-bottom">
+                        <div class="md:col-7 col-12 margin-bottom">
                             <span class="p-float-label">
                                 <p-dropdown placeholder="Seleccionar IGA"></p-dropdown>
                                 <label class="label-placehoder">Seleccionar IGA</label>
                             </span>
                         </div>
-                        <div class="md:col-6 col-12 margin-bottom">
+                        <div class="md:col-5 col-12 margin-bottom">
                             <span class="p-float-label flex flex-column">
-                                <input pInputText type="text" placeholder="Buscar Puntos"/>
-                                <label class="label-placehoder">Buscar Puntos</label>
+                                <input pInputText type="text" placeholder="Nombre del punto"/>
+                                <label class="label-placehoder">Nombre del punto</label>
                             </span>
                         </div>
-                        <div class="md:col-6 col-12 margin-bottom">
+                        <div class="md:col-7 col-12">
                             <span class="p-float-label">
-                                <p-dropdown placeholder="Buscar por Componente"></p-dropdown>
-                                <label class="label-placehoder">Buscar por Componente</label>
+                                <p-dropdown placeholder="Componente ambiental"></p-dropdown>
+                                <label class="label-placehoder">Componente ambiental</label>
                             </span>
+                        </div>
+                        <div class="md:col-5 col-12">
+                            <p-button label="Buscar" outlined="true" severity="primary" class="outline-primary"></p-button>
                         </div>
                         <div class="col-12 table">
                             <p-table [value]="dataSourcePuntoIga" selectionMode="single" dataKey="orden" [tableStyle]="{ 'min-width': '500px' }">
                                 <ng-template pTemplate="header">
                                     <tr>
-                                        <th><i class="pi pi-check-square" pTooltip="Seleccionar todos" tooltipPosition="top"></i>
-                                            <i class="pi pi-times" pTooltip="Desmarcar todos" tooltipPosition="top"></i>
+                                        <th><i class="pi pi-check-square cursor-pointer" pTooltip="Seleccionar todos" tooltipPosition="top"></i>
+                                            <i class="pi pi-times ml-2 cursor-pointer" pTooltip="Desmarcar todos" tooltipPosition="top"></i>
                                         </th>
                                         <th>PUNTO</th>
                                         <th>FUENTE PUNTO</th>
@@ -65,10 +68,11 @@
                         <div class="md:col-4 col-12">
                             <p-button label="Buscar" outlined="true" severity="primary" class="outline-primary"></p-button>
                         </div>
-                        <div class="col-12 mt-0">
+                        <div class="col-12" style="margin-top: -1rem;">
                             <div class="titulo-res">
                                 <strong class="" [ngClass]="{'res-active': tabSelect=='I'}" (click)="onClickInforme()">Informes</strong>
                                 <strong class="pcp-2" [ngClass]="{'res-active': tabSelect=='P'}" (click)="onClickPunto(dataInforme)">Puntos</strong>
+                                <span *ngIf="tabSelect=='P'"><span class="font-bold ml-2">Informe: </span><span>INFORME 01</span></span>
                             </div>
                         </div>
                         <div class="col-12 table" *ngIf="tabSelect=='I'">

@@ -7,43 +7,100 @@
     <div class="grid mt-1">
         <div class="md:col-3 col-12 margin-bottom">
             <span class="p-float-label">
-                <p-dropdown placeholder="Proyección"></p-dropdown>
+                <p-dropdown [options]="listaProyeccion" optionValue="id" optionLabel="nombre" placeholder="Proyección" 
+                            [(ngModel)]="coordenada.idProyeccion" (onChange)="onChangeProyeccion()"></p-dropdown>
                 <label class="label-placehoder">Proyección</label>
             </span>
         </div>
-        <div class="md:col-3 col-12 margin-bottom">
+        <div class="md:col-9 col-12 margin-bottom" *ngIf="coordenada.idProyeccion=='1'">
+            <span class="p-float-label">
+                <p-dropdown [options]="listaTipoUnidad" optionValue="id" optionLabel="nombre" placeholder="Tipo de unidad" [(ngModel)]="coordenada.idTipoUnidad"></p-dropdown>
+                <label class="label-placehoder">Tipo de unidad</label>
+            </span>
+        </div>
+        <div class="md:col-3 col-12 margin-bottom" *ngIf="coordenada.idProyeccion=='2'">
             <span class="p-float-label flex flex-column">
-                <input pInputText type="text" placeholder="Coord. Este"/>
+                <input pInputText type="text" placeholder="Coord. Este" [(ngModel)]="coordenada.este"/>
                 <label class="label-placehoder">Coord. Este</label>
             </span>
         </div>
-        <div class="md:col-3 col-12 margin-bottom">
+        <div class="md:col-3 col-12 margin-bottom" *ngIf="coordenada.idProyeccion=='2'">
             <span class="p-float-label flex flex-column">
-                <input pInputText type="text" placeholder="Coord. Norte"/>
+                <input pInputText type="text" placeholder="Coord. Norte" [(ngModel)]="coordenada.norte"/>
                 <label class="label-placehoder">Coord. Norte</label>
             </span>
         </div>
-        <div class="md:col-3 col-12 margin-bottom">
+
+        <div class="md:col-4 col-12 margin-bottom" *ngIf="coordenada.idTipoUnidad=='1'">
             <span class="p-float-label flex flex-column">
-                <input pInputText type="text" placeholder="Altitud"/>
+                <input pInputText type="text" placeholder="Latitud grado"  [(ngModel)]="coordenada.latitudGrado"/>
+                <label class="label-placehoder">Latitud grado</label>
+            </span>
+        </div>
+        <div class="md:col-4 col-12 margin-bottom" *ngIf="coordenada.idTipoUnidad=='1'">
+            <span class="p-float-label flex flex-column">
+                <input pInputText type="text" placeholder="Latitud minuto"  [(ngModel)]="coordenada.latitudMinuto"/>
+                <label class="label-placehoder">Latitud minuto</label>
+            </span>
+        </div>
+        <div class="md:col-4 col-12 margin-bottom" *ngIf="coordenada.idTipoUnidad=='1'">
+            <span class="p-float-label flex flex-column">
+                <input pInputText type="text" placeholder="Latitud segundo"  [(ngModel)]="coordenada.latitudSegundo"/>
+                <label class="label-placehoder">Latitud segundo</label>
+            </span>
+        </div>
+        <div class="md:col-4 col-12 margin-bottom" *ngIf="coordenada.idTipoUnidad=='1'">
+            <span class="p-float-label flex flex-column">
+                <input pInputText type="text" placeholder="Longitud grado"  [(ngModel)]="coordenada.longitudGrado"/>
+                <label class="label-placehoder">Longitud grado</label>
+            </span>
+        </div>
+        <div class="md:col-4 col-12 margin-bottom" *ngIf="coordenada.idTipoUnidad=='1'">
+            <span class="p-float-label flex flex-column">
+                <input pInputText type="text" placeholder="Longitud minuto"  [(ngModel)]="coordenada.longitudMinuto"/>
+                <label class="label-placehoder">Longitud minuto</label>
+            </span>
+        </div>
+        <div class="md:col-4 col-12 margin-bottom" *ngIf="coordenada.idTipoUnidad=='1'">
+            <span class="p-float-label flex flex-column">
+                <input pInputText type="text" placeholder="Longitud segundo"  [(ngModel)]="coordenada.longitudSegundo"/>
+                <label class="label-placehoder">Longitud segundo</label>
+            </span>
+        </div>
+        <div class="md:col-4 col-12 margin-bottom" *ngIf="coordenada.idTipoUnidad=='2'">
+            <span class="p-float-label flex flex-column">
+                <input pInputText type="text" placeholder="Latitud"  [(ngModel)]="coordenada.latitud"/>
+                <label class="label-placehoder">Latitud</label>
+            </span>
+        </div>
+        <div class="md:col-4 col-22 margin-bottom" *ngIf="coordenada.idTipoUnidad=='2'">
+            <span class="p-float-label flex flex-column">
+                <input pInputText type="text" placeholder="Longitud"  [(ngModel)]="coordenada.longitud"/>
+                <label class="label-placehoder">Longitud</label>
+            </span>
+        </div>
+
+        <div class="md:col-3 col-12 margin-bottom" *ngIf="coordenada.idProyeccion=='2'">
+            <span class="p-float-label flex flex-column">
+                <input pInputText type="text" placeholder="Altitud" [(ngModel)]="coordenada.altitud"/>
                 <label class="label-placehoder">Altitud</label>
             </span>
         </div>
-        <div class="md:col-3 col-12 margin-bottom">
+        <div class="md:col-3 col-12 margin-bottom" *ngIf="coordenada.idProyeccion=='2'">
             <span class="p-float-label">
-                <p-dropdown placeholder="Zona"></p-dropdown>
+                <p-dropdown [options]="listaZona" optionValue="id" optionLabel="nombre" placeholder="Zona" [(ngModel)]="coordenada.idZona"></p-dropdown>
                 <label class="label-placehoder">Zona</label>
             </span>
         </div>
-        <div class="md:col-3 col-12 margin-bottom">
+        <div class="md:col-3 col-12 margin-bottom" *ngIf="coordenada.idProyeccion=='2'">
             <span class="p-float-label flex flex-column">
-                <input pInputText type="text" placeholder="Precisión"/>
+                <input pInputText type="text" placeholder="Precisión" [(ngModel)]="coordenada.precision"/>
                 <label class="label-placehoder">Precisión</label>
             </span>
         </div>
         <div class="md:col-3 col-12 margin-bottom">
             <span class="p-float-label">
-                <p-dropdown placeholder="Datum"></p-dropdown>
+                <p-dropdown [options]="listaDatum" optionValue="id" optionLabel="nombre" placeholder="Datum" [disabled]="true" [(ngModel)]="coordenada.idDatum"></p-dropdown>
                 <label class="label-placehoder">Datum</label>
             </span>
         </div>
