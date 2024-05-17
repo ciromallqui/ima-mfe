@@ -13,7 +13,7 @@ import { DropdownList } from '../model/DropdownList';
 })
 export class InformeMonitoreoListadoComponent implements OnInit{
   faPencil = faPencil;
-  faTrash = faTrashAlt;
+  faTrashAlt = faTrashAlt;
   faArrowsAlt = faExpandArrowsAlt;
   faPaperPlane = faLocationArrow;
   faFileExcel = faFileExcel;

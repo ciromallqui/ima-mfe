@@ -8,7 +8,7 @@ import { TreeControlCheckbox } from '../../../../utils/TreeControlCheckbox';
   styleUrl: './parametro-seleccion.component.scss'
 })
 export class ParametroSeleccionComponent implements OnInit {
-  @Output() cerrar: EventEmitter<boolean> = new EventEmitter();
+  @Output() close: EventEmitter<boolean> = new EventEmitter();
 
   selectedFiles: any[] = [];
   infoPunto!: Message[];
@@ -21,7 +21,7 @@ export class ParametroSeleccionComponent implements OnInit {
   }
 
   onClickCancelar(){
-    this.cerrar.emit(false);
+    this.close.emit(false);
   }
 
   onChangeCheckParam(datos: any) {

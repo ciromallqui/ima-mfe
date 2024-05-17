@@ -54,7 +54,7 @@
                     <td>{{ data.orden }}</td>
                     <td>
                         <fa-icon [icon]="faPencil" pTooltip="Editar informe" tooltipPosition="top" class="icon-primary" (click)="onClickAgregar()" *ngIf="data.estado=='EN PROCESO'"></fa-icon>
-                        <fa-icon [icon]="faTrash" pTooltip="Eliminar informe" tooltipPosition="top" class="icon-danger" (click)="onClickEliminar(data)" *ngIf="data.estado=='EN PROCESO'"></fa-icon>
+                        <fa-icon [icon]="faTrashAlt" pTooltip="Eliminar informe" tooltipPosition="top" class="icon-danger" (click)="onClickEliminar(data)" *ngIf="data.estado=='EN PROCESO'"></fa-icon>
                         <fa-icon [icon]="faArrowsAlt" pTooltip="Entrar a resultados" tooltipPosition="top" class="icon-primary" (click)="onClickResultado()"></fa-icon>
                         <span pTooltip="Enviar informe a OEFA" tooltipPosition="top" class="material-icons icon-primary" (click)="onClickPresentar(data)" *ngIf="data.estado=='CONCLUIDO'">send</span>
                     </td>

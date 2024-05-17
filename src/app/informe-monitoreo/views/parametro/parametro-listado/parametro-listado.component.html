@@ -29,31 +29,87 @@
         <div class="md:col-5 col-12 flex justify-content-end">
             <p-button label="Control de parámetros" severity="primary" outlined="true" class="outline-primary" (click)="onClickMostrarParam()"></p-button>
         </div>
-        
+
         <div class="grid">
             <div class="col-12 info-res">
                 <p-messages [(value)]="infoPunto" [enableService]="false" />
             </div>
-            <div class="col-12 table">
-                <p-table [value]="dataSource" selectionMode="single" dataKey="orden" [tableStyle]="{ 'min-width': '100rem'}">
-                    <ng-template pTemplate="header">
-                        <tr><th>COMPONENTE AMBIENTAL / PROCEDENCIA DE LA MUESTRA / PROCEDENCIA ESPECÍFICA DE LA MUESTRA </th></tr>
-                    </ng-template>
-                    <ng-template pTemplate="body">
-                        <tr>
-                            <td>col 11</td>
-                        </tr>
-                    </ng-template>
+            <div class="col-12 table table-resul">
+                <p-table [value]="dataSource" selectionMode="single" dataKey="orden" [tableStyle]="{ 'min-width': '100rem' }">
+                  <ng-template pTemplate="header">
+                    <tr>
+                      <th *ngFor="let head of tableHeader">{{head}}</th>
+                    </tr>
+                  </ng-template>
+                  <ng-template pTemplate="body" let-data let-rowIndex="rowIndex">
+                    <tr>
+                      <td>{{ data.orden }}</td>
+                      <td style="min-width: 120px;">
+                        <i class="pi pi-caret-right icon-res" pTooltip="Agregar etapas y frecuencias" tooltipPosition="top" (click)="onClickAgregarEtapaFrecuencia()"></i>
+                        <i class="pi pi-clock icon-res" pTooltip="Agregar muestra" tooltipPosition="top" (click)="onClickAgregarMuestra()"></i>
+                        <i class="pi pi-comment icon-res" pTooltip="Agregar observación" tooltipPosition="top" (click)="onClickAgregarObservacion()"></i>
+                        <fa-icon [icon]="faTrashAlt" class="icon-danger" pTooltip="Eliminar parámetro" tooltipPosition="top" (click)="onClickAgregarObservacion()"></fa-icon>
+                      </td>
+                      <td style="min-width: 200px;">{{ data.normativa }}</td>
+                      <td>{{ data.parametroDescripcion }}</td>
+                      <td><p-inputSwitch/></td>
+                      <td>
+                        <div *ngIf="!data.esLimiteMultiple">
+                          <p-dropdown [options]="" optionLabel="name" placeholder="Límite"/>
+                        </div>
+                        <div *ngIf="data.esLimiteMultiple">
+                            <input pInputText id="username" value="Límite de cuantificación" [readonly]="true" class="mb-2"/>
+                            <input pInputText id="username" value="Límite de detección" [readonly]="true"/>
+                        </div>
+                      </td>
+                      <td>
+                        <div *ngIf="!data.esLimiteMultiple">
+                          <p-inputNumber inputId="integeronly"  id="username" value="Valor"/>
+                        </div>
+                        <div *ngIf="data.esLimiteMultiple">
+                            <p-inputNumber inputId="integeronly"  id="username" placeholder="Valor LC" class="mb-2"/>
+                            <p-inputNumber inputId="integeronly"  id="username" placeholder="Valor LD"/>
+                        </div>
+                      </td>
+                      <td>
+                        <p-dropdown [options]="" optionLabel="name" placeholder="Signo"/>
+                      </td>
+                      <td>
+                        <input pInputText id="username" placeholder="Resultado"  *ngIf="data.idTipoValor=='3'"/>
+                        <p-inputNumber inputId="integeronly"  id="username" placeholder="Resultado"  *ngIf="data.idTipoValor!='3'"/>
+                      </td>
+                      <td>
+                        <p-dropdown [options]="" optionLabel="name" placeholder="U. Medida"/>
+                      </td>
+                      <td>
+                        <p-dropdown [options]="" optionLabel="name" placeholder="Acreditado"/>
+                      </td>
+                    </tr>
+                  </ng-template>
                 </p-table>
+                <div class="card flex justify-content-end">
+                  <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows"
+                    [totalRecords]="dataSource.length" [showCurrentPageReport]="true"
+                    currentPageReportTemplate="({totalRecords} registros)"></p-paginator>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 <div class="card flex justify-content-center p-dialog-custom">
-    <p-dialog header="SELECCIONAR PARÁMETROS" [(visible)]="mostrarDetalle" [modal]="true" [style]="{width: '800px'}" closable="false">
-        <parametro-seleccion (cerrar)="onClickCerrarDialog($event)"></parametro-seleccion>
-    </p-dialog>
+  <p-dialog header="{{configDialog.title}}" [(visible)]="configDialog.show" [modal]="true" 
+    [style]="{width: configDialog.width, height: configDialog.height}" closable="false">
+    <div *ngIf="configDialog.option == 'PARAMETRO'">
+      <parametro-seleccion (close)="onClickCerrarDialog($event)"></parametro-seleccion>
+    </div>
+    <div *ngIf="configDialog.option == 'ETAPA'">
+      <parametro-etapa-frecuencia class="absolute" (close)="onClickCerrarDialog($event)"></parametro-etapa-frecuencia>
+    </div>
+    <div *ngIf="configDialog.option == 'MUESTRA'">
+      <parametro-muestra (close)="onClickCerrarDialog($event)"></parametro-muestra>
+    </div>
+  </p-dialog>
 </div>
 
 <p-toast position="top-center" key="toast"></p-toast>

@@ -1,0 +1,29 @@
+<div class="content  mb-4" style="margin-top: 25px; padding-right: 10px; border-bottom: solid 1px #1d85bf;">
+  <div class="grid">
+    <div class="col-12">
+      <div class="grid flex align-items-center" *ngFor="let etapa of etapaMonitoreo; let i=index">
+        <div class="col-4">
+          <p-checkbox [label]="etapa.nombreEtapa" [value]="etapa.isCheked"/>
+        </div>
+        <div class="col-8">
+          <p-multiSelect [options]="frecuenciaMonitoreo" optionLabel="nombre" placeholder="Frecuencia de monitoreo" />
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <p-dropdown [options]="frecuenciaMonitoreo" optionLabel="nombre" placeholder="Frecuencia de reporte" />
+    </div>
+    <div class="col-12 nota">
+        <span class="requerido text-primary text-md">
+          Cuando se desee replicar todos los parámetros, quitar el check de la ETAPA para poder limpiar correctamente la
+          Frecuencia de Monitoreo y poder realizar las modificaciones requeridas.
+        </span>
+    </div>
+  </div>
+</div>
+<div class="futter">
+  <div class="flex justify-content-center gap-2">
+    <p-button label="Replicar a todos los parámetros" outlined="true" severity="primary" class="outline-primary" (click)="onClickCancelar()"></p-button>
+    <p-button label="Cerrar" outlined="true" severity="secondary" class="outline-secondary" (click)="onClickCancelar()"></p-button>
+  </div>
+</div>
