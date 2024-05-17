@@ -37,11 +37,15 @@ export class EquipoMonitoreoListadoComponent implements OnInit {
   mostrarDetalle: boolean = false;
   activeIndex: number = 0;
   tabResul: string = "EQUIPO";
+
+  infoEquipo!: Message[];
+
   constructor(private equipoMonitoreoService: EquipoMonitoreoService, private confirmationService: ConfirmationService, private primengConfig: PrimeNGConfig, private messageService: MessageService) { }
 
   ngOnInit(): void {
     this.primengConfig.ripple = true;
     this.listadoEquipo();
+    this.infoEquipo = [{ sticky: false, closable: false, severity: 'success', summary: 'Informe de ensayo:', detail: "12342342" }];
   }
 
   onPageChange(event: any) {

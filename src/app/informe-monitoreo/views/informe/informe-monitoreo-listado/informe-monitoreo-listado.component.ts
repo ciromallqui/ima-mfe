@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfirmationService, MenuItem, MessageService, PrimeNGConfig } from 'primeng/api';
-import { InformeMonitoreo } from '../model/InformeMonitoreo';
 import { InformeMonitoreoService } from '../../../services/informe-monitoreo.service';
 import { faPencil, faTrashAlt, faExpandArrowsAlt, faLocationArrow, faFileExcel } from '@fortawesome/free-solid-svg-icons';
-import { DropdownList } from '../model/DropdownList';
+import { InformeMonitoreo } from '../../../model/informe/InformeMonitoreo';
+import { DropdownList } from '../../../model/helper/DropdownList';
+
 
 @Component({
   selector: 'informe-monitoreo-listado',

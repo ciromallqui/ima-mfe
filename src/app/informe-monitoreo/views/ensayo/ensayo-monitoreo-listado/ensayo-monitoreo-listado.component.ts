@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EnsayoInformeMonitoreo, EnsayoInformeParametroAsociadoMonitoreo } from '../model/EnsayoInformeMonitoreo';
-import { ConfirmationService, MessageService, PrimeNGConfig } from 'primeng/api';
+import { ConfirmationService, Message, MessageService, PrimeNGConfig } from 'primeng/api';
 import { EnsayoInformeMonitoreoService } from '../../../services/ensayo-informe-monitoreo.service';
 import { faPencil, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
@@ -36,11 +36,15 @@ export class EnsayoMonitoreoListadoComponent implements OnInit {
   mostrarDetalle: boolean = false;
   activeIndex: number = 0;
   tabResul: string = "ENSAYO";
+
+  infoEnsayo!: Message[];
+
   constructor(private ensayoInformeMonitoreoService: EnsayoInformeMonitoreoService, private confirmationService: ConfirmationService, private primengConfig: PrimeNGConfig, private messageService: MessageService) { }
 
   ngOnInit(): void {
     this.primengConfig.ripple = true;
     this.listadoEnsayoInforme();
+    this.infoEnsayo = [{ sticky: false, closable: false, severity: 'success', summary: 'Informe de ensayo:', detail: "12342342" }];
   }
 
   onPageChange(event: any) {

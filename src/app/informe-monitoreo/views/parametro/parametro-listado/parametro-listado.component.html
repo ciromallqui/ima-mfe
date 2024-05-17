@@ -48,7 +48,7 @@
                         <i class="pi pi-caret-right icon-res" pTooltip="Agregar etapas y frecuencias" tooltipPosition="top" (click)="onClickAgregarEtapaFrecuencia()"></i>
                         <i class="pi pi-clock icon-res" pTooltip="Agregar muestra" tooltipPosition="top" (click)="onClickAgregarMuestra()"></i>
                         <i class="pi pi-comment icon-res" pTooltip="Agregar observación" tooltipPosition="top" (click)="onClickAgregarObservacion()"></i>
-                        <fa-icon [icon]="faTrashAlt" class="icon-danger" pTooltip="Eliminar parámetro" tooltipPosition="top" (click)="onClickAgregarObservacion()"></fa-icon>
+                        <fa-icon [icon]="faTrashAlt" class="icon-danger" pTooltip="Eliminar parámetro" tooltipPosition="top" (click)="onClickEliminar(data)"></fa-icon>
                       </td>
                       <td style="min-width: 200px;">{{ data.normativa }}</td>
                       <td>{{ data.parametroDescripcion }}</td>
@@ -97,8 +97,8 @@
     </div>
 </div>
 
-<div class="card flex justify-content-center p-dialog-custom">
-  <p-dialog header="{{configDialog.title}}" [(visible)]="configDialog.show" [modal]="true" 
+<div class="card flex justify-content-center p-dialog-custom" [ngClass]="{'p-dialog-parametro-resultado':configDialog.option=='MUESTRA'}">
+  <p-dialog header="{{configDialog.title}}" [(visible)]="configDialog.show" [modal]="true"
     [style]="{width: configDialog.width, height: configDialog.height}" closable="false">
     <div *ngIf="configDialog.option == 'PARAMETRO'">
       <parametro-seleccion (close)="onClickCerrarDialog($event)"></parametro-seleccion>
@@ -107,9 +107,47 @@
       <parametro-etapa-frecuencia class="absolute" (close)="onClickCerrarDialog($event)"></parametro-etapa-frecuencia>
     </div>
     <div *ngIf="configDialog.option == 'MUESTRA'">
-      <parametro-muestra (close)="onClickCerrarDialog($event)"></parametro-muestra>
+      <parametro-muestra class="parametro-muestra" (close)="onClickCerrarDialog($event)"></parametro-muestra>
+    </div>
+    <div *ngIf="configDialog.option == 'OBS'">
+      <div class="content">
+        <div class="grid">
+            <div class="col-12">
+                <strong>Las obligaciones de monitoreo ambiental (normativas de calidad ambiental, parámetros y unidades de medida) provienen del IGA seleccionado.</strong>
+            </div>
+            <div class="col-12" style="margin: 10px 0 15px 0;">
+                <span class="p-float-label flex flex-column">
+                    <input pInputText type="text" placeholder="Observación"/>
+                    <label class="label-placehoder">Observación</label>
+                </span>
+            </div>
+        </div>
+      </div>
+      <div class="futter">
+          <div class="flex justify-content-center gap-2">
+              <p-button label="Guardar" outlined="true" severity="primary" class="outline-primary"></p-button>
+              <p-button label="Cerrar" outlined="true" severity="secondary" class="outline-secondary" (click)="configDialog.show=false"></p-button>
+          </div>
+      </div>
     </div>
   </p-dialog>
+</div>
+
+<div class="card flex justify-content-center">
+  <p-confirmDialog #cd [visible]="openDlgEliminar">
+    <ng-template pTemplate="headless" let-message>
+      <div class="flex flex-column align-items-center p-5 surface-overlay border-round p-dialog-confirm">
+        <div class="border-circle bg-primary inline-flex justify-content-center align-items-center h-6rem w-6rem">
+          <i class="pi pi-question text-5xl"></i>
+        </div>
+        <strong class="mt-4">{{ message.message }}</strong>
+        <div class="flex align-items-center gap-2 mt-4">
+          <p-button label="Aceptar" (click)="cd.accept()" severity="primary" outlined="true" class="outline-primary"></p-button>
+          <p-button label="Cancelar" (click)="cd.reject()" severity="secondary" outlined="true" class="outline-secondary"></p-button>
+        </div>
+      </div>
+    </ng-template>
+  </p-confirmDialog>
 </div>
 
 <p-toast position="top-center" key="toast"></p-toast>

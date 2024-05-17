@@ -245,3 +245,21 @@ body {
 .parametro-ancho{
   width: 100%;
 }
+
+//DIALOG ABSOLUTO
+.p-dialog-parametro-resultado .p-dialog {
+  height: 420px;
+  .parametro-muestra {
+    position: absolute;
+    padding-right: 10px;
+  }
+}
+@media (max-width: 767px) {
+  .p-dialog-parametro-resultado .p-dialog {
+    height: 670px;
+    .parametro-muestra {
+      position: relative;
+      padding: 0;
+    }
+  }
+}

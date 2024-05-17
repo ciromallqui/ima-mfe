@@ -1,10 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Message, MessageService } from 'primeng/api';
-import { ComponenteAmbiental } from '../../componente/model/ComponenteAmbiental';
+import { ConfirmationService, Message, MessageService } from 'primeng/api';
 import { ParametroMonitoreoService } from '../../../services/parametro-monitoreo.service';
-import { ParametroMonitoreo } from '../model/parametroMonitoreo';
 import { faCaretRight, faClock, faComment, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { ConfigDialog } from '../../../model/helper/ConfigDialog';
+import { ParametroMonitoreo } from '../../../model/parametro/parametroMonitoreo';
+import { ComponenteAmbiental } from '../../../model/componente/ComponenteAmbiental';
 
 @Component({
   selector: 'parametro-listado',
@@ -27,10 +27,12 @@ export class ParametroListadoComponent implements OnInit{
   busqueda: boolean = false;
   tableHeader:string[] = ['N°','OPCIONES','NORMATIVA','PARÁMETRO','MULTIPLE','TIPO LÍMITE','LÍMITE','SIGNO','RESULTADO','U. MEDIDA','ACREDITACIÓN'];
 
+  openDlgEliminar: boolean = false;
   configDialog: ConfigDialog = {};
 
   constructor(
     private messageService: MessageService,
+    private confirmationService: ConfirmationService,
     private parametroMonitoreoService: ParametroMonitoreoService
   ){}
 
@@ -57,26 +59,37 @@ export class ParametroListadoComponent implements OnInit{
     else this.busqueda = true;
   }
 
+  onClickEliminar(args: any) {
+    this.confirmationService.confirm({
+      message: '¿Está seguro que desea eliminar el registro?',
+      accept: () => {
+        this.openDlgEliminar = false;
+        this.messageService.add({ key: 'noComp', severity: 'success', summary: 'Confirmado', detail: 'El parámetro se eliminó correctamente.', life: 3000 });
+      },
+      reject: () => {
+        this.openDlgEliminar = false;
+      }
+    });
+  }
+
   onClickPuntoRes() {
     this.select.emit("PUNTO");
   }
   onClickComponenteRes()  {
     this.select.emit("COMPONENTE");
-
   }
 
   onClickMostrarParam(){
-    this.onClickAbrirDialogo('SELECCIONAR PARÁMETROS','800px', null,'PARAMETRO');
+    this.onClickAbrirDialogo('SELECCIONAR PARÁMETROS','800px', 'auto','PARAMETRO');
   }
   onClickAgregarEtapaFrecuencia(){
     this.onClickAbrirDialogo('ETAPA, FRECUENCIA DE MONITOREO Y DE REPORTE','800px', '650px','ETAPA');
   }
   onClickAgregarMuestra(){
-    this.onClickAbrirDialogo('INFORMACIÓN DE LA MUESTRA','800px', null,'MUESTRA');
+    this.onClickAbrirDialogo('INFORMACIÓN DE LA MUESTRA','800px', 'auto','MUESTRA');
   }
-
   onClickAgregarObservacion(){
-
+    this.onClickAbrirDialogo('OBSERVACIÓN DEL PARÁMETRO','450px', 'auto','OBS');
   }
 
   messageWarn(message: string) {

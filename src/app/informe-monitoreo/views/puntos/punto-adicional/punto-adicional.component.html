@@ -143,26 +143,24 @@
                             </p-tree>
                         </div>
                     </ng-template>
-
                 </p-tabPanel>
                 <p-tabPanel header="Agregar Parámetro" [disabled]="false">
                     <ng-template pTemplate="content">
-                        <punto-adicional-parametro></punto-adicional-parametro>
+                        <punto-adicional-parametro [opcion]="'SELECT'"></punto-adicional-parametro>
                     </ng-template>
-
                 </p-tabPanel>
-                <p-tabPanel [disabled]="true">
-                    <ng-template pTemplate="header">
-                        <span>Lista de Parámetros</span>
+                <p-tabPanel header="Lista de Parámetros" [disabled]="false">
+                    <ng-template pTemplate="content">
+                        <punto-adicional-parametro [opcion]="'LIST'"></punto-adicional-parametro>
                     </ng-template>
-
                 </p-tabPanel>
             </p-tabView>
         </div>
     </div>
 </div>
 <div class="futter">
-    <div class="flex justify-content-center">
-        <p-button label="Cerrar" outlined="true" severity="secondary" class="outline-secondary" (click)="onClickCancelar()"></p-button>
+    <div class="flex justify-content-center gap-2">
+        <p-button label="Guardar" outlined="true" severity="primary" class="outline-primary" (click)="onClickCancelar()" *ngIf="activeIndex==3"></p-button>
+        <p-button label="Cancelar" outlined="true" severity="secondary" class="outline-secondary" (click)="onClickCancelar()"></p-button>
     </div>
 </div>

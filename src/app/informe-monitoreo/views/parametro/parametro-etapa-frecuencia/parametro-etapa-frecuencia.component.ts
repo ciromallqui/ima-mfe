@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { EtapaFrecuenciaReporteMonitoreo, EtapaMonitoreo, FrecuenciaMonitoreo, FrecuenciaReporte } from '../model/parametroMonitoreo';
 import { ParametroMonitoreoService } from '../../../services/parametro-monitoreo.service';
+import { EtapaMonitoreo, FrecuenciaMonitoreo, FrecuenciaReporte } from '../../../model/parametro/parametroMonitoreo';
 
 @Component({
   selector: 'parametro-etapa-frecuencia',

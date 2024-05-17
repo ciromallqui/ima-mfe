@@ -69,20 +69,22 @@
 </div>
 
 <div class="card flex justify-content-center p-dialog-custom">
-    <p-dialog header="SELECCIONAR PUNTOS DE MONITOREO" [(visible)]="mostrarDlgPGestion" [modal]="true" [style]="{width: '800px'}" closable="false">
-        <punto-monitoreo-gestion (close)="onCerrarDlg($event)"></punto-monitoreo-gestion>
-    </p-dialog>
-    <p-dialog header="PUNTOS ADICIONALES" [(visible)]="mostrarDlgPAdicional" [modal]="true" [style]="{width: '900px'}" closable="false">
-        <punto-adicional (close)="onCerrarDlg($event)"></punto-adicional>
-    </p-dialog>
-    <p-dialog header="COORDENADAS" [(visible)]="mostrarDlgCoodenada" [modal]="true" [style]="{width: '800px'}" closable="false">
-        <punto-monitoreo-coordenada (close)="onCerrarDlg($event)"></punto-monitoreo-coordenada>
-    </p-dialog>
-    <p-dialog header="AGREGAR FOTO Y/O VIDEO" [(visible)]="mostrarDlgFoto" [modal]="true" [style]="{width: '600px'}" closable="false">
-        <punto-monitoreo-foto (close)="onCerrarDlg($event)"></punto-monitoreo-foto>
-    </p-dialog>
-    <p-dialog header="PUNTO: PUNTO 01" [(visible)]="mostrarDlgObservacion" [modal]="true" [style]="{width: '500px'}" closable="false">
-        <punto-monitoreo-observacion (close)="onCerrarDlg($event)"></punto-monitoreo-observacion>
+    <p-dialog header="{{configDialog.title}}" [(visible)]="configDialog.show" [modal]="true" [style]="{width: configDialog.width}" closable="false">
+        <div *ngIf="configDialog.option=='GESTION'">
+            <punto-monitoreo-gestion (close)="onClickCerrarDialog($event)"></punto-monitoreo-gestion>
+        </div>
+        <div *ngIf="configDialog.option=='ADICIONAL'">
+            <punto-adicional (close)="onClickCerrarDialog($event)"></punto-adicional>
+        </div>
+        <div *ngIf="configDialog.option=='COORDENADA'">
+            <punto-monitoreo-coordenada (close)="onClickCerrarDialog($event)"></punto-monitoreo-coordenada>
+        </div>
+        <div *ngIf="configDialog.option=='FOTO'">
+            <punto-monitoreo-foto (close)="onClickCerrarDialog($event)"></punto-monitoreo-foto>
+        </div>
+        <div *ngIf="configDialog.option=='OBS'">
+            <punto-monitoreo-observacion (close)="onClickCerrarDialog($event)"></punto-monitoreo-observacion>
+        </div>
     </p-dialog>
 </div>
 

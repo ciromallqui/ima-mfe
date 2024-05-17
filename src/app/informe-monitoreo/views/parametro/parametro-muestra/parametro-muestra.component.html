@@ -1,1 +1,71 @@
-<p>parametro-muestra works!</p>
+<div class="content">
+    <div class="grid">
+        <div class="col-12 mb-3 info-res" style="margin-top: -1rem;">
+            <p-messages [(value)]="infoParametro" [enableService]="false" />
+        </div>
+        <div class="md:col-6 col-12 mb-2">
+            <span class="p-float-label">
+                <p-dropdown placeholder="Etapa - Frecuencia Monitoreo"></p-dropdown>
+                <label class="label-placehoder">Etapa - Frecuencia Monitoreo</label>
+            </span>
+        </div>
+        <div class="md:col-6 col-12 mb-2">
+            <span class="p-float-label">
+                <p-dropdown placeholder="Periodo Monitoreo"></p-dropdown>
+                <label class="label-placehoder">Periodo Monitoreo</label>
+            </span>
+        </div>
+        <div class="md:col-6 col-12 mb-2">
+            <span class="p-float-label flex flex-column">
+                <p-calendar [readonlyInput]="true" styleClass="w-full" [showIcon]="true" [showOnFocus]="false" inputId="buttondisplay"></p-calendar>
+                <label class="label-placehoder">Fecha de muestreo inicial</label>
+            </span>
+        </div>
+        <div class="md:col-6 col-12 mb-2">
+            <span class="p-float-label flex flex-column">
+                <p-calendar styleClass="w-full" [(ngModel)]="date3" [iconDisplay]="'input'" 
+                    [showIcon]="true" [timeOnly]="true" [readonlyInput]="true" inputId="templatedisplay">
+                        <ng-template pTemplate="inputicon" let-clickCallBack="clickCallBack">
+                            <i class="pi pi-clock cursor-pointer" (click)="clickCallBack($event)"></i>
+                        </ng-template>
+                </p-calendar>
+                <label class="label-placehoder">Hora de muestreo inicial</label>
+            </span>
+        </div>
+        <div class="md:col-6 col-12 mb-2">
+            <span class="p-float-label flex flex-column">
+                <p-calendar [readonlyInput]="true" styleClass="w-full" [showIcon]="true" [showOnFocus]="false" inputId="buttondisplay"></p-calendar>
+                <label class="label-placehoder">Fecha de muestreo final</label>
+            </span>
+        </div>
+        <div class="md:col-6 col-12 mb-2">
+            <span class="p-float-label flex flex-column">
+                <p-calendar styleClass="w-full" [(ngModel)]="date3" [iconDisplay]="'input'" 
+                    [showIcon]="true" [timeOnly]="true" [readonlyInput]="true" inputId="templatedisplay">
+                        <ng-template pTemplate="inputicon" let-clickCallBack="clickCallBack">
+                            <i class="pi pi-clock cursor-pointer" (click)="clickCallBack($event)"></i>
+                        </ng-template>
+                </p-calendar>
+                <label class="label-placehoder">Hora de muestreo final</label>
+            </span>
+        </div>
+        <div class="md:col-6 col-12 mb-2">
+            <span class="p-float-label">
+                <p-dropdown placeholder="Condición de la amuestra"></p-dropdown>
+                <label class="label-placehoder">Condición de la amuestra</label>
+            </span>
+        </div>
+        <div class="md:col-6 col-12 mb-2">
+            <span class="p-float-label">
+                <p-dropdown placeholder="Medio de envío"></p-dropdown>
+                <label class="label-placehoder">Medio de envío</label>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="futter">
+    <div class="flex justify-content-center gap-2">
+        <p-button label="Guardar" outlined="true" severity="primary" class="outline-primary" (click)="onClickCancelar()"></p-button>
+        <p-button label="Cancelar" outlined="true" severity="secondary" class="outline-secondary" (click)="onClickCancelar()"></p-button>
+    </div>
+</div>

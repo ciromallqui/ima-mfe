@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { DropdownList } from '../model/DropdownList';
+import { DropdownList } from '../../../model/helper/DropdownList';
 
 @Component({
   selector: 'informe-monitoreo-detalle',

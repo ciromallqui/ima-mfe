@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Message } from 'primeng/api';
-import { InformeMonitoreo } from '../../informe/model/InformeMonitoreo';
+import { InformeMonitoreo } from '../../../model/informe/InformeMonitoreo';
 
 @Component({
   selector: 'punto-monitoreo-gestion',

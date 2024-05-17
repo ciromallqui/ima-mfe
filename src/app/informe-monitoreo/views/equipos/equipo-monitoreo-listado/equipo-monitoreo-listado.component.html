@@ -1,6 +1,6 @@
-<div class="content ">
+<div class="content-list" style="margin-top: -10px;">
   <div *ngIf="tabResul == 'EQUIPO'">
-    <div class="grid mb-5">
+    <div class="grid">
       <div class="md:col-7 col-12">
         <div class="titulo-res">
           <strong class="pcp-1 res-active" (click)="onClickEquipos()">Equipos</strong>
@@ -10,12 +10,6 @@
       <div class="md:col-5 col-12 flex justify-content-end gap-1">
         <p-button label="Agregar Equipos" icon="pi pi-plus" severity="primary" outlined="true" class="outline-primary"
           (click)="onClickAgregarEquipo()"></p-button>
-      </div>
-    </div>
-    <div class="row mb-4">
-      <div class="col-12">
-        <strong>*Para asociar los parámetros, dar click en el tercer ícono y hacer check por parámetro; primero deberá
-          registrar el registro de resultados, en caso contrario no se mostrará ningún parámetro</strong>
       </div>
     </div>
     <div class="grid">
@@ -52,26 +46,27 @@
             currentPageReportTemplate="({totalRecords} registros)"></p-paginator>
         </div>
       </div>
+      <div class="col-12">
+        <strong class="text-primary requerido">Para asociar los parámetros, dar click en el tercer ícono y hacer check por parámetro; primero deberá registrar el registro de resultados, en caso contrario no se mostrará ningún parámetro</strong>
+      </div>
     </div>
   </div>
   <div *ngIf="tabResul == 'PARAMETRO'">
-    <div class="grid mb-5">
-      <div class="md:col-12 col-12 mb-2">
+    <div class="grid">
+      <div class="md:col-6 col-12">
         <div class="titulo-res">
           <strong class="pcp-1" (click)="onClickEquipos()">Equipos</strong>
           <strong class="pcp-2 res-active">Parámetros</strong>
         </div>
       </div>
-      <div class="md:col-3 col-12 mb-2">
-        <div class="card flex justify-content-center">
-          <p-dropdown [options]="" placeholder="Equipo" [editable]="true" optionLabel="name" />
-        </div>
-      </div>
-      <div class="md:col-9 col-12 mb-2">
+      <div class="md:col-6 col-12">
         <div class="card flex justify-content-end">
           <p-button label="Asociar parámetro" icon="pi pi-plus" severity="primary" outlined="true" class="outline-primary"
           (click)="onClickAsociarParametros()"></p-button>
         </div>
+      </div>
+      <div class="col-12" style="margin: -15px 0 -15px 0; padding-top: 0; padding-bottom: 0;">
+        <p-messages [(value)]="infoEquipo" [enableService]="false" />
       </div>
       <div class="md:col-12 col-12 table">
         <p-table [value]="dataSourceParametro" selectionMode="single" dataKey="orden">
@@ -104,7 +99,7 @@
 <p-toast position="top-center" [showTransformOptions]="'translateY(100%)'" [showTransitionOptions]="'1000ms'"
   [hideTransitionOptions]="'1000ms'" [showTransformOptions]="'translateX(100%)'" />
 
-<div class="card flex justify-content-center">
+<div class="card flex justify-content-center p-dialog-custom">
   <p-dialog header="{{tituloHeaderDialogo}}" [(visible)]="mostrarDetalle" [modal]="true"
     [style]="{width: widthDialogo, height: heightDialogo}" closable="false">
     <div *ngIf="modalContent == 'AGREGAR-EDITAR-EQUIPO'">

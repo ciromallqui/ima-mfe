@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { PuntoMonitoreo } from '../model/PuntoMonitoreo';
 import { PuntoMonitoreoService } from '../../../services/punto-monitoreo.service';
 import { MessageService } from 'primeng/api';
+import { PuntoMonitoreo } from '../../../model/punto/PuntoMonitoreo';
+import { ConfigDialog } from '../../../model/helper/ConfigDialog';
 
 @Component({
   selector: 'punto-monitoreo-listado',
@@ -16,15 +17,12 @@ export class PuntoMonitoreoListadoComponent implements OnInit{
 
   busqueda: boolean = false;
   tabResul: string = "PUNTO";
-  mostrarDlgCoodenada: boolean = false;
-  mostrarDlgFoto: boolean = false;
-  mostrarDlgObservacion: boolean = false;
-  mostrarDlgPGestion: boolean = false;
-  mostrarDlgPAdicional: boolean = false;
 
   puntoMonitoreo: PuntoMonitoreo | undefined;
   dataSource: PuntoMonitoreo[] = [];
   dataPunto!: PuntoMonitoreo;
+
+  configDialog: ConfigDialog = {};
 
   constructor(
     private puntoMonitoreoService: PuntoMonitoreoService,
@@ -58,27 +56,26 @@ export class PuntoMonitoreoListadoComponent implements OnInit{
   }
 
   onClickDlgPGestion(data: PuntoMonitoreo) {
-    this.mostrarDlgPGestion = true;
+    this.onClickAbrirDialogo('SELECCIONAR PUNTOS DE MONITOREO','800px', null,'GESTION');
   }
   onClickDlgPAdicional(data: PuntoMonitoreo) {
-    this.mostrarDlgPAdicional = true;
+    this.onClickAbrirDialogo('PUNTOS ADICIONALES','900px', null,'ADICIONAL');
   }
   onClickDlgCoordenada(data: PuntoMonitoreo) {
-    this.mostrarDlgCoodenada = true;
+    this.onClickAbrirDialogo('COORDENADAS','800px', null,'COORDENADA');
   }
   onClickDlgFoto(data: PuntoMonitoreo) {
-    this.mostrarDlgFoto = true;
+    this.onClickAbrirDialogo('AGREGAR FOTO Y/O VIDEO','600px', null,'FOTO');
   }
   onClickDlgObservacion(data: PuntoMonitoreo) {
-    this.mostrarDlgObservacion = true;
+    this.onClickAbrirDialogo('PUNTO: PUNTO 01','500px', null,'OBS');
   }
 
-  onCerrarDlg(event: boolean) {
-    this.mostrarDlgPGestion = event;
-    this.mostrarDlgPAdicional = event;
-    this.mostrarDlgCoodenada = event;
-    this.mostrarDlgFoto = event;
-    this.mostrarDlgObservacion = event;
+  onClickAbrirDialogo(titulo: string, width: string, height: string, opcion: string, mostrarDialog: boolean = true) {
+    this.configDialog = {title: titulo, width: width, height: height, option: opcion, show: mostrarDialog};
+  }
+  onClickCerrarDialog(isShow: boolean) {
+    this.configDialog.show = isShow;
   }
 
   onClickPuntoRes() {
@@ -94,11 +91,6 @@ export class PuntoMonitoreoListadoComponent implements OnInit{
     }
   }
   onClickParametroRes(data: any) {
-    // if(data != undefined) {
-    //   this.dataPunto = data;
-    //   this.tabResul = "PARAMETRO";
-    // }else {
-    // }
     this.messageWarn("No se ha detectado ningún componente seleccionado");
   }
 

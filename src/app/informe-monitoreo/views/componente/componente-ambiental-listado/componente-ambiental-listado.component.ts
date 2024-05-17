@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { ConfirmationService, Message, MessageService } from 'primeng/api';
-import { PuntoMonitoreo } from '../../puntos/model/PuntoMonitoreo';
-import { ComponenteAmbiental } from '../model/ComponenteAmbiental';
 import { TreeControlCheckbox } from '../../../../utils/TreeControlCheckbox';
+import { PuntoMonitoreo } from '../../../model/punto/PuntoMonitoreo';
+import { ComponenteAmbiental } from '../../../model/componente/ComponenteAmbiental';
 
 @Component({
   selector: 'componente-ambiental-listado',

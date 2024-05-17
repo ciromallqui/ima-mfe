@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Message } from 'primeng/api';
 import { TreeControlCheckbox } from '../../../../utils/TreeControlCheckbox';
 
@@ -9,15 +9,32 @@ import { TreeControlCheckbox } from '../../../../utils/TreeControlCheckbox';
 })
 export class PuntoAdicionalParametroComponent implements OnInit {
 
+  @Input() opcion: string;
+
+  first:number=0;
+  rows:number=10;
+  
+  valorTemp: boolean = true;
   infoComponente!: Message[];
 
   ngOnInit(): void {
-    this.infoComponente = [{ sticky: false, closable: false, severity: 'success', summary: 'Componente:', detail: 'AIRE AMBIENTAL' }];
+    this.infoComponente = [{ sticky: false, closable: false, severity: 'success', summary: 'Componente:', detail: 'AGUA' }];
   }
 
   onChangeCheckParam(datos: any) {
     new TreeControlCheckbox().changeCheckbox(datos);
   }
+
+  onPageChange(event: any) {
+    console.log(event);
+    this.first = event.first;
+    this.rows = event.rows;
+  }
+
+  dataSource: any[] = [
+    {componente: 'AGUA', parametro: 'Cianuro (<= 1 mg/L)'},
+    {componente: 'AGUA', parametro: 'Nitrógeno amoniacal (<= 80 mg/L)'}
+  ];
 
   parametroAdiLista: any[] = [
     {
@@ -36,7 +53,7 @@ export class PuntoAdicionalParametroComponent implements OnInit {
         checked: false,
         expanded: true,
         data: "Work Folder",
-        children: [{idParametro: 3,idParametroPadre: 2, parametro: "Suelo Agrícola",showCheckbox: true,checked: false, "data": "Expenses Document"}, {idParametro: 4,idParametroPadre: 2, parametro: "Suelo residual",showCheckbox: true,checked: false, "data": "Resume Document"}]
+        children: [{idParametro: 3,idParametroPadre: 2, parametro: "Cianuro (<= 1 mg/L)",showCheckbox: true,checked: false, "data": "Expenses Document"}, {idParametro: 4,idParametroPadre: 2, parametro: "Nitrógeno amoniacal (<= 80 mg/L)",showCheckbox: true,checked: false, "data": "Resume Document"}]
       }]
     },
     {
@@ -54,7 +71,7 @@ export class PuntoAdicionalParametroComponent implements OnInit {
         showCheckbox: true,
         checked: false,
         children: [
-          {idParametro: 7,idParametroPadre: 6,checked: true,showCheckbox: true, parametro: "Aceites y grasas mg/kg", "data": "Barcelona Photo"},
+          {idParametro: 7,idParametroPadre: 6,checked: false,showCheckbox: true, parametro: "Aceites y grasas mg/kg", "data": "Barcelona Photo"},
           {idParametro: 18,idParametroPadre: 6,checked: false,showCheckbox: true, parametro: "Aceites y grasas %", "data": "PrimeFaces Logo"}]
       }]
     }

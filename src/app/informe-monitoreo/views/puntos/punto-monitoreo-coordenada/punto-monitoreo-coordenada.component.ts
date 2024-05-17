@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Message } from 'primeng/api';
-import { DropdownList } from '../../informe/model/DropdownList';
-import { PuntoResCoordenada } from '../model/PuntoResCoordenada';
+import { PuntoResCoordenada } from '../../../model/punto/PuntoResCoordenada';
+import { DropdownList } from '../../../model/helper/DropdownList';
 
 @Component({
   selector: 'punto-monitoreo-coordenada',
