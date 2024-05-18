@@ -221,6 +221,15 @@ body {
       clip-path:  polygon(95% 0, 100% 50%, 95% 100%, 0% 100%, 5% 50%, 0% 0%);
       margin-left: -4px;
   }
+  .pcp-3 {
+      clip-path:  polygon(95% 0, 100% 50%, 95% 100%, 0% 100%, 0% 0%, 0% 0%);
+  }
+  .pcp-4 {
+      clip-path:  polygon(95% 0, 100% 50%, 95% 100%, 0% 100%, 5% 50%, 0% 0%);
+      margin-left: -6px;
+      padding-right: 50px;
+  }
+  
 }
 .titulo-res i{
   color: #144AA7;

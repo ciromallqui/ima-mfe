@@ -134,7 +134,7 @@
 </div>
 
 <div class="card flex justify-content-center">
-  <p-confirmDialog #cd [visible]="openDlgEliminar">
+  <p-confirmDialog #cd1 id="dialog" [visible]="openDlgEliminar" (onHide)="openDlgEliminar = false">
     <ng-template pTemplate="headless" let-message>
       <div class="flex flex-column align-items-center p-5 surface-overlay border-round p-dialog-confirm">
         <div class="border-circle bg-primary inline-flex justify-content-center align-items-center h-6rem w-6rem">
@@ -142,8 +142,8 @@
         </div>
         <strong class="mt-4">{{ message.message }}</strong>
         <div class="flex align-items-center gap-2 mt-4">
-          <p-button label="Aceptar" (click)="cd.accept()" severity="primary" outlined="true" class="outline-primary"></p-button>
-          <p-button label="Cancelar" (click)="cd.reject()" severity="secondary" outlined="true" class="outline-secondary"></p-button>
+          <p-button label="Aceptar" (click)="cd1.accept()" severity="primary" outlined="true" class="outline-primary"></p-button>
+          <p-button label="Cancelar" (click)="cd1.reject()" severity="secondary" outlined="true" class="outline-secondary"></p-button>
         </div>
       </div>
     </ng-template>

@@ -10,7 +10,7 @@ import { ComponenteAmbiental } from '../../../model/componente/ComponenteAmbient
   selector: 'parametro-listado',
   templateUrl: './parametro-listado.component.html',
   styleUrl: './parametro-listado.component.scss',
-  providers: [MessageService]
+  providers: [MessageService, ConfirmationService]
 })
 export class ParametroListadoComponent implements OnInit{
   faClock = faClock;
@@ -64,7 +64,7 @@ export class ParametroListadoComponent implements OnInit{
       message: '¿Está seguro que desea eliminar el registro?',
       accept: () => {
         this.openDlgEliminar = false;
-        this.messageService.add({ key: 'noComp', severity: 'success', summary: 'Confirmado', detail: 'El parámetro se eliminó correctamente.', life: 3000 });
+        this.messageService.add({ key: 'toast', severity: 'success', summary: 'Confirmado', detail: 'El parámetro se eliminó correctamente.', life: 3000 });
       },
       reject: () => {
         this.openDlgEliminar = false;

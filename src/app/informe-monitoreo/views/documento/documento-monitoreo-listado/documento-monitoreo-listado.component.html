@@ -47,12 +47,11 @@
 <p-toast position="top-center" [showTransformOptions]="'translateY(100%)'" [showTransitionOptions]="'1000ms'"
     [hideTransitionOptions]="'1000ms'" [showTransformOptions]="'translateX(100%)'" />
 
-<div class="card flex justify-content-center">
+<div class="card flex justify-content-center p-dialog-custom">
     <p-dialog header="{{tituloHeaderDialogo}}" [(visible)]="mostrarDetalle" [modal]="true"
         [style]="{width: widthDialogo, height: heightDialogo}" closable="false">
         <div *ngIf="modalContent == 'AGREGAR-EDITAR-DOCUMENTO'">
-            <documento-monitoreo-detalle style="position: absolute;"
-                (cerrar)="onClickCerrar($event)"></documento-monitoreo-detalle>
+            <documento-monitoreo-detalle (cerrar)="onClickCerrar($event)"></documento-monitoreo-detalle>
         </div>
         <div *ngIf="modalContent == 'VER-DATOS-EQUIPO'">
             <equipo-detalle (cerrar)="onClickCerrar($event)"></equipo-detalle>

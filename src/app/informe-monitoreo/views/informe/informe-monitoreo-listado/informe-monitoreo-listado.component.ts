@@ -32,7 +32,7 @@ export class InformeMonitoreoListadoComponent implements OnInit{
   mostrarDlgEnvio: boolean = false;
   showResultado: boolean = false;
   openDlgEliminar: boolean = false;
-  openDlgConcluirr: boolean = false;
+  openDlgConcluir: boolean = false;
 
   first: number = 0;
   rows: number = 10;
@@ -102,7 +102,7 @@ export class InformeMonitoreoListadoComponent implements OnInit{
       message: '¿Está seguro que desea eliminar el registro?',
       accept: () => {
         this.openDlgEliminar = false;
-        this.messageService.add({ severity: 'success', summary: 'Confirmado', detail: 'El informe de ensayo se eliminó correctamente.', life: 3000 });
+        this.messageService.add({ severity: 'success', summary: 'Confirmado', detail: 'El informe se eliminó correctamente.', life: 3000 });
       },
       reject: () => {
         this.openDlgEliminar = false;
@@ -111,13 +111,13 @@ export class InformeMonitoreoListadoComponent implements OnInit{
   }
   onClickConcluir(data: InformeMonitoreo) {
     this.confirmationService.confirm({
-      message: '¿Está seguro que desea concluir \n el Informe de Monitoreo?',
+      message: '¿Está seguro que desea concluir el Informe de Monitoreo?',
       accept: () => {
-        this.openDlgConcluirr = false;
+        this.openDlgConcluir = false;
         this.messageService.add({ severity: 'success', summary: 'Confirmado', detail: 'Informe concluido con éxito.', life: 3000 });
       },
       reject: () => {
-        this.openDlgConcluirr = false;
+        this.openDlgConcluir = false;
       }
     });
   }

@@ -3,13 +3,12 @@
     <div class="grid">
       <div class="md:col-7 col-12">
         <div class="titulo-res">
-          <strong class="pcp-1 res-active" (click)="onClickEnsayo()">Informe de ensayo</strong>
-          <strong class="pcp-2">Parámetros</strong>
+          <strong class="pcp-3 res-active" (click)="onClickEnsayo()">Informe de ensayo</strong>
+          <strong class="pcp-4">Parámetros</strong>
         </div>
       </div>
       <div class="md:col-5 col-12 flex justify-content-end gap-1">
-        <p-button label="Agregar ensayo" icon="pi pi-plus" severity="primary" outlined="true" class="outline-primary"
-          (click)="onClickAgregarEnsayo()"></p-button>
+        <p-button label="Agregar ensayo" icon="pi pi-plus" severity="primary" outlined="true" class="outline-primary" (click)="onClickAgregarEnsayo()"></p-button>
       </div>
     </div>
     <div class="grid">
@@ -23,12 +22,10 @@
           <ng-template pTemplate="body" let-data let-rowIndex="rowIndex">
             <tr>
               <td>{{ data.orden }}</td>
-              <td style="width: 200px;">
-                <fa-icon [icon]="faPencil" class="icon-primary" pTooltip="Editar Ensayo" tooltipPosition="top"
-                  (click)="onClickEditarEnsayo()"></fa-icon>
-                <fa-icon [icon]="faTrash" class="icon-danger px-2" pTooltip="Eliminar Ensayo" tooltipPosition="top"
-                  (click)="confirm()"></fa-icon>
-                <i class="pi pi-arrow-right icon-res px-2" pTooltip="Ir al parámetro" (click)="onClickParametros()"
+              <td style="width: 180px;">
+                <fa-icon [icon]="faPencil" class="icon-primary" pTooltip="Editar Ensayo" tooltipPosition="top" (click)="onClickEditarEnsayo()"></fa-icon>
+                <fa-icon [icon]="faTrash" class="icon-danger px-1" pTooltip="Eliminar Ensayo" tooltipPosition="top" (click)="confirm()"></fa-icon>
+                <i class="pi pi-arrow-right icon-res px-1" pTooltip="Ir al parámetro" (click)="onClickParametros()"
                   tooltipPosition="top"></i>
               </td>
               <td>{{ data.nroInformeEnsayo }}</td>
@@ -55,14 +52,13 @@
     <div class="grid">
       <div class="md:col-6 col-12">
         <div class="titulo-res">
-          <strong class="pcp-1" (click)="onClickEnsayo()">Informe de ensayo</strong>
-          <strong class="pcp-2 res-active">Parámetros</strong>
+          <strong class="pcp-3" (click)="onClickEnsayo()">Informe de ensayo</strong>
+          <strong class="pcp-4 res-active">Parámetros</strong>
         </div>
       </div>
       <div class="md:col-6 col-12">
         <div class="card flex justify-content-end">
-          <p-button label="Asociar parámetro" icon="pi pi-plus" severity="primary" outlined="true"
-            class="outline-primary" (click)="onClickAsociarParametros()"></p-button>
+          <p-button label="Asociar parámetro" icon="pi pi-plus" severity="primary" outlined="true" class="outline-primary" (click)="onClickAsociarParametros()"></p-button>
         </div>
       </div>
       <div class="col-12" style="margin: -15px 0 -15px 0; padding-top: 0; padding-bottom: 0;">
@@ -102,7 +98,7 @@
 <p-toast position="top-center" [showTransformOptions]="'translateY(100%)'" [showTransitionOptions]="'1000ms'"
   [hideTransitionOptions]="'1000ms'" [showTransformOptions]="'translateX(100%)'" />
 
-<div class="card flex justify-content-center">
+<div class="card flex justify-content-center p-dialog-custom">
   <p-dialog header="{{tituloHeaderDialogo}}" [(visible)]="mostrarDetalle" [modal]="true"
     [style]="{width: widthDialogo, height: heightDialogo}" closable="false">
     <div *ngIf="modalContent == 'AGREGAR-EDITAR-ENSAYO'">

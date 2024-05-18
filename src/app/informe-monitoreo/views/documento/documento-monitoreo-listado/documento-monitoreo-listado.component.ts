@@ -48,11 +48,11 @@ export class DocumentoMonitoreoListadoComponent implements OnInit {
   }
 
   onClickAgregarDocumento() {
-    this.onclickAbrirDialogo('AGREGAR INFORME DE ENSAYO', '600px', '420px', 'AGREGAR-EDITAR-DOCUMENTO');
+    this.onclickAbrirDialogo('AGREGAR INFORME DE ENSAYO', '600px', 'auto', 'AGREGAR-EDITAR-DOCUMENTO');
   }
 
   onClickEditarDocumento() {
-    this.onclickAbrirDialogo('AGREGAR INFORME DE ENSAYO', '600px', '420px', 'AGREGAR-EDITAR-DOCUMENTO');
+    this.onclickAbrirDialogo('AGREGAR INFORME DE ENSAYO', '600px', 'auto', 'AGREGAR-EDITAR-DOCUMENTO');
   }
 
   onClickEliminarDocumento() {
@@ -70,11 +70,11 @@ export class DocumentoMonitoreoListadoComponent implements OnInit {
   onClickVerDatos(data: DocumentoMonitoreo) {
     console.log(data)
     if (data.modulo.includes('EQUIPO')) {
-      this.onclickAbrirDialogo('DATOS DEL ARCHIVO DE EQUIPO', '700px', '600px', 'VER-DATOS-EQUIPO');
+      this.onclickAbrirDialogo('DATOS DEL ARCHIVO DE EQUIPO', '700px', 'auto', 'VER-DATOS-EQUIPO');
     }
 
     if (data.modulo.includes('ENSAYO')) {
-      this.onclickAbrirDialogo('DATOS DEL ARCHIVO DE ENSAYO',  '700px', '670px', 'VER-DATOS-ENSAYO');
+      this.onclickAbrirDialogo('DATOS DEL ARCHIVO DE ENSAYO',  '700px', 'auto', 'VER-DATOS-ENSAYO');
     }
   }
 

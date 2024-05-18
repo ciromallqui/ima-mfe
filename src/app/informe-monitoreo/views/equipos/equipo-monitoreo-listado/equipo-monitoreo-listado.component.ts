@@ -8,7 +8,7 @@ import { faPencil, faTrashAlt, faExpandArrowsAlt, faLocationArrow, faFileExcel }
   selector: 'equipo',
   templateUrl: './equipo-monitoreo-listado.component.html',
   styleUrl: './equipo-monitoreo-listado.component.scss',
-  providers: [ConfirmationService]
+  providers: [MessageService, ConfirmationService]
 })
 export class EquipoMonitoreoListadoComponent implements OnInit {
   faPencil = faPencil;

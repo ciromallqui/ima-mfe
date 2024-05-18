@@ -23,12 +23,10 @@
           <ng-template pTemplate="body" let-data let-rowIndex="rowIndex">
             <tr>
               <td>{{ data.orden }}</td>
-              <td style="width: 200px;">
-                <fa-icon [icon]="faPencil" class="icon-primary" pTooltip="Editar Equipo" tooltipPosition="top"
-                  (click)="onClickEditarEquipo()"></fa-icon>
-                <fa-icon [icon]="faTrash" class="icon-danger px-2" pTooltip="Eliminar Equipo" tooltipPosition="top"
-                  (click)="onClickEliminar()"></fa-icon>
-                <i class="pi pi-arrow-right icon-res px-2" pTooltip="Ir al parámetro" (click)="onClickParametros()"
+              <td style="width: 180px;">
+                <fa-icon [icon]="faPencil" class="icon-primary" pTooltip="Editar Equipo" tooltipPosition="top" (click)="onClickEditarEquipo()"></fa-icon>
+                <fa-icon [icon]="faTrash" class="icon-danger px-1" pTooltip="Eliminar Equipo" tooltipPosition="top" (click)="onClickEliminar()"></fa-icon>
+                <i class="pi pi-arrow-right icon-res px-1" pTooltip="Ir al parámetro" (click)="onClickParametros()"
                   tooltipPosition="top"></i>
               </td>
               <td>{{ data.nombre }}</td>
@@ -87,9 +85,7 @@
           </ng-template>
         </p-table>
         <div class="card flex justify-content-end">
-          <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows"
-            [totalRecords]="dataSourceParametro.length" [showCurrentPageReport]="true"
-            currentPageReportTemplate="({totalRecords} registros)"></p-paginator>
+          <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="dataSourceParametro.length" [showCurrentPageReport]="true" currentPageReportTemplate="({totalRecords} registros)"></p-paginator>
         </div>
       </div>
     </div>

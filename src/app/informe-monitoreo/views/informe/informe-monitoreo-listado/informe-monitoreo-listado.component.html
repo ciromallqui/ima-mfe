@@ -64,7 +64,7 @@
                     <td>{{ data.fechaRegistro }}</td><td>{{ data.fechaCierre }}</td>
                     <td>
                         <fa-icon [icon]="faFileExcel" pTooltip="Descargar reporte" tooltipPosition="top" class="icon-primary"></fa-icon>
-                        <span pTooltip="Concluir el informe" tooltipPosition="top" class="material-icons icon-primary" (click)="onClickConcluir(data)" *ngIf="data.estado=='EN PROCESO'">assignment_turned_in</span>
+                        <span pTooltip="Concluir el informe" tooltipPosition="left" class="material-icons icon-primary" (click)="onClickConcluir(data)" *ngIf="data.estado=='EN PROCESO'">assignment_turned_in</span>
                     </td>
                 </tr>
             </ng-template>

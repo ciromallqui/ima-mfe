@@ -9,7 +9,7 @@ import { ComponenteAmbiental } from '../../../model/componente/ComponenteAmbient
   selector: 'componente-ambiental-listado',
   templateUrl: './componente-ambiental-listado.component.html',
   styleUrl: './componente-ambiental-listado.component.scss',
-  providers: [MessageService]
+  providers: [MessageService, ConfirmationService]
 })
 export class ComponenteAmbientalListadoComponent implements OnInit {
   faTrash = faTrashAlt;

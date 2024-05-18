@@ -1,12 +1,12 @@
-<div class="content  mb-4" style="margin-top: 25px; padding-right: 10px; border-bottom: solid 1px #1d85bf;">
-    <div class="grid row">
-        <div class="col-12 mb-4">
+<div class="content">
+    <div class="grid">
+        <div class="col-12 mb-3">
             <span class="p-float-label flex flex-column">
                 <input pInputText type="text" placeholder="N° informe de ensayo" />
                 <label class="label-placehoder requerido">N° informe de ensayo</label>
             </span>
         </div>
-        <div class="col-12 mb-4">
+        <div class="col-12 mb-3">
             <span class="p-float-label flex flex-column">
                 <p-dropdown [options]="" optionLabel="Tipo de Documento"
                 placeholder="Tipo de Documento" />
@@ -30,9 +30,7 @@
 </div>
 <div class="futter">
     <div class="flex justify-content-center gap-2">
-        <p-button label="Guardar" outlined="true" severity="primary" class="outline-primary"
-            (click)="onClickCancelar()"></p-button>
-        <p-button label="Cancelar" outlined="true" severity="secondary" class="outline-secondary"
-            (click)="onClickCancelar()"></p-button>
+        <p-button label="Guardar" outlined="true" severity="primary" class="outline-primary" (click)="onClickCancelar()"></p-button>
+        <p-button label="Cancelar" outlined="true" severity="secondary" class="outline-secondary" (click)="onClickCancelar()"></p-button>
     </div>
 </div>
