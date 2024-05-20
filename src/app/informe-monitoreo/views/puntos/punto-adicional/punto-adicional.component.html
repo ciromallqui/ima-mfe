@@ -133,10 +133,10 @@
                         </div>
                     </ng-template>
                 </p-tabPanel>
-                <p-tabPanel header="Agre. Componente" [disabled]="false">
+                <p-tabPanel header="Agre. Componente" [disabled]="!enabledIndex1">
                     <ng-template pTemplate="content">
                         <div class="col-12">
-                            <p-tree class="w-full md:w-30rem" [selectionMode]="'checkbox'" [value]="componenteLista" dataKey="idComponente">
+                            <p-tree class="w-full md:w-30rem" [selectionMode]="'checkbox'" [value]="componenteLista" dataKey="idComponente" (selectionChange)="selectCheckComponente()">
                                 <ng-template let-node pTemplate="default">
                                     <div><span class="hover:text-primary cursor-pointer">{{node.componente}}</span></div>
                                 </ng-template>
@@ -144,12 +144,12 @@
                         </div>
                     </ng-template>
                 </p-tabPanel>
-                <p-tabPanel header="Agregar Parámetro" [disabled]="false">
+                <p-tabPanel header="Agregar Parámetro" [disabled]="!enabledIndex2">
                     <ng-template pTemplate="content">
                         <punto-adicional-parametro [opcion]="'SELECT'"></punto-adicional-parametro>
                     </ng-template>
                 </p-tabPanel>
-                <p-tabPanel header="Lista de Parámetros" [disabled]="false">
+                <p-tabPanel header="Lista de Parámetros" [disabled]="!enabledIndex3">
                     <ng-template pTemplate="content">
                         <punto-adicional-parametro [opcion]="'LIST'"></punto-adicional-parametro>
                     </ng-template>
@@ -160,7 +160,8 @@
 </div>
 <div class="futter">
     <div class="flex justify-content-center gap-2">
-        <p-button label="Guardar" outlined="true" severity="primary" class="outline-primary" (click)="onClickCancelar()" *ngIf="activeIndex==3"></p-button>
+        <p-button label="Guardar" outlined="true" severity="primary" class="outline-primary" (click)="onClickGuardar()" *ngIf="activeIndex==0"></p-button>
+        <p-button label="Finalizar" outlined="true" severity="primary" class="outline-primary" (click)="onClickCancelar()" *ngIf="activeIndex==3"></p-button>
         <p-button label="Cancelar" outlined="true" severity="secondary" class="outline-secondary" (click)="onClickCancelar()"></p-button>
     </div>
 </div>

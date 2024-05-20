@@ -86,7 +86,7 @@ export class ParametroListadoComponent implements OnInit{
     this.onClickAbrirDialogo('ETAPA, FRECUENCIA DE MONITOREO Y DE REPORTE','800px', '650px','ETAPA');
   }
   onClickAgregarMuestra(){
-    this.onClickAbrirDialogo('INFORMACIÓN DE LA MUESTRA','800px', 'auto','MUESTRA');
+    this.onClickAbrirDialogo('INFORMACIÓN DE LA MUESTRA','800px', '420px','MUESTRA');
   }
   onClickAgregarObservacion(){
     this.onClickAbrirDialogo('OBSERVACIÓN DEL PARÁMETRO','450px', 'auto','OBS');

@@ -12,11 +12,25 @@ export class PuntoAdicionalComponent {
   infoPunto!: Message[];
 
   activeIndex: number = 0;
+  enabledIndex1: boolean = false;
+  enabledIndex2: boolean = false;
+  enabledIndex3: boolean = false;
 
   constructor (){}
 
   ngOnInit(){
 
+  }
+
+  onClickGuardar() {
+    this.activeIndex = 1;
+    this.enabledIndex1 = true;
+  }
+
+  selectCheckComponente() {
+    this.activeIndex = 2;
+    this.enabledIndex2 = true;
+    this.enabledIndex3 = true;
   }
 
   onClickCancelar() {
