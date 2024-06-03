@@ -23,8 +23,6 @@
         <div class="md:col-5 col-12 flex justify-content-end">
             <p-button label="Agregar parámetro adicional" severity="primary" outlined="true" class="outline-primary" (click)="onClickParamAdicional()"></p-button>
         </div>
-        
-        <div class="grid">
             <div class="col-12 info-res">
                 <p-messages [(value)]="infoPunto" [enableService]="false" />
             </div>
@@ -47,7 +45,6 @@
                     </ng-template>
                 </p-table>
             </div>
-        </div>
     </div>
     <div class="card flex justify-content-center p-dialog-custom">
         <p-dialog header="SELECCIONAR PARÁMETROS ADICIONALES" [(visible)]="mostrarDetalle" [modal]="true" [style]="{width: '600px'}" closable="false">

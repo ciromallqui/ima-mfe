@@ -26,10 +26,10 @@
         </div>
     </div>
     <div class="grid" *ngIf="!skeleton">
-        <div class="md:col-12 col-12 bg-primary-100 mb-3">
+        <div class="md:col-12 col-12 bg-primary-100 mb-4">
             <i class="pi pi-angle-double-left icon-previo" (click)="onClickPrevio()"></i>
         </div>
-        <div class="lg:col-3 sm:col-6 col-12 margin-bottom">
+        <div class="lg:col-3 sm:col-6 col-12 margin-bottom mb-4">
             <span class="p-float-label">
                 <p-dropdown [options]="listaSubsector" optionValue="id" optionLabel="nombre" placeholder="Subsector"></p-dropdown>
                 <label class="label-placehoder">Subsector</label>
@@ -37,17 +37,18 @@
         </div>
         <div class="lg:col-6 sm:col-6 col-12 margin-bottom">
             <span class="p-float-label">
-                <p-dropdown [options]="listaUnidadFiscalizable" optionValue="id" optionLabel="nombre" placeholder="Unidad fiscalizable"></p-dropdown>
+                <p-dropdown [options]="listaUnidadFiscalizable" optionValue="id" optionLabel="nombre" placeholder="Unidad fiscalizable"
+                ></p-dropdown>
                 <label class="label-placehoder">Unidad fiscalizable</label>
             </span>
         </div>
         <div class="lg:col-3 md:col-4 sm:col-6 col-12 margin-bottom">
             <span class="p-float-label">
-                <p-dropdown [options]="listaEstado" optionValue="id" optionLabel="nombre" placeholder="Estado"></p-dropdown>
+                <p-dropdown [options]="listaEstado" optionValue="id" optionLabel="nombre" placeholder="Estado" [showClear]="true" ></p-dropdown>
                 <label class="label-placehoder">Estado</label>
             </span>
         </div>
-    
+
         <div class="lg:col-3 md:col-4 sm:col-6 col-12 margin-bottom">
             <span class="p-float-label flex flex-column">
                 <input pInputText type="text" placeholder="Nombre de informe"/>

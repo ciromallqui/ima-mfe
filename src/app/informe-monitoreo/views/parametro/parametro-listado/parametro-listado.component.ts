@@ -27,7 +27,7 @@ export class ParametroListadoComponent implements OnInit{
   dataSource: ParametroMonitoreo[] = [];
   busqueda: boolean = false;
   tableHeader:string[] = ['N°','OPCIONES','NORMATIVA','PARÁMETRO','MULTIPLE','TIPO LÍMITE','LÍMITE','SIGNO','RESULTADO','U. MEDIDA','ACREDITACIÓN'];
-
+  selectInforme!: any;
   openDlgEliminar: boolean = false;
   configDialog: ConfigDialog = {};
 
@@ -112,7 +112,7 @@ export class ParametroListadoComponent implements OnInit{
 
   menuItem(){
     this.contextMenu = [
-      { label: 'Duplicar Parámetro', command: () => this.duplicarParametro() },
+      { label: 'Duplicar Parámetro', command: () => this.duplicarParametro() }
     ];
   }
 }
