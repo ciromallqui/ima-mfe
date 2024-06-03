@@ -15,11 +15,12 @@ export class PuntoMonitoreoListadoComponent implements OnInit{
   first: number = 0;
   rows: number = 10;
 
+  skeleton: boolean = true; //se muestra mientras cargan datos
   busqueda: boolean = false;
   tabResul: string = "PUNTO";
 
   puntoMonitoreo: PuntoMonitoreo | undefined;
-  dataSource: PuntoMonitoreo[] = [];
+  dataSource: PuntoMonitoreo[] = [{}];
   dataPunto!: PuntoMonitoreo;
 
   configDialog: ConfigDialog = {};
@@ -30,7 +31,7 @@ export class PuntoMonitoreoListadoComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
-      this.listado();
+    this.listado();
   }
 
   onPageChange(event: any){
@@ -45,7 +46,10 @@ export class PuntoMonitoreoListadoComponent implements OnInit{
 
   listado(){
     this.puntoMonitoreoService.listaPunto().subscribe((res: any) =>{
-      this.dataSource = res;
+      setTimeout(() => { //eliminar al implementar con datos
+        this.dataSource = res;
+        this.skeleton = false;
+      }, 3000);
     });
   }
 

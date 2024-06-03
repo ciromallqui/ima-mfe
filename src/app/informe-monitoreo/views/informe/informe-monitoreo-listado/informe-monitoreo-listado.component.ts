@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ConfirmationService, MenuItem, MessageService, PrimeNGConfig } from 'primeng/api';
 import { InformeMonitoreoService } from '../../../services/informe-monitoreo.service';
 import { faPencil, faTrashAlt, faExpandArrowsAlt, faLocationArrow, faFileExcel } from '@fortawesome/free-solid-svg-icons';
 import { InformeMonitoreo } from '../../../model/informe/InformeMonitoreo';
 import { DropdownList } from '../../../model/helper/DropdownList';
+import { Skeleton } from '../../../model/helper/Skeleton';
 
 
 @Component({
@@ -13,6 +14,9 @@ import { DropdownList } from '../../../model/helper/DropdownList';
   providers: [MessageService, ConfirmationService]
 })
 export class InformeMonitoreoListadoComponent implements OnInit{
+
+  @Output() close: EventEmitter<string> = new EventEmitter();
+  
   faPencil = faPencil;
   faTrashAlt = faTrashAlt;
   faArrowsAlt = faExpandArrowsAlt;
@@ -22,7 +26,7 @@ export class InformeMonitoreoListadoComponent implements OnInit{
   selectInforme!: InformeMonitoreo;
   infoMenu: MenuItem[] | undefined;
   contextMenu: MenuItem[] | undefined;
-  dataSource!: InformeMonitoreo[];
+  dataSource: InformeMonitoreo[] = [{}];
 
   listaSubsector!: DropdownList[];
   listaUnidadFiscalizable!: DropdownList[];
@@ -33,6 +37,7 @@ export class InformeMonitoreoListadoComponent implements OnInit{
   showResultado: boolean = false;
   openDlgEliminar: boolean = false;
   openDlgConcluir: boolean = false;
+  skeleton: boolean = true; //se muestra mientras cargan datos
 
   first: number = 0;
   rows: number = 10;
@@ -52,7 +57,10 @@ export class InformeMonitoreoListadoComponent implements OnInit{
 
   listado(){
     this.informeMonitoreoService.listaInforme().subscribe((res: any) =>{
-      this.dataSource = res;
+      setTimeout(() => { //Eliminar
+        this.dataSource = res;
+        this.skeleton = false;
+      }, 2000);
     });
   }
 
@@ -62,6 +70,10 @@ export class InformeMonitoreoListadoComponent implements OnInit{
     this.rows = event.rows;
   }
 
+  onClickPrevio() {
+    this.close.emit("M");
+  }
+
   onClickAgregar(){
     this.mostrarDlgDetalle = true;
     // this.messageService.add({ key: 'tc', sticky: false, severity: 'error', summary: 'Product Selected', detail: "Holaaaa" });
@@ -69,6 +81,9 @@ export class InformeMonitoreoListadoComponent implements OnInit{
 
   onClickResultado() {
     this.showResultado = true;
+  }
+  cerrarResultado(event: boolean) {
+    this.showResultado = event;
   }
 
   onClickPresentar(data: InformeMonitoreo) {

@@ -39,10 +39,10 @@
                         <tr><th *ngFor="let head of tableHeader">{{head}}</th></tr>
                     </ng-template>
                     <ng-template pTemplate="body" let-data let-rowIndex="rowIndex">
-                        <tr>
+                        <tr *ngIf="skeleton"><td colspan="13"><p-skeleton /></td></tr>
+                        <tr *ngIf="!skeleton">
                             <td>{{ data.orden }}</td>
                             <td style="width: 120px;">
-                                <!-- <i class="pi pi-asterisk icon-res" pTooltip="Selec. parámetros" tooltipPosition="top"></i> -->
                                 <i class="pi pi-map-marker icon-res" pTooltip="Agregar coordenadas" tooltipPosition="top" (click)="onClickDlgCoordenada(data)"></i>
                                 <i class="pi pi-camera icon-res" pTooltip="Agregar foto" tooltipPosition="top" (click)="onClickDlgFoto(data)"></i>
                                 <i class="pi pi-comment icon-res" pTooltip="Observación" tooltipPosition="top" (click)="onClickDlgObservacion(data)"></i>
@@ -58,7 +58,8 @@
                     </ng-template>
                 </p-table>
                 <div class="card flex justify-content-end">
-                    <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="5" [showCurrentPageReport]="true" currentPageReportTemplate="({totalRecords} registros)"></p-paginator>
+                    <div *ngIf="skeleton" class="m-3"><p-skeleton width="300px" height="30px"/></div>
+                    <p-paginator *ngIf="!skeleton" (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="5" [showCurrentPageReport]="true" currentPageReportTemplate="({totalRecords} registros)"></p-paginator>
                 </div>
             </div>
         </div>

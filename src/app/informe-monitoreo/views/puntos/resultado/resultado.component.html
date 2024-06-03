@@ -1,5 +1,8 @@
-<div class="tab-resultado m-2 mt-4">
-    <div class="grid" style="margin-top: 10px;">
+<div class="tab-resultado m-2">
+    <div class="grid">
+        <div class="md:col-12 col-12 bg-primary-100 mb-3">
+            <i class="pi pi-angle-double-left icon-previo" (click)="onClickPrevio()"></i>
+        </div>
         <div class="md:col-4 col-12 margin-bottom">
             <span class="p-float-label flex flex-column">
                 <input pInputText type="text" placeholder="Subsector" value="Hidrocarburos" disabled="false"/>

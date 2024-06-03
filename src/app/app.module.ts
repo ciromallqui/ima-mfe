@@ -33,7 +33,7 @@ import { CardModule } from 'primeng/card';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { InputNumberModule } from 'primeng/inputnumber';
-
+import { SkeletonModule } from 'primeng/skeleton';
 
 import { InformeMonitoreoListadoComponent } from './informe-monitoreo/views/informe/informe-monitoreo-listado/informe-monitoreo-listado.component';
 import { InformeMonitoreoDetalleComponent } from './informe-monitoreo/views/informe/informe-monitoreo-detalle/informe-monitoreo-detalle.component';
@@ -122,6 +122,7 @@ import { ParametroEtapaFrecuenciaComponent } from './informe-monitoreo/views/par
     TreeModule,
     ImageModule,
     CardModule,
+    SkeletonModule,
     InputSwitchModule,
     FloatLabelModule,
     InputNumberModule

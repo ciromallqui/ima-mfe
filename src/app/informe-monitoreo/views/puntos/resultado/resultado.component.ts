@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { Skeleton } from '../../../model/helper/Skeleton';
 
 @Component({
   selector: 'resultado',
@@ -7,7 +8,12 @@ import { Component } from '@angular/core';
 })
 export class ResultadoComponent {
 
+  @Output() close: EventEmitter<boolean> = new EventEmitter();
+
   activeIndex: number = 0;
   valor!: string;
-
+  
+  onClickPrevio() {
+    this.close.emit(false);
+  }
 }

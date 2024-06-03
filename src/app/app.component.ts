@@ -13,4 +13,8 @@ export class AppComponent {
   onSelectCard(opcion: string) {
     this.opciones = opcion;
   }
+
+  cerrarInforme(opcion: string) {
+    this.opciones = opcion
+  }
 }

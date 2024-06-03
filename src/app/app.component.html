@@ -65,7 +65,7 @@
         
     </div>
     <div *ngIf="opciones=='I'">
-        <informe-monitoreo-listado></informe-monitoreo-listado>
+        <informe-monitoreo-listado (close)="cerrarInforme($event)"></informe-monitoreo-listado>
     </div>
     <div *ngIf="opciones=='C'">
         

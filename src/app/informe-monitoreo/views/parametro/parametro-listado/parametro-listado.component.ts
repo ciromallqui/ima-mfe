@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ConfirmationService, Message, MessageService } from 'primeng/api';
+import { ConfirmationService, MenuItem, Message, MessageService } from 'primeng/api';
 import { ParametroMonitoreoService } from '../../../services/parametro-monitoreo.service';
 import { faCaretRight, faClock, faComment, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { ConfigDialog } from '../../../model/helper/ConfigDialog';
@@ -23,6 +23,7 @@ export class ParametroListadoComponent implements OnInit{
   infoPunto!: Message[];
   first:number=0;
   rows:number=10;
+  contextMenu: MenuItem[] | undefined;
   dataSource: ParametroMonitoreo[] = [];
   busqueda: boolean = false;
   tableHeader:string[] = ['N°','OPCIONES','NORMATIVA','PARÁMETRO','MULTIPLE','TIPO LÍMITE','LÍMITE','SIGNO','RESULTADO','U. MEDIDA','ACREDITACIÓN'];
@@ -39,6 +40,7 @@ export class ParametroListadoComponent implements OnInit{
   ngOnInit(): void {
     this.infoPunto = [{ sticky: false, closable: false, severity: 'success', summary: 'Punto/ Componente:', detail: this.data.nombrePunto +"/ "+ this.data.nombreComponente }];
     this.onClickParametroRes();
+    this.menuItem();
   }
 
   onPageChange(event: any) {
@@ -102,5 +104,15 @@ export class ParametroListadoComponent implements OnInit{
   }
   onClickCerrarDialog(isShow: boolean) {
     this.configDialog.show = isShow;
+  }
+
+  duplicarParametro() {
+
+  }
+
+  menuItem(){
+    this.contextMenu = [
+      { label: 'Duplicar Parámetro', command: () => this.duplicarParametro() },
+    ];
   }
 }
